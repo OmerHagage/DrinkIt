@@ -23,6 +23,20 @@ struct DrinkList: View {
               List {
                 
                 
+//                ForEach(self.drinksDB.data){data1 in HStack {
+//                    Button(action: {
+//                        self.drinksToAdd.insert(data1)
+//
+//
+//                        }) {
+//                            Text(data1.name)
+//                        }
+//                    }
+//                }
+                
+                
+                
+                
                 ForEach(0..<drinksDB.data.count){ i in HStack {
                     Button(action: {
                         if (!self.drinksDB.data[i].selected) {
@@ -39,18 +53,18 @@ struct DrinkList: View {
                     }) {
                         self.drinksDB.data[i]
                     } .background(self.drinksDB.data[i].bgColor)
-                    
+
                 }
                 .padding()
-               
+
                 }
                 }
                 .padding()
                 .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
                 .cornerRadius(20)
                 .padding()
-            
-            
+
+
             Spacer()
             
             Button(action: {

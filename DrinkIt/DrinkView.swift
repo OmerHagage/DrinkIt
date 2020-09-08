@@ -13,10 +13,17 @@ struct DrinkView: View, Identifiable, Hashable{
     var name: String
     var bgColor:Color = Color.clear
     var selected:Bool = false
+//    var image:Image = Image(systemName: "arkit")
     
     // delete the view
     var body: some View {
-        Text(self.name)
+        HStack{
+            Spacer()
+            Text(self.name)
+            Spacer()
+            Image(systemName: "arkit")
+            Spacer()
+        }
     }
 }
 

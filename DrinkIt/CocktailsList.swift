@@ -9,9 +9,34 @@
 import SwiftUI
 
 struct CocktailsList: View {
+    
+   @ObservedObject private var datas = FirebaseData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Spacer()
+            Text("Cocktails List")
+            Spacer()
+            List{
+            
+                
+                ForEach(self.datas.data){ data in
+                    HStack {
+                        CocktailButtonView(name: data.name, ingredients: data.ingredients)
+
+                    }
+
+                }
+            }
+            .onAppear {UITableView.appearance().separatorStyle = .none}
+            
+          
+            
+        }
+        
     }
+    
 }
 
 struct CocktailsList_Previews: PreviewProvider {

@@ -17,36 +17,53 @@ class FirebaseData: ObservableObject {
     @Published var data = [Cocktails]()
     
     init() {
-         dbCollection.addSnapshotListener { (documentSnapshot, err) in
-                   if err != nil {
-                       print((err?.localizedDescription)!)
-                       return
-                   }else {
-                       print("read data success")
-                   }
-                   
-                   documentSnapshot!.documentChanges.forEach { diff in
-                       // Real time create from server
-                       if (diff.type == .added) {
-                        let cocktail = Cocktails(id: diff.document.documentID, name: diff.document.get("id") as! String ,msg: diff.document.get("name") as! String)
-                           self.data.append(cocktail)
-                       }
-                       
-                       // Real time modify from server
-                       if (diff.type == .modified) {
-                           self.data = self.data.map { (eachData) -> Cocktails in
-                               var data = eachData
-                               if data.id == diff.document.documentID {
-                                   data.msg = diff.document.get("name") as! String
-                                   data.name = diff.document.get("id") as! String
-                                   return data
-                               }else {
-                                   return eachData
-                               }
-                           }
-                       }
-                   }
-               }
+        
+        
+        dbCollection.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                   print("\(document.documentID) => \(document.data())")
+                    self.data.append(Cocktails(id: document.documentID, name: document.data()["name"] as! String, ingredients: document.data()["Ingredients"] as! String))
+                }
+            }
+        }
+        
+        
+        
+        
+//         dbCollection.addSnapshotListener { (documentSnapshot, err) in
+//                   if err != nil {
+//                       print((err?.localizedDescription)!)
+//                       return
+//                   }else {
+//                       print("read data success")
+//                   }
+//
+//                   documentSnapshot!.documentChanges.forEach { diff in
+//                       // Real time create from server
+//                       if (diff.type == .added) {
+//                        print("\(diff.document.documentID) => \(diff.document.data())")
+//                        let cocktail = Cocktails(id: diff.document.documentID, name: diff.document.get("name") as! String, ingredients: diff.document.get("Ingredients") as! String)
+//                           self.data.append(cocktail)
+//                       }
+//
+//                       // Real time modify from server
+//                       if (diff.type == .modified) {
+//                           self.data = self.data.map { (eachData) -> Cocktails in
+//                               var data = eachData
+//                               if data.id == diff.document.documentID {
+//                                    data.name = diff.document.get("name") as! String
+//                                    data.ingredients = diff.document.get("Ingredients") as! String
+//                                   return data
+//                               }else {
+//                                   return eachData
+//                               }
+//                           }
+//                       }
+//                   }
+//               }
     }
 
 

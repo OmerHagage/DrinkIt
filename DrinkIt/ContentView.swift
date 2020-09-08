@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
      
   
-    @ObservedObject private var datas = FirebaseData()
+  
  
     
     var body: some View {
@@ -25,6 +25,19 @@ struct ContentView: View {
                 
                 HStack{
 
+                    NavigationLink(destination: CocktailsList())
+                                       {
+                                           Text("All Cocktails")
+                                       .foregroundColor(Color.white)
+                                                   .bold()
+                                                   .padding(.all , 10)
+                                                   .padding(.horizontal , 0)
+                                                   .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
+                                                   .background(Color.black)
+                                                   .cornerRadius(20)
+                                                   .shadow(radius: 10)
+                                           }.padding(.horizontal, 20)
+                    
                     Spacer()
                     
                     NavigationLink(destination: DrinkList())
@@ -48,16 +61,17 @@ struct ContentView: View {
                 
                 
                 List {
-                    ForEach(datas.data){ data in
-                        HStack {
-                            Button(action: {
-
-                            }) {
-                                Text(data.name)
-                                Text(data.msg)
-                            }
-                        }.padding()
-                    }
+                    Text("")
+//                    ForEach(datas.data){ data in
+//                        HStack {
+//                            Button(action: {
+//
+//                            }) {
+//                                Text(data.name)
+//                                Text(data.msg)
+//                            }
+//                        }.padding()
+//                    }
                 }
                 .padding()
                 .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
@@ -73,32 +87,16 @@ struct ContentView: View {
                 Spacer()
 
                 HStack{
-                    Spacer()
-
-
-
-
-                    NavigationLink(destination: DrinkList())
-                    {
-                        Text("button")
-                            .foregroundColor(Color.white)
-                            .bold()
-                            .padding(.all , 10)
-                            .padding(.horizontal , 25)
-                            .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
-                            .background(Color.black)
-                            .cornerRadius(20)
-                            .shadow(radius: 10)
-                    }
+                  
 
                     Spacer()
 
                     NavigationLink(destination: CocktailsList())
                     {
-                        Text("button")
+                        Text("Search Cocktails")
                         .bold()
                         .padding(.all , 10)
-                        .padding(.horizontal , 25)
+                        .padding(.horizontal , 40)
                         .overlay(RoundedRectangle(cornerRadius:20).stroke(lineWidth: 3))
                         .background(Color.yellow)
                         .cornerRadius(20)

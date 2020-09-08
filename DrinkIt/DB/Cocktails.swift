@@ -12,5 +12,5 @@ import Foundation
 struct Cocktails: Identifiable {
     var id: String
     var name: String
-    var msg: String
+    var ingredients: String
 }
