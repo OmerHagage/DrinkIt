@@ -8,9 +8,119 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+     
+  
+    @ObservedObject private var datas = FirebaseData()
+ 
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+            
+            VStack{
+
+                Text("Title").offset(y: -50)
+                Spacer()
+                
+                HStack{
+
+                    Spacer()
+                    
+                    NavigationLink(destination: DrinkList())
+                    {
+                        Text("Add drink")
+                            .foregroundColor(Color.white)
+                            .bold()
+                            .padding(.all , 10)
+                            .padding(.horizontal , 0)
+                            .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
+                            .background(Color.black)
+                            .cornerRadius(20)
+                            .shadow(radius: 10)
+                    }.padding(.horizontal, 20)
+                    
+                }
+                    
+                Spacer()
+
+
+                
+                
+                List {
+                    ForEach(datas.data){ data in
+                        HStack {
+                            Button(action: {
+
+                            }) {
+                                Text(data.name)
+                                Text(data.msg)
+                            }
+                        }.padding()
+                    }
+                }
+                .padding()
+                .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
+                .cornerRadius(20)
+                .padding()
+                
+                
+                
+                
+                
+                
+                
+                Spacer()
+
+                HStack{
+                    Spacer()
+
+
+
+
+                    NavigationLink(destination: DrinkList())
+                    {
+                        Text("button")
+                            .foregroundColor(Color.white)
+                            .bold()
+                            .padding(.all , 10)
+                            .padding(.horizontal , 25)
+                            .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
+                            .background(Color.black)
+                            .cornerRadius(20)
+                            .shadow(radius: 10)
+                    }
+
+                    Spacer()
+
+                    NavigationLink(destination: CocktailsList())
+                    {
+                        Text("button")
+                        .bold()
+                        .padding(.all , 10)
+                        .padding(.horizontal , 25)
+                        .overlay(RoundedRectangle(cornerRadius:20).stroke(lineWidth: 3))
+                        .background(Color.yellow)
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                        .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                    }
+                    Spacer()
+                }
+                
+                
+                
+                 Spacer()
+            }
+            
+            
+    
+           
+            
+            
+        }
+  
+        
     }
 }
 
@@ -19,3 +129,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
