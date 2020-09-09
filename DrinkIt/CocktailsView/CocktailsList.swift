@@ -18,18 +18,19 @@ struct CocktailsList: View {
             Spacer()
             Text("Cocktails List")
             Spacer()
-            List{
+            ScrollView{
             
                 
                 ForEach(self.datas.data){ data in
                     HStack {
-                        CocktailButtonView(name: data.name, ingredients: data.ingredients)
+                        CocktailButtonView(cocktail: data)
 
                     }
 
                 }
             }
-            .onAppear {UITableView.appearance().separatorStyle = .none}
+            .padding()
+//            .onAppear {UITableView.appearance().separatorStyle = .none}
             
           
             

@@ -16,9 +16,8 @@ import FirebaseFirestore
 class DBDrinks: ObservableObject {
 
     let dbCollection = Firestore.firestore().collection("drinks")
-//    let firebaseData = FirebaseData()
     
-    @Published var data = [DrinkView]()
+    @Published var data = [Drink]()
 
     init() {
         addDrinksFromDB()
@@ -33,7 +32,7 @@ class DBDrinks: ObservableObject {
              } else {
                  for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    self.data.append(DrinkView(id: document.documentID, name: document.data()["name"] as! String))
+                    self.data.append(Drink(id: document.documentID, name: document.data()["name"] as! String))
                  }
              }
          }

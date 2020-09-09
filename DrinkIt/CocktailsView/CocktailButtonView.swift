@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct CocktailButtonView: View {
-    var name:String
-    var ingredients:String
+    
+    let cocktail: Cocktail
     var image:Image = Image(systemName: "arkit")
     
     
@@ -22,13 +22,15 @@ struct CocktailButtonView: View {
         }) {
             VStack{
                 HStack{
-                    Text(self.name).font(.title).fontWeight(.bold)
+                    Text(cocktail.name).font(.title).fontWeight(.bold)
                     Spacer()
                     self.image.padding()
                 }
                 Spacer()
-                Text(self.ingredients)
+                Text(cocktail.ingredients)
                     .multilineTextAlignment(.leading)
+                Text(cocktail.recipe)
+                .multilineTextAlignment(.leading)
                 Spacer()
             }
             }
@@ -42,7 +44,7 @@ struct CocktailButtonView: View {
                     .stroke(Color.black, lineWidth: 3)
             )
             
-            .shadow(radius: 0.5)
+            .shadow(radius: 2)
             .padding(.all, 5.5)
  
             
@@ -53,6 +55,7 @@ struct CocktailButtonView: View {
 
 struct CocktailButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailButtonView(name: "Negroni", ingredients: "gin,vermouth rosso,  Campari")
+        CocktailButtonView(cocktail: Cocktail(id: "dsf", name: "smfn", ingredients: "kfjgn", recipe: "kd"))
     }
 }
+

@@ -12,8 +12,6 @@ import Foundation
 struct Drink: Identifiable, Hashable{
     var id: String
     var name: String
-    var bgColor:String = "clear"
-    var selected:Bool = false
 }
 
 //

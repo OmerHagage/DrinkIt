@@ -16,7 +16,7 @@ class DBCocktails: ObservableObject {
     
     let dbCollection = Firestore.firestore().collection("cocktails")
     
-    @Published var data = [Cocktails]()
+    @Published var data = [Cocktail]()
     
     init() {
         
@@ -33,7 +33,7 @@ class DBCocktails: ObservableObject {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    self.data.append(Cocktails(id: document.documentID, name: document.data()["name"] as! String, ingredients: document.data()["Ingredients"] as! String))
+                    self.data.append(Cocktail(id: document.documentID, name: document.data()["name"] as! String, ingredients: document.data()["ingredients"] as! String, recipe: document.data()["recipe"] as! String))
                     
                 }
                 

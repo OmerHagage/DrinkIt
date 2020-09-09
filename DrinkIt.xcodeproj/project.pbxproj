@@ -10,14 +10,15 @@
 		26F96412BD3CF3E832447F10 /* Pods_DrinkIt_DrinkItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2543414A47A8E6ABC194067 /* Pods_DrinkIt_DrinkItUITests.framework */; };
 		37812ECA12E019A6789915AF /* Pods_DrinkIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F3255AA6C26B03065483A5 /* Pods_DrinkIt.framework */; };
 		600AFF6E25062C4900BC17D9 /* DBCocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF6D25062C4900BC17D9 /* DBCocktails.swift */; };
-		600AFF7025063FDD00BC17D9 /* Cocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF6F25063FDD00BC17D9 /* Cocktails.swift */; };
 		600AFF762506792000BC17D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF752506792000BC17D9 /* User.swift */; };
 		600AFF7825067AC900BC17D9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF7725067AC900BC17D9 /* Drink.swift */; };
 		600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF792506836900BC17D9 /* DBDrinks.swift */; };
-		600AFF7E250696C600BC17D9 /* DrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF7D250696C600BC17D9 /* DrinkView.swift */; };
+		600AFF7E250696C600BC17D9 /* DrinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF7D250696C600BC17D9 /* DrinkButtonView.swift */; };
 		600AFF822507ABC500BC17D9 /* CocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */; };
+		60220EC22509007A00D26047 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60220EC12509007A00D26047 /* Cocktail.swift */; };
 		6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E425052E9000D0C85E /* DrinkList.swift */; };
 		6033D7E72505337200D0C85E /* CocktailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E62505337200D0C85E /* CocktailsList.swift */; };
+		606317322508DF4C008D0AC3 /* DrinkIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606317302508DF4C008D0AC3 /* DrinkIt.xcdatamodeld */; };
 		60ADAE762504FE6B006628F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADAE752504FE6B006628F9 /* AppDelegate.swift */; };
 		60ADAE782504FE6B006628F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADAE772504FE6B006628F9 /* SceneDelegate.swift */; };
 		60ADAE7A2504FE6B006628F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADAE792504FE6B006628F9 /* ContentView.swift */; };
@@ -54,14 +55,15 @@
 		4D8EC2154BD694E1B39BFEAB /* Pods-DrinkItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkItTests.release.xcconfig"; path = "Target Support Files/Pods-DrinkItTests/Pods-DrinkItTests.release.xcconfig"; sourceTree = "<group>"; };
 		5190BE0C4F3858D61CFE8EBB /* Pods-DrinkItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkItTests.debug.xcconfig"; path = "Target Support Files/Pods-DrinkItTests/Pods-DrinkItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		600AFF6D25062C4900BC17D9 /* DBCocktails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCocktails.swift; sourceTree = "<group>"; };
-		600AFF6F25063FDD00BC17D9 /* Cocktails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktails.swift; sourceTree = "<group>"; };
 		600AFF752506792000BC17D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		600AFF7725067AC900BC17D9 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		600AFF792506836900BC17D9 /* DBDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDrinks.swift; sourceTree = "<group>"; };
-		600AFF7D250696C600BC17D9 /* DrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkView.swift; sourceTree = "<group>"; };
+		600AFF7D250696C600BC17D9 /* DrinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButtonView.swift; sourceTree = "<group>"; };
 		600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailButtonView.swift; sourceTree = "<group>"; };
+		60220EC12509007A00D26047 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		6033D7E425052E9000D0C85E /* DrinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkList.swift; sourceTree = "<group>"; };
 		6033D7E62505337200D0C85E /* CocktailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsList.swift; sourceTree = "<group>"; };
+		606317312508DF4C008D0AC3 /* DrinkIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkIt.xcdatamodel; sourceTree = "<group>"; };
 		60ADAE722504FE6B006628F9 /* DrinkIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ADAE752504FE6B006628F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60ADAE772504FE6B006628F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				600AFF6D25062C4900BC17D9 /* DBCocktails.swift */,
-				600AFF6F25063FDD00BC17D9 /* Cocktails.swift */,
+				60220EC12509007A00D26047 /* Cocktail.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -144,6 +146,15 @@
 				600AFF752506792000BC17D9 /* User.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		606317332508E015008D0AC3 /* DrinkView */ = {
+			isa = PBXGroup;
+			children = (
+				6033D7E425052E9000D0C85E /* DrinkList.swift */,
+				600AFF7D250696C600BC17D9 /* DrinkButtonView.swift */,
+			);
+			path = DrinkView;
 			sourceTree = "<group>";
 		};
 		60ADAE692504FE6B006628F9 = {
@@ -177,14 +188,14 @@
 				60ADAE752504FE6B006628F9 /* AppDelegate.swift */,
 				60ADAE772504FE6B006628F9 /* SceneDelegate.swift */,
 				60ADAE792504FE6B006628F9 /* ContentView.swift */,
-				6033D7E425052E9000D0C85E /* DrinkList.swift */,
-				600AFF7D250696C600BC17D9 /* DrinkView.swift */,
+				606317332508E015008D0AC3 /* DrinkView */,
 				6033D7E82505337800D0C85E /* CocktailsView */,
 				60ADAE7B2504FE6D006628F9 /* Assets.xcassets */,
 				60ADAE802504FE6D006628F9 /* LaunchScreen.storyboard */,
 				60ADAE832504FE6D006628F9 /* Info.plist */,
 				60ADAEA825050323006628F9 /* GoogleService-Info.plist */,
 				60ADAE7D2504FE6D006628F9 /* Preview Content */,
+				606317302508DF4C008D0AC3 /* DrinkIt.xcdatamodeld */,
 			);
 			path = DrinkIt;
 			sourceTree = "<group>";
@@ -481,15 +492,16 @@
 				600AFF822507ABC500BC17D9 /* CocktailButtonView.swift in Sources */,
 				60ADAE762504FE6B006628F9 /* AppDelegate.swift in Sources */,
 				600AFF7825067AC900BC17D9 /* Drink.swift in Sources */,
-				600AFF7025063FDD00BC17D9 /* Cocktails.swift in Sources */,
 				60ADAE782504FE6B006628F9 /* SceneDelegate.swift in Sources */,
 				6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */,
 				600AFF762506792000BC17D9 /* User.swift in Sources */,
+				60220EC22509007A00D26047 /* Cocktail.swift in Sources */,
 				600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */,
 				60ADAE7A2504FE6B006628F9 /* ContentView.swift in Sources */,
+				606317322508DF4C008D0AC3 /* DrinkIt.xcdatamodeld in Sources */,
 				6033D7E72505337200D0C85E /* CocktailsList.swift in Sources */,
 				600AFF6E25062C4900BC17D9 /* DBCocktails.swift in Sources */,
-				600AFF7E250696C600BC17D9 /* DrinkView.swift in Sources */,
+				600AFF7E250696C600BC17D9 /* DrinkButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +834,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		606317302508DF4C008D0AC3 /* DrinkIt.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				606317312508DF4C008D0AC3 /* DrinkIt.xcdatamodel */,
+			);
+			currentVersion = 606317312508DF4C008D0AC3 /* DrinkIt.xcdatamodel */;
+			path = DrinkIt.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 60ADAE6A2504FE6B006628F9 /* Project object */;
 }
