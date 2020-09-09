@@ -9,25 +9,36 @@
 import Firebase
 import FirebaseFirestore
 
-let dbCollection = Firestore.firestore().collection("cocktails")
-let firebaseData = FirebaseData()
 
-class FirebaseData: ObservableObject {
+//let firebaseData = FirebaseData()
+
+class DBCocktails: ObservableObject {
+    
+    let dbCollection = Firestore.firestore().collection("cocktails")
     
     @Published var data = [Cocktails]()
     
     init() {
         
+        addCocktailsFromDB()
         
+        }
+        
+        
+    func addCocktailsFromDB(){
         dbCollection.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
+                
             } else {
                 for document in querySnapshot!.documents {
-                   print("\(document.documentID) => \(document.data())")
+                    print("\(document.documentID) => \(document.data())")
                     self.data.append(Cocktails(id: document.documentID, name: document.data()["name"] as! String, ingredients: document.data()["Ingredients"] as! String))
+                    
                 }
+                
             }
+            
         }
         
         

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CocktailsList: View {
     
-   @ObservedObject private var datas = FirebaseData()
+   @ObservedObject private var datas = DBCocktails()
     
     var body: some View {
         
