@@ -33,8 +33,10 @@ class DBCocktails: ObservableObject {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+
                     self.data.append(Cocktail(id: document.documentID, name: document.data()["name"] as! String, ingredients: document.data()["ingredients"] as! String, recipe: document.data()["recipe"] as! String))
                     
+//
                 }
                 
             }

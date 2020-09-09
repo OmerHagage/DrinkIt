@@ -8,14 +8,17 @@
 
 import SwiftUI
 
+
 struct DrinkButtonView: View{
 
     
-        
+//    @EnvironmentObject var user:User
+           
     
     let drink:Drink
     
     @State private var pressed = false
+    
     
     var bgColor:Color = Color.clear
     var selected:Bool = false
@@ -26,7 +29,7 @@ struct DrinkButtonView: View{
             self.pressed.toggle()
             
             //add to user if press
-            
+//            self.user.userDrinks.append(self.drink.name)
             
                 }) {
                     VStack{
@@ -68,7 +71,7 @@ struct DrinkButtonView: View{
 
 struct DrinkButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkButtonView(drink: Drink(id: "3245", name: "sdfn"))
+        DrinkButtonView(drink: Drink(id: "dsfdsf", name: "fdgdfdf"))
     }
 }
 

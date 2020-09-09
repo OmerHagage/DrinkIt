@@ -10,13 +10,26 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
+ 
+    @EnvironmentObject var user:User
+         
+    
+         
+    
+    
+    
+    
+    
         
     var body: some View {
+     
+        
         NavigationView{
             
             VStack{
 
-                Text("Title").offset(y: -50)
+                Text("DrinkIt").offset(y: -50).font(.title)
                 Spacer()
                 
                 HStack{
@@ -53,21 +66,19 @@ struct ContentView: View {
                     
                 Spacer()
 
-
                 
-                
+            
                 List {
-                    Text("")
-//                    ForEach(datas.data){ data in
-//                        HStack {
-//                            Button(action: {
-//
-//                            }) {
-//                                Text(data.name)
-//                                Text(data.msg)
-//                            }
-//                        }.padding()
-//                    }
+                
+                    ForEach(0..<self.user.userDrinks.count){ i in
+                        HStack {
+                            Button(action: {
+
+                            }) {
+                                Text(self.user.userDrinks[i])
+                            }
+                        }.padding()
+                    }
                 }
                 .padding()
                 .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
@@ -116,6 +127,11 @@ struct ContentView: View {
   
         
     }
+    
+
+    
+ 
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -123,5 +139,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
 
 

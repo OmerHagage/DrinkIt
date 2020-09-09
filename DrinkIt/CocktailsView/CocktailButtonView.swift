@@ -15,7 +15,7 @@ struct CocktailButtonView: View {
     
     
     
-    
+
     var body: some View {
         Button(action: {
             
@@ -55,7 +55,7 @@ struct CocktailButtonView: View {
 
 struct CocktailButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailButtonView(cocktail: Cocktail(id: "dsf", name: "smfn", ingredients: "kfjgn", recipe: "kd"))
+        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", name: "lgdfn", ingredients: "kdjnfg", recipe: "ldnkfg"))
     }
 }
 

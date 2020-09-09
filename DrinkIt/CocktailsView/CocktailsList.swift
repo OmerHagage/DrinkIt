@@ -15,8 +15,7 @@ struct CocktailsList: View {
     var body: some View {
         
         VStack{
-            Spacer()
-            Text("Cocktails List")
+            Text("Cocktails List").font(.title)
             Spacer()
             ScrollView{
             

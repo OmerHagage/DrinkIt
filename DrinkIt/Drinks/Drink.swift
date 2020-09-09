@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Drink: Identifiable, Hashable{
+struct Drink: Identifiable{
     var id: String
     var name: String
 }
