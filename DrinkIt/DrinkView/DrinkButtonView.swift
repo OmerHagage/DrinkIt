@@ -12,7 +12,8 @@ import SwiftUI
 struct DrinkButtonView: View{
 
     
-//    @EnvironmentObject var user:User
+    @EnvironmentObject var user:User
+    @Binding var drinkToAdd:Set<String>
            
     
     let drink:Drink
@@ -24,12 +25,22 @@ struct DrinkButtonView: View{
     var selected:Bool = false
     var image:Image = Image(systemName: "circle")
     
+    
+    
+    
+    
     var body: some View {
         Button(action: {
+            
             self.pressed.toggle()
             
             //add to user if press
-//            self.user.userDrinks.append(self.drink.name)
+            if (self.pressed){
+                self.drinkToAdd.insert(self.drink.name)
+            }else{
+                self.drinkToAdd.remove(self.drink.name)
+            }
+            
             
                 }) {
                     VStack{
@@ -47,7 +58,7 @@ struct DrinkButtonView: View{
         .background(self.pressed ? Color.black.opacity(0.2) : Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(radius: 2)
-        .padding(.horizontal)
+        
         
         
             
@@ -69,9 +80,9 @@ struct DrinkButtonView: View{
     }
 }
 
-struct DrinkButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        DrinkButtonView(drink: Drink(id: "dsfdsf", name: "fdgdfdf"))
-    }
-}
+//struct DrinkButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DrinkButtonView(drinkToAdd: Binding<Set<String>>, drink: Drink(id: "dsfdsf", name: "fdgdfdf") )
+//    }
+//}
 

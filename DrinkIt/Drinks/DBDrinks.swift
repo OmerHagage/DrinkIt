@@ -25,8 +25,7 @@ class DBDrinks: ObservableObject {
     }
     
     func addDrinksFromDB(){
-        
-        
+
         dbCollection.getDocuments() { (querySnapshot, err) in
              if let err = err {
                  print("Error getting documents: \(err)")

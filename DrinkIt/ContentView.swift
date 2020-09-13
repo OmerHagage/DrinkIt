@@ -12,19 +12,22 @@ import SwiftUI
 struct ContentView: View {
     
  
+    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
-         
     
-         
-    
-    
-    
-    
-    
+    func saveUser(){
+        do{
+            try self.managedObjectContext.save()
+        }
+        catch{
+            print(error)
+            exit(EXIT_FAILURE)
+        }
+    }
+
         
     var body: some View {
      
-        
         NavigationView{
             
             VStack{
@@ -61,7 +64,6 @@ struct ContentView: View {
                             .cornerRadius(20)
                             .shadow(radius: 10)
                     }.padding(.horizontal, 20)
-                    
                 }
                     
                 Spacer()
@@ -69,17 +71,20 @@ struct ContentView: View {
                 
             
                 List {
-                
-                    ForEach(0..<self.user.userDrinks.count){ i in
+
+                    ForEach(self.user.userDrinks!,  id: \.self){ drinkName in
                         HStack {
                             Button(action: {
-
                             }) {
-                                Text(self.user.userDrinks[i])
+                                Text(drinkName)
                             }
                         }.padding()
+                    }.onDelete(){ index in
+                        self.user.userDrinks!.remove(at: index.first!)
+                        self.saveUser()
                     }
                 }
+            
                 .padding()
                 .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
                 .cornerRadius(20)
@@ -134,12 +139,18 @@ struct ContentView: View {
     
 }
 
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+
+
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
-
-
-
-

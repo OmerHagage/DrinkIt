@@ -12,10 +12,25 @@ struct DrinkList: View {
     
     @ObservedObject private var drinksDB = DBDrinks()
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var user:User
+    
+    
+    @State var drinkToAdd = Set<String>()
 
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    
+    func saveUser(){
+          do{
+              try self.managedObjectContext.save()
+          }
+          catch{
+              print(error)
+              exit(EXIT_FAILURE)
+          }
+    }
     
     var body: some View {
         
@@ -26,12 +41,13 @@ struct DrinkList: View {
             
             
             ScrollView{
-                ForEach(self.drinksDB.data){ data in
+                ForEach(self.drinksDB.data){ drink in
                     HStack {
-                      DrinkButtonView(drink: data)
-
+                        if(!self.user.userDrinks!.contains(drink.name)){
+                            DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
+                                .padding(.horizontal)
+                        }
                     }
-
                 }
             }
             .padding(.vertical)
@@ -44,9 +60,13 @@ struct DrinkList: View {
             Spacer()
             
             Button(action: {
+                for name in self.drinkToAdd{
+                    self.user.userDrinks!.append(name)
+                }
+                self.saveUser()
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("push")
+                Text("Add")
                 .foregroundColor(Color.white)
                 .bold()
                 .padding(.all , 10)
