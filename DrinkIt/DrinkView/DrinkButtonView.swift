@@ -23,7 +23,8 @@ struct DrinkButtonView: View{
     
     var bgColor:Color = Color.clear
     var selected:Bool = false
-    var image:Image = Image(systemName: "circle")
+    
+//    var image:String = "jagermeister_icon"
     
     
     
@@ -47,12 +48,12 @@ struct DrinkButtonView: View{
                         HStack{
                             Text(drink.id).font(.title).fontWeight(.bold)
                             Spacer()
-                            self.image.padding()
+                            ImageView()
                         }
                         .padding(.horizontal, 35.0)
                     }
                     }
-        .frame(height: 50)
+        .frame(height: 70)
         .foregroundColor(Color.black)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 3))
         .background(self.pressed ? Color.black.opacity(0.2) : Color.white)

@@ -29,7 +29,6 @@ struct ContentView: View {
     var body: some View {
      
         NavigationView{
-            
             VStack{
 
                 Text("DrinkIt").offset(y: -50).font(.title)
@@ -49,9 +48,9 @@ struct ContentView: View {
                                                    .cornerRadius(20)
                                                    .shadow(radius: 10)
                                            }.padding(.horizontal, 20)
-                    
+
                     Spacer()
-                    
+
                     NavigationLink(destination: DrinkList())
                     {
                         Text("Add drink")
@@ -70,33 +69,34 @@ struct ContentView: View {
 
                 
             
-                List {
+            List {
 
-                    ForEach(self.user.userDrinks!,  id: \.self){ drinkName in
-                        HStack {
-                            Button(action: {
-                            }) {
-                                HStack{
-                                    Text(drinkName)
-                                    Spacer()
-                                    ImageView()
-                                }
+                ForEach(self.user.userDrinks!,  id: \.self){ drinkName in
+                    HStack {
+                        Button(action: {
+                        }) {
+                            HStack{
+                                Text(drinkName)
+                                Spacer()
+                                ImageView()
                             }
-                        }.padding()
-                    }.onDelete(){ index in
-                        self.user.userDrinks!.remove(at: index.first!)
-                        self.saveUser()
-                    }
+                        }
+                    }.padding()
+                }.onDelete(){ index in
+                    self.user.userDrinks!.remove(at: index.first!)
+                    self.saveUser()
                 }
-            
-                .padding()
-                .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
-                .cornerRadius(20)
-                .padding()
+            }
+
+            .padding()
+            .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
+            .cornerRadius(20)
+            .padding()
                 
-                
-                
-                
+               
+                    
+                    
+                   
                 
                 
                 
@@ -158,3 +158,5 @@ struct ContentView_Previews: PreviewProvider {
         /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
+
+

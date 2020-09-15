@@ -17,7 +17,9 @@ struct DrinkList: View {
     
     
     @State var drinkToAdd = Set<String>()
-
+    @State var searchText:String = ""
+    let searchBar = UISearchBar(frame: .zero)
+    
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -37,11 +39,18 @@ struct DrinkList: View {
         VStack{
             
             Text("Drinks").font(.title)
+
+            
+            
+            
             Spacer()
             
+//            UISearchBar
+            SearchBar(text: $searchText).padding(.top)
             
             ScrollView{
-                ForEach(self.drinksDB.data){ drink in
+                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().contains(self.searchText.lowercased())
+                    })){ drink in
                     HStack {
                         if(!self.user.userDrinks!.contains(drink.id)){
                             DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
@@ -51,6 +60,7 @@ struct DrinkList: View {
                 }
             }
             .padding(.vertical)
+            
 //            .onAppear {UITableView.appearance().separatorStyle = .none}
  
   
@@ -76,9 +86,9 @@ struct DrinkList: View {
                 .cornerRadius(20)
                 .shadow(radius: 10)
             }
-            
-            
+        
         }
+//        .frame(height: UIScreen.main.bounds.height)
         
         
     }
@@ -89,3 +99,5 @@ struct DrinkList_Previews: PreviewProvider {
         DrinkList()
     }
 }
+
+
