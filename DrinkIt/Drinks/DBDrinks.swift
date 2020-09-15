@@ -33,7 +33,7 @@ class DBDrinks: ObservableObject {
                  for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
                 
-                    self.data.append(Drink(id: document.documentID, name: document.data()["name"] as! String))
+                    self.data.append(Drink(id: document.documentID))
                  }
              }
          }

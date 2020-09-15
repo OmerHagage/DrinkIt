@@ -76,7 +76,11 @@ struct ContentView: View {
                         HStack {
                             Button(action: {
                             }) {
-                                Text(drinkName)
+                                HStack{
+                                    Text(drinkName)
+                                    Spacer()
+                                    ImageView()
+                                }
                             }
                         }.padding()
                     }.onDelete(){ index in

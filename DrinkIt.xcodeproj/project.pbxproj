@@ -15,6 +15,8 @@
 		600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF792506836900BC17D9 /* DBDrinks.swift */; };
 		600AFF7E250696C600BC17D9 /* DrinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF7D250696C600BC17D9 /* DrinkButtonView.swift */; };
 		600AFF822507ABC500BC17D9 /* CocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */; };
+		60292D7F2510B020004081CF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D7E2510B020004081CF /* ImageView.swift */; };
+		60292D812510E211004081CF /* FullCocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D802510E211004081CF /* FullCocktailView.swift */; };
 		602EC11F25093DD70057AA9E /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EC11E25093DD70057AA9E /* Cocktail.swift */; };
 		6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E425052E9000D0C85E /* DrinkList.swift */; };
 		6033D7E72505337200D0C85E /* CocktailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E62505337200D0C85E /* CocktailsList.swift */; };
@@ -62,6 +64,8 @@
 		600AFF792506836900BC17D9 /* DBDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDrinks.swift; sourceTree = "<group>"; };
 		600AFF7D250696C600BC17D9 /* DrinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButtonView.swift; sourceTree = "<group>"; };
 		600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailButtonView.swift; sourceTree = "<group>"; };
+		60292D7E2510B020004081CF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		60292D802510E211004081CF /* FullCocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCocktailView.swift; sourceTree = "<group>"; };
 		602EC11E25093DD70057AA9E /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		6033D7E425052E9000D0C85E /* DrinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkList.swift; sourceTree = "<group>"; };
 		6033D7E62505337200D0C85E /* CocktailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsList.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			children = (
 				6033D7E62505337200D0C85E /* CocktailsList.swift */,
 				600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */,
+				60292D802510E211004081CF /* FullCocktailView.swift */,
 			);
 			path = CocktailsView;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				600AFF722506426400BC17D9 /* Cocktails */,
 				606317332508E015008D0AC3 /* DrinkView */,
 				6033D7E82505337800D0C85E /* CocktailsView */,
+				60292D7E2510B020004081CF /* ImageView.swift */,
 				60ADAE7B2504FE6D006628F9 /* Assets.xcassets */,
 				60ADAE802504FE6D006628F9 /* LaunchScreen.storyboard */,
 				60ADAE832504FE6D006628F9 /* Info.plist */,
@@ -503,6 +509,7 @@
 				600AFF762506792000BC17D9 /* User1.swift in Sources */,
 				602EC11F25093DD70057AA9E /* Cocktail.swift in Sources */,
 				600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */,
+				60292D7F2510B020004081CF /* ImageView.swift in Sources */,
 				60ADAE7A2504FE6B006628F9 /* ContentView.swift in Sources */,
 				606317322508DF4C008D0AC3 /* DrinkIt.xcdatamodeld in Sources */,
 				60C947FE250E2C24006B870D /* User+CoreDataProperties.swift in Sources */,
@@ -510,6 +517,7 @@
 				600AFF6E25062C4900BC17D9 /* DBCocktails.swift in Sources */,
 				600AFF7E250696C600BC17D9 /* DrinkButtonView.swift in Sources */,
 				60C947FF250E2C24006B870D /* User+CoreDataClass.swift in Sources */,
+				60292D812510E211004081CF /* FullCocktailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

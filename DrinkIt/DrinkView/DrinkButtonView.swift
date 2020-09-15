@@ -36,16 +36,16 @@ struct DrinkButtonView: View{
             
             //add to user if press
             if (self.pressed){
-                self.drinkToAdd.insert(self.drink.name)
+                self.drinkToAdd.insert(self.drink.id)
             }else{
-                self.drinkToAdd.remove(self.drink.name)
+                self.drinkToAdd.remove(self.drink.id)
             }
             
             
                 }) {
                     VStack{
                         HStack{
-                            Text(drink.name).font(.title).fontWeight(.bold)
+                            Text(drink.id).font(.title).fontWeight(.bold)
                             Spacer()
                             self.image.padding()
                         }

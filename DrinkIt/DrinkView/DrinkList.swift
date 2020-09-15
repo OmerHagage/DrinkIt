@@ -43,7 +43,7 @@ struct DrinkList: View {
             ScrollView{
                 ForEach(self.drinksDB.data){ drink in
                     HStack {
-                        if(!self.user.userDrinks!.contains(drink.name)){
+                        if(!self.user.userDrinks!.contains(drink.id)){
                             DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
                                 .padding(.horizontal)
                         }

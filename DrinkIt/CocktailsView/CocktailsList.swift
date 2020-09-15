@@ -20,9 +20,9 @@ struct CocktailsList: View {
             ScrollView{
             
                 
-                ForEach(self.datas.data){ data in
+                ForEach(self.datas.data){ cocktail in
                     HStack {
-                        CocktailButtonView(cocktail: data)
+                        CocktailButtonView(cocktail: cocktail)
 
                     }
 

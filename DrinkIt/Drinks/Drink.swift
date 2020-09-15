@@ -10,8 +10,7 @@ import Foundation
 
 
 struct Drink: Identifiable, Hashable{
-    var id: String
-    var name: String
+    let id: String
 }
 
 //
