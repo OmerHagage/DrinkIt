@@ -68,19 +68,22 @@ struct ContentView: View {
                 Spacer()
 
                 
+//                LiquorCabinetView(userDrinks: self.user.userDrinks!)
             
             List {
 
                 ForEach(self.user.userDrinks!,  id: \.self){ drinkName in
                     HStack {
                         Button(action: {
+                            print("second")
                         }) {
                             HStack{
                                 Text(drinkName)
                                 Spacer()
                                 ImageView()
                             }
-                        }
+                        }.buttonStyle(BorderlessButtonStyle())
+                            .foregroundColor(.black)
                     }.padding()
                 }.onDelete(){ index in
                     self.user.userDrinks!.remove(at: index.first!)
@@ -89,7 +92,7 @@ struct ContentView: View {
             }
 
             .padding()
-            .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
+            .background(Color.black)
             .cornerRadius(20)
             .padding()
                 
@@ -143,20 +146,57 @@ struct ContentView: View {
     
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
-
-
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        ContentView().environmentObject(User(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext))
     }
 }
 
 
+
+
+
+
+struct LiquorCabinetView: View {
+    var userDrinks:[String]
+    
+    
+    var body: some View {
+      
+        
+        List {
+            ForEach(0..<self.userDrinks.count, id: \.self) { i in
+                HStack{
+                    ForEach(min(i*3, self.userDrinks.count)..<min(i+3, self.userDrinks.count), id: \.self){ j in
+                        Text(self.userDrinks[j])
+                    }
+                }
+            }
+        }
+    }
+}
+
+//                       ForEach(self.userDrinks,  id: \.self){ drinkName in
+//                           HStack {
+//                               Button(action: {print("omeer")}){ Text("omer")}.foregroundColor(.gray).buttonStyle(BorderlessButtonStyle())
+//                               Button(action: {
+//                                   print("second")
+//                               }) {
+//                                   HStack{
+//                                       Text(drinkName)
+//                                       Spacer()
+//                                       ImageView()
+//                                   }
+//                               }.buttonStyle(BorderlessButtonStyle())
+//                           }.padding()
+////                       }.onDelete(){ index in
+////                           self.userDrinks.remove(at: index.first!)
+////                           self.saveUser()
+////                       }
+//                   }
+//
+//                   .padding()
+//                   .background(Color.black)
+//                   .cornerRadius(20)
+//                   .padding()
+    

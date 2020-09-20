@@ -48,20 +48,19 @@ struct DrinkList: View {
 //            UISearchBar
             SearchBar(text: $searchText).padding(.top)
             
-            ScrollView{
+            List{
                 ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().contains(self.searchText.lowercased())
                     })){ drink in
-                    HStack {
-                        if(!self.user.userDrinks!.contains(drink.id)){
+                    if(!self.user.userDrinks!.contains(drink.id)){
+                        HStack {
                             DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
-                                .padding(.horizontal)
+                                .buttonStyle(BorderlessButtonStyle())
                         }
                     }
                 }
             }
             .padding(.vertical)
-            
-//            .onAppear {UITableView.appearance().separatorStyle = .none}
+            .onAppear {UITableView.appearance().separatorStyle = .none}
  
   
           
