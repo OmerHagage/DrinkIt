@@ -32,8 +32,8 @@ struct ContentView: View {
             VStack{
 
                 Text("DrinkIt").offset(y: -50).font(.title)
-                Spacer()
-                
+        
+
                 HStack{
 
                     NavigationLink(destination: CocktailsList())
@@ -46,7 +46,7 @@ struct ContentView: View {
                                                    .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
                                                    .background(Color.black)
                                                    .cornerRadius(20)
-                                                   .shadow(radius: 10)
+                                                   .shadow(radius: 5)
                                            }.padding(.horizontal, 20)
 
                     Spacer()
@@ -61,54 +61,21 @@ struct ContentView: View {
                             .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
                             .background(Color.black)
                             .cornerRadius(20)
-                            .shadow(radius: 10)
+                            .shadow(radius: 5)
                     }.padding(.horizontal, 20)
                 }
-                    
-                Spacer()
 
-                
-//                LiquorCabinetView(userDrinks: self.user.userDrinks!)
+
+
             
-            List {
-
-                ForEach(self.user.userDrinks!,  id: \.self){ drinkName in
-                    HStack {
-                        Button(action: {
-                            print("second")
-                        }) {
-                            HStack{
-                                Text(drinkName)
-                                Spacer()
-                                ImageView()
-                            }
-                        }.buttonStyle(BorderlessButtonStyle())
-                            .foregroundColor(.black)
-                    }.padding()
-                }.onDelete(){ index in
-                    self.user.userDrinks!.remove(at: index.first!)
-                    self.saveUser()
-                }
-            }
-
-            .padding()
-            .background(Color.black)
-            .cornerRadius(20)
-            .padding()
                 
+                LiquorCabinetView(userDrinks: self.user.userDrinks)
                
-                    
+                
                     
                    
-                
-                
-                
-                Spacer()
 
-                HStack{
-                  
-
-                    Spacer()
+          
 
                     NavigationLink(destination: CocktailsList())
                     {
@@ -121,22 +88,22 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .shadow(radius: 10)
                         .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
-                    }
-                    Spacer()
-                }
-                
-                
-                
-                 Spacer()
-            }
+                    }.padding()
             
-            
-    
            
+
+
+
             
-            
+            }
+
+
+
+
+
+
         }
-  
+
         
     }
     
@@ -161,42 +128,59 @@ struct LiquorCabinetView: View {
     var userDrinks:[String]
     
     
+    
+    
     var body: some View {
       
         
         List {
-            ForEach(0..<self.userDrinks.count, id: \.self) { i in
-                HStack{
-                    ForEach(min(i*3, self.userDrinks.count)..<min(i+3, self.userDrinks.count), id: \.self){ j in
-                        Text(self.userDrinks[j])
+            ForEach(0..<(self.userDrinks.count/3)+1, id: \.self) { i in
+                HStack(alignment: .top){
+                    ForEach(min(i*3, self.userDrinks.count)..<min((i*3)+3, self.userDrinks.count), id: \.self){ j in
+                        cabinetDrinkView(drinkName: self.userDrinks[j], index: j)
                     }
                 }
             }
         }
+        .scaledToFit()
+        .onAppear(perform: {
+            UITableView.appearance().backgroundColor = UIColor.clear
+        })
     }
 }
 
-//                       ForEach(self.userDrinks,  id: \.self){ drinkName in
-//                           HStack {
-//                               Button(action: {print("omeer")}){ Text("omer")}.foregroundColor(.gray).buttonStyle(BorderlessButtonStyle())
-//                               Button(action: {
-//                                   print("second")
-//                               }) {
-//                                   HStack{
-//                                       Text(drinkName)
-//                                       Spacer()
-//                                       ImageView()
-//                                   }
-//                               }.buttonStyle(BorderlessButtonStyle())
-//                           }.padding()
-////                       }.onDelete(){ index in
-////                           self.userDrinks.remove(at: index.first!)
-////                           self.saveUser()
-////                       }
-//                   }
-//
-//                   .padding()
-//                   .background(Color.black)
-//                   .cornerRadius(20)
-//                   .padding()
     
+
+struct cabinetDrinkView: View {
+    
+    let drinkName:String
+    let index:Int
+    
+    @State var longPress = false
+    
+    @EnvironmentObject var user:User
+    
+    var body: some View {
+        VStack(alignment: .center){
+            ZStack{
+                ImageView()
+                    .opacity(self.longPress == false ? 1: 0.3)
+                if (self.longPress){
+                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/).offset(x: -50, y: -50)
+                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        self.user.userDrinks.remove(at: index)
+                        self.longPress = false
+                    })
+                }
+            }.padding()
+            Text(drinkName).multilineTextAlignment(.center).opacity(self.longPress == false ? 1: 0.3)
+        }.padding(.horizontal, 5)
+        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+            self.longPress = false
+        })
+        .onLongPressGesture{
+            self.longPress = true
+        }
+        
+    }
+}

@@ -51,7 +51,7 @@ struct DrinkList: View {
             List{
                 ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().contains(self.searchText.lowercased())
                     })){ drink in
-                    if(!self.user.userDrinks!.contains(drink.id)){
+                    if(!self.user.userDrinks.contains(drink.id)){
                         HStack {
                             DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
                                 .buttonStyle(BorderlessButtonStyle())
@@ -60,7 +60,8 @@ struct DrinkList: View {
                 }
             }
             .padding(.vertical)
-            .onAppear {UITableView.appearance().separatorStyle = .none}
+            .onAppear(perform: { UITableView.appearance().separatorStyle = .none })
+        
  
   
           
@@ -70,7 +71,7 @@ struct DrinkList: View {
             
             Button(action: {
                 for name in self.drinkToAdd{
-                    self.user.userDrinks!.append(name)
+                    self.user.userDrinks.append(name)
                 }
                 self.saveUser()
                 self.presentationMode.wrappedValue.dismiss()
