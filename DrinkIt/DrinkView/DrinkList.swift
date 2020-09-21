@@ -38,7 +38,8 @@ struct DrinkList: View {
         
         VStack{
             
-            Text("Drinks").font(.title)
+            
+          
 
             
             
@@ -49,7 +50,7 @@ struct DrinkList: View {
             SearchBar(text: $searchText).padding(.top)
             
             List{
-                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().contains(self.searchText.lowercased())
+                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().starts(with: self.searchText.lowercased())
                     })){ drink in
                     if(!self.user.userDrinks.contains(drink.id)){
                         HStack {
@@ -60,7 +61,7 @@ struct DrinkList: View {
                 }
             }
             .padding(.vertical)
-            .onAppear(perform: { UITableView.appearance().separatorStyle = .none })
+            
         
  
   
@@ -87,7 +88,7 @@ struct DrinkList: View {
                 .shadow(radius: 10)
             }
         
-        }
+        }.navigationBarTitle("Drinks")
 //        .frame(height: UIScreen.main.bounds.height)
         
         

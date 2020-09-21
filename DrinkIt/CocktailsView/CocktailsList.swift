@@ -10,17 +10,38 @@ import SwiftUI
 
 struct CocktailsList: View {
     
-   @ObservedObject private var datas = DBCocktails()
+    @ObservedObject private var datas = DBCocktails()
+    @State var searchText:String = ""
+    @State var filterSearch:Bool = false
+    
+    @EnvironmentObject var user:User
+    
+    func filterData(cocktail:Cocktail) -> Bool {
+        let searchBarUse = self.searchText.isEmpty ? true : cocktail.id.lowercased().starts(with: self.searchText.lowercased())
+        if filterSearch{
+            var flag = true
+            for ingredient in cocktail.ingredients{
+                if (!user.userDrinks.contains(ingredient)){
+                    flag = false
+                    break
+                }
+            }
+            return searchBarUse && flag
+        }
+        return searchBarUse
+    }
     
     var body: some View {
         
         VStack{
-            Text("Cocktails List").font(.title)
             Spacer()
+            
+            SearchBar(text: $searchText).padding(.top)
+            
             ScrollView{
             
                 
-                ForEach(self.datas.data){ cocktail in
+                ForEach(self.datas.data.filter(filterData(cocktail:))){ cocktail in
                     HStack {
                         CocktailButtonView(cocktail: cocktail)
 
@@ -33,7 +54,7 @@ struct CocktailsList: View {
             
           
             
-        }
+        }.navigationBarTitle("Cocktails List")
         
     }
     

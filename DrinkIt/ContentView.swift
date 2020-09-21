@@ -27,83 +27,102 @@ struct ContentView: View {
 
         
     var body: some View {
-     
-        NavigationView{
-            VStack{
+      
+            NavigationView{
+                
+                
+                
+              
+                VStack{
 
-                Text("DrinkIt").offset(y: -50).font(.title)
-        
-
-                HStack{
-
-                    NavigationLink(destination: CocktailsList())
-                                       {
-                                           Text("All Cocktails")
-                                       .foregroundColor(Color.white)
-                                                   .bold()
-                                                   .padding(.all , 10)
-                                                   .padding(.horizontal , 0)
-                                                   .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
-                                                   .background(Color.black)
-                                                   .cornerRadius(20)
-                                                   .shadow(radius: 5)
-                                           }.padding(.horizontal, 20)
-
-                    Spacer()
-
-                    NavigationLink(destination: DrinkList())
-                    {
-                        Text("Add drink")
-                            .foregroundColor(Color.white)
-                            .bold()
-                            .padding(.all , 10)
-                            .padding(.horizontal , 0)
-                            .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
-                            .background(Color.black)
-                            .cornerRadius(20)
-                            .shadow(radius: 5)
-                    }.padding(.horizontal, 20)
-                }
-
-
+//                    Text("DrinkIt").offset(y: -50).font(.title)
+                    Image("DrinkIt")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(alignment: .top)
 
             
-                
-                LiquorCabinetView(userDrinks: self.user.userDrinks)
-               
+
+                    HStack{
+
+                        NavigationLink(destination: CocktailsList())
+                                           {
+                                               Text("All Cocktails")
+                                           .foregroundColor(Color.white)
+                                                       .bold()
+                                                       .padding(.all , 10)
+                                                       .padding(.horizontal , 0)
+                                                       .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
+                                                       .background(Color.black)
+                                                       .cornerRadius(20)
+                                                       .shadow(radius: 5)
+                                               }.padding(.horizontal, 20)
+
+                        Spacer()
+                        
+                        Button(action: {
+                            self.user.userDrinks.removeAll()
+                            saveUser()
+                        }){
+                            Text("Remove all")
+                        }
+                        
+                        Spacer()
+
+                        NavigationLink(destination: DrinkList())
+                        {
+                            Text("Add drink")
+                                .foregroundColor(Color.white)
+                                .bold()
+                                .padding(.all , 10)
+                                .padding(.horizontal , 0)
+                                .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
+                                .background(Color.black)
+                                .cornerRadius(20)
+                                .shadow(radius: 5)
+                        }.padding(.horizontal, 20)
+                    }
+
+
+
                 
                     
-                   
+                        LiquorCabinetView(userDrinks: self.user.userDrinks)
+                    
+                    
+                        
+                       
 
-          
+              
 
-                    NavigationLink(destination: CocktailsList())
-                    {
-                        Text("Search Cocktails")
-                        .bold()
-                        .padding(.all , 10)
-                        .padding(.horizontal , 40)
-                        .overlay(RoundedRectangle(cornerRadius:20).stroke(lineWidth: 3))
-                        .background(Color.yellow)
-                        .cornerRadius(20)
-                        .shadow(radius: 10)
-                        .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
-                    }.padding()
-            
-           
+                        NavigationLink(destination: CocktailsList(filterSearch: true))
+                        {
+                            Text("Search Cocktails")
+                            .bold()
+                            .padding(.all , 10)
+                            .padding(.horizontal , 40)
+                            .overlay(RoundedRectangle(cornerRadius:20).stroke(lineWidth: 3))
+                            .background(Color.yellow)
+                            .cornerRadius(20)
+                            .shadow(radius: 10)
+                            .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                        }.padding([.top, .leading, .trailing])
+                
+               
 
 
 
-            
+                
+                }.navigationBarHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                
+
+
+
+
+
+
             }
-
-
-
-
-
-
-        }
-
+          
         
     }
     
@@ -127,25 +146,29 @@ struct ContentView_Previews: PreviewProvider {
 struct LiquorCabinetView: View {
     var userDrinks:[String]
     
-    
-    
+    func userDrinksLenght() -> Int {
+        return Int(ceil(Double(self.userDrinks.count) / 3.0))
+    }
     
     var body: some View {
       
-        
-        List {
-            ForEach(0..<(self.userDrinks.count/3)+1, id: \.self) { i in
+
+        ScrollView(.vertical) {
+            ForEach(0..<userDrinksLenght(), id: \.self) { i in
                 HStack(alignment: .top){
                     ForEach(min(i*3, self.userDrinks.count)..<min((i*3)+3, self.userDrinks.count), id: \.self){ j in
+                        Spacer()
                         cabinetDrinkView(drinkName: self.userDrinks[j], index: j)
+                        Spacer()
+                       
                     }
                 }
             }
         }
-        .scaledToFit()
-        .onAppear(perform: {
-            UITableView.appearance().backgroundColor = UIColor.clear
-        })
+//        .onAppear(perform: {
+//            UITableView.appearance().backgroundColor = UIColor.clear
+//        })
+    
     }
 }
 
@@ -157,8 +180,20 @@ struct cabinetDrinkView: View {
     let index:Int
     
     @State var longPress = false
+    @State var fullText = false
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
+    
+    func saveUser(){
+        do{
+            try self.managedObjectContext.save()
+        }
+        catch{
+            print(error)
+            exit(EXIT_FAILURE)
+        }
+    }
     
     var body: some View {
         VStack(alignment: .center){
@@ -166,15 +201,25 @@ struct cabinetDrinkView: View {
                 ImageView()
                     .opacity(self.longPress == false ? 1: 0.3)
                 if (self.longPress){
-                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(/*@START_MENU_TOKEN@*/.large/*@END_MENU_TOKEN@*/).offset(x: -50, y: -50)
+                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)
+                        .offset(x: -30, y: -30)
+                        .frame(alignment: .topLeading)
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                         self.user.userDrinks.remove(at: index)
+                        saveUser()
                         self.longPress = false
                     })
                 }
-            }.padding()
-            Text(drinkName).multilineTextAlignment(.center).opacity(self.longPress == false ? 1: 0.3)
-        }.padding(.horizontal, 5)
+            }.padding(.horizontal)
+            Text(drinkName)
+                .layoutPriority(1)
+                .frame(width: 80 ,height: self.fullText == false ? 30 : .none)
+                .multilineTextAlignment(.center)
+                .opacity(self.longPress == false ? 1: 0.3)
+                .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                    self.fullText.toggle()
+                })
+        }.padding(.all, 5)
         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
             self.longPress = false
         })
