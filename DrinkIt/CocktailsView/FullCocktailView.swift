@@ -11,6 +11,7 @@ import SwiftUI
 struct FullCocktailView: View {
     
     @State var peopleNum:Float = 1
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let cocktail:Cocktail
     
@@ -38,6 +39,9 @@ struct FullCocktailView: View {
                 Spacer(minLength: 20)
                 Text(cocktail.recipe)
                     .padding()
+                Button("Dismiss") {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
                 Spacer()
             }
         }
@@ -58,7 +62,7 @@ struct numPeopleView: View {
     
     var body: some View{
         VStack{
-            Text("Number of people")
+            Text("Number of people:")
                 .font(.subheadline)
                 .padding(.horizontal)
             HStack{

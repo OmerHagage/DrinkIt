@@ -19,6 +19,7 @@ struct DrinkButtonView: View{
     let drink:Drink
     
     @State private var pressed = false
+    @State private var showInfo = false
     
     
     var bgColor:Color = Color.clear
@@ -48,11 +49,25 @@ struct DrinkButtonView: View{
                         HStack{
                             Text(drink.id).font(.title).fontWeight(.bold)
                             Spacer()
-                            ImageView()
+                            ImageView().padding(.trailing, 20)
+                     
+                            VStack{
+                                Button(action: {
+                                    self.showInfo = true
+                                }, label: {
+                                    Image(systemName: "info.circle").frame(alignment: .topTrailing)
+                                        .padding(.vertical, 10)
+                                })
+                                .alert(isPresented: $showInfo, content: {
+                                    Alert(title: Text(drink.id), message: Text("Add information about the drink"), dismissButton: .default(Text("done")))
+                                })
+                                Spacer()
+                            }
                         }
-                        .padding(.horizontal, 35.0)
+                        .padding(.leading, 35.0)
+                        .padding(.trailing, 15)
                     }
-                    }
+                }
         .frame(height: 70)
         .foregroundColor(Color.black)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 3))

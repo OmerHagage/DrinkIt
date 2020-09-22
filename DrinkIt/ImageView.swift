@@ -20,7 +20,7 @@ struct ImageView: View {
         .clipShape(Circle())
         .overlay(
             Circle().stroke(Color.white, lineWidth: 4))
-        .shadow(radius: 10)
+        .shadow(radius: 5)
     }
 }
 
