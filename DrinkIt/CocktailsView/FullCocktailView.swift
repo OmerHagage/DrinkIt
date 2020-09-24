@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FullCocktailView: View {
     
-    @State var peopleNum:Float = 1
+    @State var peopleNum:Double = 1
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let cocktail:Cocktail
@@ -24,21 +24,29 @@ struct FullCocktailView: View {
                     .padding()
                 Spacer(minLength: 20)
                    numPeopleView(num: $peopleNum)
-//                HStack{
+
                     VStack(alignment: .leading){
-                        ForEach(0..<cocktail.ingredients.capacity){ i in
+                        ForEach(0..<cocktail.alcoholIngredients.capacity){ i in
                             HStack{
-                                Text(String(self.cocktail.quantities[i] * self.peopleNum))
-                                Text(self.cocktail.ingredients[i])
-                            }
-                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                Text(String(self.cocktail.alcoholQuantities[i] * self.peopleNum))
+                                Text(self.cocktail.alcoholIngredients[i])
+                            }.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                         }
+                        ForEach(0..<cocktail.nonAlcoholIngredients.capacity){ i in
+                                HStack{
+                                    Text(String(self.cocktail.nonAlcoholQuantities[i] * self.peopleNum))
+                                    Text(self.cocktail.nonAlcoholIngredients[i])
+                                }.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                            }
                     }.padding()
-                 
-//                }
-                Spacer(minLength: 20)
-                Text(cocktail.recipe)
-                    .padding()
+                
+                VStack(alignment: .leading){
+                    Spacer(minLength: 20)
+                    Text(cocktail.recipe)
+                        .padding()
+                    Text(cocktail.summary)
+                        .padding()
+                }
                 Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 }
@@ -48,17 +56,17 @@ struct FullCocktailView: View {
     }
 }
 
-struct FullCocktailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FullCocktailView(cocktail: Cocktail(id: "fdg", recipe: "fdg", ingredients: ["fg"], quantities: [1]))
-    }
-}
+//struct FullCocktailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FullCocktailView(cocktail: Cocktail(id: "fdg", recipe: "fdg", ingredients: ["fg"], quantities: [1]))
+//    }
+//}
 
 
 
 struct numPeopleView: View {
 
-    @Binding var num:Float
+    @Binding var num:Double
     
     var body: some View{
         VStack{
@@ -83,8 +91,8 @@ struct numPeopleView: View {
 
 struct numButtonView: View {
     
-    @Binding var num:Float
-    let lable:Float
+    @Binding var num:Double
+    let lable:Double
     
     var body: some View{
         Text(String(format: "%.0f", lable))

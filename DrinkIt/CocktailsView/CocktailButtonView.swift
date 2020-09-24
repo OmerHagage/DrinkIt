@@ -33,10 +33,10 @@ struct CocktailButtonView: View {
                             }
                             Spacer()
                             VStack{
-                                ForEach(0..<cocktail.ingredients.capacity){ i in
+                                ForEach(0..<cocktail.alcoholIngredients.capacity){ i in
                                     HStack{
-                                        Text(String(self.cocktail.quantities[i]))
-                                        Text(self.cocktail.ingredients[i])
+                                        Text(String(self.cocktail.alcoholQuantities[i]))
+                                        Text(self.cocktail.alcoholIngredients[i])
                                     }
                                 }
                             }
@@ -58,8 +58,8 @@ struct CocktailButtonView: View {
     }
 }
 
-struct CocktailButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", recipe: "ldnkfg", ingredients: ["Df","sdf","sdf"], quantities: [1,2,3]))
-    }
-}
+//struct CocktailButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", recipe: "ldnkfg", ingredients: ["Df","sdf","sdf"], quantities: [1,2,3]))
+//    }
+//}

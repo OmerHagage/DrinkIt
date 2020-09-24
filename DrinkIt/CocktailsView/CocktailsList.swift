@@ -20,7 +20,7 @@ struct CocktailsList: View {
         let searchBarUse = self.searchText.isEmpty ? true : cocktail.id.lowercased().starts(with: self.searchText.lowercased())
         if filterSearch{
             var flag = true
-            for ingredient in cocktail.ingredients{
+            for ingredient in cocktail.alcoholIngredients{
                 if (!user.userDrinks.contains(ingredient)){
                     flag = false
                     break

@@ -11,6 +11,7 @@ import Foundation
 
 struct Drink: Identifiable, Hashable{
     let id: String
+    let summary: String
 }
 
 //

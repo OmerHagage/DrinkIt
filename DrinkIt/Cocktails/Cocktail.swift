@@ -11,8 +11,10 @@ import Foundation
 struct Cocktail: Identifiable {
     let id: String
     let recipe: String
-    let ingredients: [String]
-    let quantities: [Float]
-    
+    let alcoholIngredients: [String]
+    let alcoholQuantities: [Double]
+    let nonAlcoholIngredients: [String]
+    let nonAlcoholQuantities: [Double]
+    let summary: String
 
 }

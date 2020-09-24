@@ -32,6 +32,8 @@ struct ContentView: View {
       
             NavigationView{
                 
+                ZStack{
+                    Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 
                 
               
@@ -58,7 +60,7 @@ struct ContentView: View {
                                                        .background(Color.black)
                                                        .cornerRadius(20)
                                                        .shadow(radius: 5)
-                                               }
+                        }
 
                         Spacer()
                         
@@ -79,7 +81,7 @@ struct ContentView: View {
 
                   
                 
-                    
+                    Spacer()
                         
                     LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit)
                                
@@ -140,7 +142,7 @@ struct ContentView: View {
 
             }
           
-        
+            }.navigationViewStyle(StackNavigationViewStyle())
     }
     
 
@@ -179,8 +181,10 @@ struct LiquorCabinetView: View {
     var body: some View {
       
       
-        ScrollView(.vertical) {
+        ScrollView(.horizontal, showsIndicators: false){
+        
             gridView(userDrinks: self.userDrinks, edit: $edit)
+            Spacer()
 //            if (left == 0){
 //                HStack{
 //                    ForEach(0..<3, id: \.self){ j in
@@ -207,7 +211,7 @@ struct LiquorCabinetView: View {
 //
 //                }
 //            }
-        }
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.6)
     
     }
 }
@@ -253,13 +257,14 @@ struct cabinetDrinkView: View {
             }.padding(.horizontal)
             Text(drinkName)
                 .layoutPriority(1)
-                .frame(width: 80 ,height: self.fullText == false ? 30 : .none)
+                .frame(width: self.fullText == false ? 100 : .none ,height: 30)
                 .multilineTextAlignment(.center)
                 .opacity(self.edit == false ? 1: 0.3)
                 .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                     self.fullText.toggle()
                 })
-        }.padding(.all, 5)
+        }
+        .padding([.top, .leading, .trailing], 10.0)
     }
 }
 
@@ -274,14 +279,24 @@ struct gridView: View {
     }
     
     var body: some View {
-        ForEach(0..<userDrinksLenght(), id: \.self) { i in
-            HStack(alignment: .top){
-                ForEach(min(i*3, self.userDrinks.count)..<min((i*3)+3, self.userDrinks.count), id: \.self){ j in
-                    Spacer()
-                    cabinetDrinkView(drinkName: self.userDrinks[j], index: j, edit: $edit)
-                    Spacer()
+//        GeometryReader { geo in
+        HStack{
+            ForEach(0..<userDrinksLenght(), id: \.self) { i in
+                
+                VStack(alignment: .center){
+                    ForEach(min(i*4, self.userDrinks.count)..<min((i*4)+4, self.userDrinks.count), id: \.self){ j in
+    //                    Spacer()
+                        
+                        cabinetDrinkView(drinkName: self.userDrinks[j], index: j, edit: $edit)
+                           
+//                            .frame(width: UIScreen.main.bounds.width * 0.3, height: geo.size.height * 0.23)
+                        
+                        Spacer()
+                    }
                 }
             }
         }
+       
+//        }
     }
 }

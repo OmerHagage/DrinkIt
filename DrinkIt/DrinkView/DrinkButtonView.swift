@@ -58,9 +58,14 @@ struct DrinkButtonView: View{
                                     Image(systemName: "info.circle").frame(alignment: .topTrailing)
                                         .padding(.vertical, 10)
                                 })
-                                .alert(isPresented: $showInfo, content: {
-                                    Alert(title: Text(drink.id), message: Text("Add information about the drink"), dismissButton: .default(Text("done")))
+                                .sheet(isPresented: $showInfo, content: {
+                                    Text(drink.id).font(.title).fontWeight(.bold).padding()
+                                    Text(drink.summary).font(.body).padding()
+                                    Spacer()
                                 })
+//                                .alert(isPresented: $showInfo, content: {
+//                                    Alert(title: Text(drink.id), message: Text("Add information about the drink"), dismissButton: .default(Text("done")))
+//                                })
                                 Spacer()
                             }
                         }
