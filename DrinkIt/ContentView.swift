@@ -14,8 +14,13 @@ struct ContentView: View {
     @State private var showingAlert = false
     @State private var startEdit = false
     
+    //use to start the app with user guide
+    @State var startGuide:Bool
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
+    
+//    @Environment(\.presentationMode) var startGuidMode: Binding<PresentationMode>
     
     func saveUser(){
         do{
@@ -33,8 +38,9 @@ struct ContentView: View {
             NavigationView{
                 
                 ZStack{
-                    Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                
+//                    Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    
+                    
                 
               
                 VStack{
@@ -136,8 +142,21 @@ struct ContentView: View {
                 
 
 
-
-
+                    
+                    // Zstack front view - open if it is the first time the user use the app
+//                    if (startGuide){
+//
+//                        Text("").sheet(isPresented: $startGuide, content: {
+//
+//                            Text("Start Guide").font(.title)
+//                            Button(action: {
+//                                startGuide = false
+//                                self.presentationMode.wrappedValue.dismiss()
+//                            }, label: {
+//                                Text("Done")
+//                            })
+//                        })
+//                    }
 
 
             }
@@ -151,11 +170,11 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environmentObject(User(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext))
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView().environmentObject(User(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext))
+//    }
+//}
 
 
 
@@ -243,7 +262,7 @@ struct cabinetDrinkView: View {
     var body: some View {
         VStack(alignment: .center){
             ZStack{
-                ImageView()
+                ImageView(imageName: "jagermeister_icon")
                     .opacity(self.edit == false ? 1: 0.3)
                 if (self.edit){
                     Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)

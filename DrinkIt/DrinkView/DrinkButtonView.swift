@@ -49,7 +49,7 @@ struct DrinkButtonView: View{
                         HStack{
                             Text(drink.id).font(.title).fontWeight(.bold)
                             Spacer()
-                            ImageView().padding(.trailing, 20)
+                            ImageView(imageName: "jagermeister_icon").padding(.trailing, 20)
                      
                             VStack{
                                 Button(action: {

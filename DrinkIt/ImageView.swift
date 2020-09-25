@@ -10,10 +10,10 @@ import SwiftUI
 
 struct ImageView: View {
     
-    let image:String = "jagermeister_icon"
+    let imageName:String
     
     var body: some View {
-        Image(image)
+        Image(imageName)
         .resizable()
         .scaledToFit()
         .frame(width: 70, height: 70)
@@ -26,6 +26,6 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView()
+        ImageView(imageName: "star")
     }
 }

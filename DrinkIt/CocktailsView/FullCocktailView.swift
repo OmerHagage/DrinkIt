@@ -22,7 +22,7 @@ struct FullCocktailView: View {
                     .font(.title)
                     .bold()
                     .padding()
-                Spacer(minLength: 20)
+                ImageView(imageName: "cocktail_icon").padding()
                    numPeopleView(num: $peopleNum)
 
                     VStack(alignment: .leading){
@@ -69,10 +69,11 @@ struct numPeopleView: View {
     @Binding var num:Double
     
     var body: some View{
-        VStack{
+        HStack{
             Text("Number of people:")
                 .font(.subheadline)
                 .padding(.horizontal)
+                .frame(width: 120)
             HStack{
 
                 numButtonView(num: $num, lable: 1)

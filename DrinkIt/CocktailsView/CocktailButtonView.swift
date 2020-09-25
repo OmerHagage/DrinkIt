@@ -12,14 +12,13 @@ struct CocktailButtonView: View {
     
     let cocktail: Cocktail
     
-    let image:Image = Image(systemName: "arkit")
+    let imageName:String = "cocktail_icon"
     
+    @EnvironmentObject var user:User
     
     @State var pressed = false
     
     
-    
-
     var body: some View {
             VStack{
             Button(action: {
@@ -29,16 +28,35 @@ struct CocktailButtonView: View {
                             HStack{
                                 Text(cocktail.id).font(.title).fontWeight(.bold)
                                 Spacer()
-                                image.padding()
+//                                Button(action: {
+////                                    if (self.user.userFavoriteCocktails.contains(cocktail.id){
+////                                        self.user.userFavoriteCocktails.remove(at: <#T##Int#>)
+////                                    }
+////                                    else{
+////
+////                                    }
+//                                    var x = Set<String>()
+//                                
+//                                    
+//                                    
+//                                }, label: {
+//                                    
+//                                })
                             }
                             Spacer()
-                            VStack{
-                                ForEach(0..<cocktail.alcoholIngredients.capacity){ i in
-                                    HStack{
-                                        Text(String(self.cocktail.alcoholQuantities[i]))
-                                        Text(self.cocktail.alcoholIngredients[i])
+                            HStack{
+                                VStack(alignment: .leading){
+                                    ForEach(0..<cocktail.alcoholIngredients.capacity){ i in
+                                        HStack{
+                                            Text(String(self.cocktail.alcoholQuantities[i]))
+                                                .multilineTextAlignment(.leading)
+                                            Text(self.cocktail.alcoholIngredients[i])
+                                                .multilineTextAlignment(.leading)
+                                        }
                                     }
                                 }
+                                Spacer()
+                                ImageView(imageName: self.imageName).padding([.bottom, .trailing])
                             }
                         }
                         }

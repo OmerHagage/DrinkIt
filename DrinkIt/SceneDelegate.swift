@@ -25,14 +25,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         
         var user:User
+        var startGuide:Bool
         
         do {
             let temp:[User] = try managedObjectContext.fetch(User.fetchRequest())
             if (temp.isEmpty){
                 user = User(context: managedObjectContext)
+                startGuide = true
             }
             else{
                 user = temp[0]
+                startGuide = false
             }
         }
         catch{
@@ -42,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Create the SwiftUI view that provides the window contents.
         
-        let contentView = ContentView().environment(\.managedObjectContext, managedObjectContext).environmentObject(user)
+        let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user)
      
 
         
