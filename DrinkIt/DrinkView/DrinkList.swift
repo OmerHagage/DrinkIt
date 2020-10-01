@@ -18,7 +18,7 @@ struct DrinkList: View {
     
     @State var drinkToAdd = Set<String>()
     @State var searchText:String = ""
-    let searchBar = UISearchBar(frame: .zero)
+
     
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -73,9 +73,7 @@ struct DrinkList: View {
             Spacer()
             
             Button(action: {
-                for name in self.drinkToAdd{
-                    self.user.userDrinks.append(name)
-                }
+                self.user.userDrinks.formUnion(self.drinkToAdd)
                 self.saveUser()
                 self.presentationMode.wrappedValue.dismiss()
             }) {

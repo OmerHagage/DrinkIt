@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  
 //
-//  Created by Omer Hagage on 20/09/2020.
+//  Created by Omer Hagage on 25/09/2020.
 //
 //
 

@@ -35,7 +35,7 @@ class DBCocktails: ObservableObject {
                     print("\(document.documentID) => \(document.data())")
                     
 
-                    self.data.append(Cocktail(id: document.documentID, recipe: document.data()["recipe"] as! String,
+                    self.data.append(Cocktail(id: document.documentID, recipe: document.data()["recipe"] as! [String],
                                               alcoholIngredients: document.data()["alcohol ingredients"] as! [String],
                                               alcoholQuantities: document.data()["alcohol quantities"] as! [Double],
                                               nonAlcoholIngredients: document.data()["non-alcohol ingredients"] as! [String],

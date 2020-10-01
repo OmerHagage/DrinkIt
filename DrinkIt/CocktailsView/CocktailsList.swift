@@ -19,14 +19,7 @@ struct CocktailsList: View {
     func filterData(cocktail:Cocktail) -> Bool {
         let searchBarUse = self.searchText.isEmpty ? true : cocktail.id.lowercased().starts(with: self.searchText.lowercased())
         if filterSearch{
-            var flag = true
-            for ingredient in cocktail.alcoholIngredients{
-                if (!user.userDrinks.contains(ingredient)){
-                    flag = false
-                    break
-                }
-            }
-            return searchBarUse && flag
+            return searchBarUse && user.userDrinks.isSuperset(of: cocktail.alcoholIngredients)
         }
         return searchBarUse
     }

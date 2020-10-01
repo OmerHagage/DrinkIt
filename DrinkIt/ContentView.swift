@@ -46,11 +46,26 @@ struct ContentView: View {
                 VStack{
 
 //                    Text("DrinkIt").offset(y: -50).font(.title)
+                    HStack{
+                        Spacer()
+                        Image(systemName: "info.circle")
+                            .onTapGesture(count: 1, perform: {
+                                self.startGuide = true
+                            }).padding(.trailing, 20)
+                            .sheet(isPresented: $startGuide, content: {
+
+                                Text("Start Guide").font(.title)
+                                Button(action: {
+                                    startGuide = false
+                                }, label: {
+                                    Text("Done")
+                                })
+                            })
+                    }
                     Image("DrinkIt")
                         .resizable()
                         .scaledToFit()
                         .frame(alignment: .top)
-
             
 
                     HStack{
@@ -89,7 +104,7 @@ struct ContentView: View {
                 
                     Spacer()
                         
-                    LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit)
+                   LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit)
                                
                     
                         
@@ -140,28 +155,14 @@ struct ContentView: View {
                 
                 }.navigationBarHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 
-
-
                     
-                    // Zstack front view - open if it is the first time the user use the app
-//                    if (startGuide){
-//
-//                        Text("").sheet(isPresented: $startGuide, content: {
-//
-//                            Text("Start Guide").font(.title)
-//                            Button(action: {
-//                                startGuide = false
-//                                self.presentationMode.wrappedValue.dismiss()
-//                            }, label: {
-//                                Text("Done")
-//                            })
-//                        })
-//                    }
 
 
             }
           
+                
             }.navigationViewStyle(StackNavigationViewStyle())
+//            .navigationBarItems(trailing: Image(systemName: "info.circle"))
     }
     
 
@@ -182,7 +183,7 @@ struct ContentView: View {
 
 
 struct LiquorCabinetView: View {
-    var userDrinks:[String]
+    var userDrinks:Set<String>
     
     @Binding var edit:Bool
     
@@ -202,7 +203,7 @@ struct LiquorCabinetView: View {
       
         ScrollView(.horizontal, showsIndicators: false){
         
-            gridView(userDrinks: self.userDrinks, edit: $edit)
+            gridView(drinks: self.userDrinks, editt: $edit)
             Spacer()
 //            if (left == 0){
 //                HStack{
@@ -240,7 +241,7 @@ struct LiquorCabinetView: View {
 struct cabinetDrinkView: View {
     
     let drinkName:String
-    let index:Int
+    
     
   
     @State var fullText = false
@@ -269,7 +270,7 @@ struct cabinetDrinkView: View {
                         .offset(x: -30, y: -30)
                         .frame(alignment: .topLeading)
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                        self.user.userDrinks.remove(at: index)
+                        self.user.userDrinks.remove(drinkName)
                         saveUser()
                     })
                 }
@@ -289,33 +290,68 @@ struct cabinetDrinkView: View {
 
 struct gridView: View {
     
-    var userDrinks:[String]
+    var userDrinks:[[String]]
     
     @Binding var edit:Bool
     
-    func userDrinksLenght() -> Int {
-        return Int(ceil(Double(self.userDrinks.count) / 3.0))
+    init(drinks:Set<String>, editt:Binding<Bool>) {
+        self.userDrinks = gridView.toArray(drinks: drinks)
+        self._edit = editt
+        
+    }
+    
+    
+    
+    static func toArray(drinks:Set<String>) -> [[String]] {
+        var count = 0
+        var arr = [[String]]()
+        var innerArr = [String]()
+        for item in drinks.sorted() {
+            if (count < 4){
+                innerArr.append(item)
+                count += 1
+            }
+            if (count == 4) {
+                arr.append(innerArr)
+                innerArr = [String]()
+                count = 0
+            }
+        }
+        arr.append(innerArr)
+        return arr
     }
     
     var body: some View {
-//        GeometryReader { geo in
+
+//        HStack{
+//            ForEach(0..<userDrinksLenght(), id: \.self) { i in
+//
+//                VStack(alignment: .center){
+//                    ForEach(min(i*4, self.userDrinks.count)..<min((i*4)+4, self.userDrinks.count), id: \.self){ j in
+//    //                    Spacer()
+//
+////                        cabinetDrinkView(drinkName: self.userDrinks[j], edit: $edit)
+//                        cabinetDrinkView(drinkName: "self.userDrinks[j]", edit: $edit)
+//
+////                            .frame(width: UIScreen.main.bounds.width * 0.3, height: geo.size.height * 0.23)
+//
+//                        Spacer()
+//                    }
+//                }
+//            }
+//        }
+       
+
         HStack{
-            ForEach(0..<userDrinksLenght(), id: \.self) { i in
-                
-                VStack(alignment: .center){
-                    ForEach(min(i*4, self.userDrinks.count)..<min((i*4)+4, self.userDrinks.count), id: \.self){ j in
-    //                    Spacer()
-                        
-                        cabinetDrinkView(drinkName: self.userDrinks[j], index: j, edit: $edit)
-                           
-//                            .frame(width: UIScreen.main.bounds.width * 0.3, height: geo.size.height * 0.23)
-                        
+            ForEach(self.userDrinks, id: \.self){ chunk in
+                VStack{
+                    ForEach(chunk, id: \.self){ drink in
+                        cabinetDrinkView(drinkName: drink, edit: self.$edit)
                         Spacer()
                     }
+                    
                 }
             }
         }
-       
-//        }
     }
 }

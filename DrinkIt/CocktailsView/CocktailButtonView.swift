@@ -18,6 +18,14 @@ struct CocktailButtonView: View {
     
     @State var pressed = false
     
+ 
+    
+    
+    
+    
+    
+    
+    
     
     var body: some View {
             VStack{
@@ -28,27 +36,21 @@ struct CocktailButtonView: View {
                             HStack{
                                 Text(cocktail.id).font(.title).fontWeight(.bold)
                                 Spacer()
-//                                Button(action: {
-////                                    if (self.user.userFavoriteCocktails.contains(cocktail.id){
-////                                        self.user.userFavoriteCocktails.remove(at: <#T##Int#>)
-////                                    }
-////                                    else{
-////
-////                                    }
-//                                    var x = Set<String>()
-//                                
-//                                    
-//                                    
-//                                }, label: {
-//                                    
-//                                })
+                                FavoriteButton(favorite: self.user.userFavoriteCocktails.contains(cocktail.id), cocktailName: cocktail.id)
+//                                Image(systemName: self.favorite ? "star.fill" : "star")
+//                                    .foregroundColor(self.favorite ? .yellow : .black)
+//                                    .onTapGesture(count: 1, perform: {
+//                                        self.favorite.toggle()
+//                                        checkFavorite(cocktailName: cocktail.id)
+//                                    })
+                                    
                             }
                             Spacer()
                             HStack{
                                 VStack(alignment: .leading){
-                                    ForEach(0..<cocktail.alcoholIngredients.capacity){ i in
+                                    ForEach(0..<self.cocktail.alcoholIngredients.count, id: \.self){ i in
                                         HStack{
-                                            Text(String(self.cocktail.alcoholQuantities[i]))
+                                            BulletedText(text: String(self.cocktail.alcoholQuantities[i]))
                                                 .multilineTextAlignment(.leading)
                                             Text(self.cocktail.alcoholIngredients[i])
                                                 .multilineTextAlignment(.leading)
@@ -71,7 +73,7 @@ struct CocktailButtonView: View {
                         .shadow(radius: 2)
                         .padding(.all, 5.5)
             }
-            .sheet(isPresented: self.$pressed, content: { FullCocktailView(cocktail: self.cocktail)})
+            .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, cocktail: self.cocktail)})
             
     }
 }
@@ -81,3 +83,48 @@ struct CocktailButtonView: View {
 //        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", recipe: "ldnkfg", ingredients: ["Df","sdf","sdf"], quantities: [1,2,3]))
 //    }
 //}
+
+struct FavoriteButton: View {
+    @State var favorite:Bool
+    let cocktailName:String
+    
+    
+    @EnvironmentObject var user:User
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    func saveUser(){
+        do{
+            try self.managedObjectContext.save()
+        }
+        catch{
+            print(error)
+            exit(EXIT_FAILURE)
+        }
+    }
+    
+    func checkFavorite(cocktailName:String) {
+        if (favorite){
+            self.user.userFavoriteCocktails.remove(cocktailName)
+        }
+        else{
+            self.user.userFavoriteCocktails.insert(cocktailName)
+        }
+        saveUser()
+    }
+    
+    var body: some View {
+        Button(action: {
+            checkFavorite(cocktailName: cocktailName)
+            favorite.toggle()
+        }, label: {
+            //                                    if (self.user.userFavoriteCocktails.contains(cocktail.id)){
+            if (favorite){
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            } else {
+                Image(systemName: "star")
+            }
+        })
+       
+    }
+}
