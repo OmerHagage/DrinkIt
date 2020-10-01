@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct CocktailsList: View {
-    
     @ObservedObject private var datas = DBCocktails()
-    @State var searchText:String = ""
+    @State private var searchText:String = ""
     @State var filterSearch:Bool = false
     
     @EnvironmentObject var user:User
     
+    /**
+     filter function:
+        filter the cocktail db acording to the searchBar
+        if @filteSearch == true, filter the cocktail db acording to the user drinks
+     */
     func filterData(cocktail:Cocktail) -> Bool {
         let searchBarUse = self.searchText.isEmpty ? true : cocktail.id.lowercased().starts(with: self.searchText.lowercased())
         if filterSearch{
@@ -25,32 +29,19 @@ struct CocktailsList: View {
     }
     
     var body: some View {
-        
         VStack{
-            Spacer()
-            
+            // search bar
             SearchBar(text: $searchText).padding(.top)
             
-            ScrollView{
-            
-                
+            // cocktails list
+            ScrollView(.vertical, showsIndicators: false){
                 ForEach(self.datas.data.filter(filterData(cocktail:))){ cocktail in
-                    HStack {
-                        CocktailButtonView(cocktail: cocktail)
-
-                    }
-
+                    CocktailButtonView(cocktail: cocktail)
                 }
             }
             .padding()
-//            .onAppear {UITableView.appearance().separatorStyle = .none}
-            
-          
-            
         }.navigationBarTitle("Cocktails List")
-        
     }
-    
 }
 
 struct CocktailsList_Previews: PreviewProvider {
