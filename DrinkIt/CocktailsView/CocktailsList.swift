@@ -34,12 +34,13 @@ struct CocktailsList: View {
             SearchBar(text: $searchText).padding(.top)
             
             // cocktails list
-            ScrollView(.vertical, showsIndicators: false){
+            ScrollView(.vertical, showsIndicators: true){
                 ForEach(self.datas.data.filter(filterData(cocktail:))){ cocktail in
                     CocktailButtonView(cocktail: cocktail)
+                        .padding(.horizontal)
                 }
             }
-            .padding()
+            .padding(.top, 1)
         }.navigationBarTitle("Cocktails List")
     }
 }

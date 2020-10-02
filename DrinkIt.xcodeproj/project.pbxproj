@@ -22,6 +22,7 @@
 		602EC11F25093DD70057AA9E /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EC11E25093DD70057AA9E /* Cocktail.swift */; };
 		6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E425052E9000D0C85E /* DrinkList.swift */; };
 		6033D7E72505337200D0C85E /* CocktailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6033D7E62505337200D0C85E /* CocktailsList.swift */; };
+		6047C5FF252782920055591B /* ButtonLableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047C5FE252782920055591B /* ButtonLableStyle.swift */; };
 		606317322508DF4C008D0AC3 /* DrinkIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606317302508DF4C008D0AC3 /* DrinkIt.xcdatamodeld */; };
 		60A8D60E251E603F00222D8D /* BulletedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A8D60D251E603F00222D8D /* BulletedText.swift */; };
 		60ADAE762504FE6B006628F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADAE752504FE6B006628F9 /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		602EC11E25093DD70057AA9E /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		6033D7E425052E9000D0C85E /* DrinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkList.swift; sourceTree = "<group>"; };
 		6033D7E62505337200D0C85E /* CocktailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsList.swift; sourceTree = "<group>"; };
+		6047C5FE252782920055591B /* ButtonLableStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLableStyle.swift; sourceTree = "<group>"; };
 		606317312508DF4C008D0AC3 /* DrinkIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrinkIt.xcdatamodel; sourceTree = "<group>"; };
 		60A8D60D251E603F00222D8D /* BulletedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletedText.swift; sourceTree = "<group>"; };
 		60ADAE722504FE6B006628F9 /* DrinkIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,17 @@
 			path = CocktailsView;
 			sourceTree = "<group>";
 		};
+		6047C5F9252781B60055591B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				60292D7E2510B020004081CF /* ImageView.swift */,
+				60292D8425110B11004081CF /* SearchBar.swift */,
+				60A8D60D251E603F00222D8D /* BulletedText.swift */,
+				6047C5FE252782920055591B /* ButtonLableStyle.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		606316F02508DCB1008D0AC3 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +221,7 @@
 				600AFF722506426400BC17D9 /* Cocktails */,
 				606317332508E015008D0AC3 /* DrinkView */,
 				6033D7E82505337800D0C85E /* CocktailsView */,
-				60292D7E2510B020004081CF /* ImageView.swift */,
-				60292D8425110B11004081CF /* SearchBar.swift */,
-				60A8D60D251E603F00222D8D /* BulletedText.swift */,
+				6047C5F9252781B60055591B /* Utilities */,
 				60ADAE7B2504FE6D006628F9 /* Assets.xcassets */,
 				60ADAE802504FE6D006628F9 /* LaunchScreen.storyboard */,
 				60ADAE832504FE6D006628F9 /* Info.plist */,
@@ -282,6 +293,7 @@
 				60ADAE6F2504FE6B006628F9 /* Frameworks */,
 				60ADAE702504FE6B006628F9 /* Resources */,
 				CF616C67A2B2D9E109963E16 /* [CP] Embed Pods Frameworks */,
+				6047C5EC25277CB10055591B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -447,6 +459,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6047C5EC25277CB10055591B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nTAGS=\"todo:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
 		851791C5DC28E489CB57C3CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +545,7 @@
 				60ADAE782504FE6B006628F9 /* SceneDelegate.swift in Sources */,
 				6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */,
 				600AFF762506792000BC17D9 /* User1.swift in Sources */,
+				6047C5FF252782920055591B /* ButtonLableStyle.swift in Sources */,
 				602EC11F25093DD70057AA9E /* Cocktail.swift in Sources */,
 				60A8D60E251E603F00222D8D /* BulletedText.swift in Sources */,
 				600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */,

@@ -17,7 +17,6 @@ struct BulletedText: View {
             Text("• ")
             Text(text)
         }
-//        Text("• " + text)
     }
 }
 

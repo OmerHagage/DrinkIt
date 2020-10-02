@@ -155,8 +155,9 @@ struct ContentView: View {
                 
                 }.navigationBarHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 
+                 
                     
-
+                   
 
             }
           
@@ -284,7 +285,8 @@ struct cabinetDrinkView: View {
                     self.fullText.toggle()
                 })
         }
-        .padding([.top, .leading, .trailing], 10.0)
+        .padding(.top, 10.0)
+        .padding(.leading, 22)
     }
 }
 
@@ -347,9 +349,8 @@ struct gridView: View {
                 VStack{
                     ForEach(chunk, id: \.self){ drink in
                         cabinetDrinkView(drinkName: drink, edit: self.$edit)
-                        Spacer()
                     }
-                    
+                    Spacer()
                 }
             }
         }

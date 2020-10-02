@@ -9,21 +9,18 @@
 import SwiftUI
 
 struct DrinkList: View {
-    
     @ObservedObject private var drinksDB = DBDrinks()
-    
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @EnvironmentObject var user:User
-    
     
     @State var drinkToAdd = Set<String>()
     @State var searchText:String = ""
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var user:User
 
     
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    
+    //todo: check if we can use the function from contentView
     func saveUser(){
           do{
               try self.managedObjectContext.save()
@@ -34,35 +31,26 @@ struct DrinkList: View {
           }
     }
     
+    
     var body: some View {
-        
         VStack{
             
-            
-          
-
-            
-            
-            
-            Spacer()
-            
-//            UISearchBar
+            // search bar
             SearchBar(text: $searchText).padding(.top)
             
-            ScrollView{
-                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().starts(with: self.searchText.lowercased())
-                    })){ drink in
+            // Drinks list - show only drinks that the user don't have
+            ScrollView(.vertical, showsIndicators: true){
+                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().starts(with: self.searchText.lowercased())}))
+                    { drink in
                     if(!self.user.userDrinks.contains(drink.id)){
-                        HStack {
-                            DrinkButtonView(drinkToAdd: self.$drinkToAdd, drink: drink)
-                                .buttonStyle(BorderlessButtonStyle())
+                        
+                        //Drink button
+                        DrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd)
                                 .padding(.horizontal)
-                                
-                        }
                     }
                 }
             }
-            .padding(.vertical)
+            .padding(.top, 1)
             
         
  
@@ -70,28 +58,17 @@ struct DrinkList: View {
           
 
 
-            Spacer()
+//            Spacer()
             
             Button(action: {
+                // add chosen drinks to the user
                 self.user.userDrinks.formUnion(self.drinkToAdd)
                 self.saveUser()
                 self.presentationMode.wrappedValue.dismiss()
             }) {
-                Text("Add")
-                .foregroundColor(Color.white)
-                .bold()
-                .padding(.all , 10)
-                .padding(.horizontal , 25)
-                .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
-                .background(Color.black)
-                .cornerRadius(20)
-                .shadow(radius: 10)
+                ButtonLableStyle.addStyle(lable: "Add")
             }
-        
         }.navigationBarTitle("Drinks")
-//        .frame(height: UIScreen.main.bounds.height)
-        
-        
     }
 }
 
