@@ -74,6 +74,7 @@ struct CocktailButtonDetails: View {
 }
 
 
+//todo: fix the favorite button
 struct FavoriteButton: View {
     @State var favorite:Bool
     let cocktailName:String

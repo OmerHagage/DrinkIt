@@ -16,18 +16,34 @@ struct CocktailsList: View {
     @EnvironmentObject var user:User
     
     /**
+     searchBar filter function
+     */
+    private func filterSearch(cocktailName: String) -> Bool {
+        if self.searchText.isEmpty{
+            return true
+        }
+        for word in cocktailName.split(separator: " "){
+            if word.lowercased().starts(with: self.searchText.lowercased()){
+                return true
+            }
+        }
+        return false
+    }
+    
+    /**
      filter function:
         filter the cocktail db acording to the searchBar
         if @filteSearch == true, filter the cocktail db acording to the user drinks
      */
-    func filterData(cocktail:Cocktail) -> Bool {
-        let searchBarUse = self.searchText.isEmpty ? true : cocktail.id.lowercased().starts(with: self.searchText.lowercased())
+    private func filterData(cocktail:Cocktail) -> Bool {
+        let searchBarUse = filterSearch(cocktailName: cocktail.id)
         if filterSearch{
             return searchBarUse && user.userDrinks.isSuperset(of: cocktail.alcoholIngredients)
         }
         return searchBarUse
     }
     
+
     var body: some View {
         VStack{
             // search bar

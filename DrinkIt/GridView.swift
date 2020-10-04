@@ -6,47 +6,120 @@
 //  Copyright © 2020 Omer Hagage. All rights reserved.
 //
 
-//import SwiftUI
-//
-//struct GridView: View {
-//
-//    var row:Int
-//    var col:Int
-//    var array:[String]
-//    var x:Int
-//
-//
-//        var body: some View{
-//         ScrollView(.horizontal) {
-//                            VStack {
-//                                ForEach(0..<self.row,  id: \.self){ i in
-//                                    HStack{
-//                                        ForEach(0..<self.col){ j in
-//                                            if (i*3+j < x){
-//                                                    Button(action: {
-//
-//                                                    }) {
-//                                                        HStack{
-//                                                            Text(self.array[i*3+j])
-//                                                            Spacer()
-//                                                //        ImageView()
-//                                                        }
-//                                                    }
-//
-//                                            }
-//                                        }
-//                                    }
-//
-//                                }
-//
-//                                }.padding()
-//                        }
-//    }
-//
-//}
+import SwiftUI
 
-//struct GridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GridView()
-//    }
-//}
+struct GridView: View {
+    
+    // array divided to chunks (number of drinks in each column)
+    private var userDrinks:[[String]]
+   
+    // edit the drinks in the cabinet
+    @Binding var edit:Bool
+    
+    //todo: chrck the real button size
+    private static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/130)
+    
+    /**
+     initialize the  grid view and builds chunks of the array
+     */
+    init(drinks:Set<String>, editt:Binding<Bool>) {
+        self.userDrinks = GridView.toArray(drinks: drinks)
+        //todo: check what is _edit
+        self._edit = editt
+    }
+    
+    /**
+     build by alphabetical order the chunks of the array
+     */
+    static func toArray(drinks:Set<String>) -> [[String]] {
+        
+        var count = 0
+        var arr = [[String]]()
+        var innerArr = [String]()
+        for item in drinks.sorted() {
+            if (count < GridView.NUM_OF_ROWS){
+                innerArr.append(item)
+                count += 1
+            }
+            if (count == GridView.NUM_OF_ROWS) {
+                arr.append(innerArr)
+                innerArr = [String]()
+                count = 0
+            }
+        }
+        arr.append(innerArr)
+        return arr
+    }
+    
+    var body: some View {
+        HStack{
+            ForEach(self.userDrinks, id: \.self){ chunk in
+                VStack{
+                    ForEach(chunk, id: \.self){ drink in
+                        CabinetDrinkView(drinkName: drink, edit: self.$edit)
+                    }
+                    Spacer(minLength: 0)
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+ the view of each drink in the cabinet
+ */
+struct CabinetDrinkView: View {
+    
+    // drink name
+    let drinkName:String
+    
+    // make space to see the full drink name
+    @State var fullText = false
+    
+    // edit the drinks in the cabinet - add (-) button to the  drink view
+    @Binding var edit:Bool
+    
+    //todo: check how to fix that
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var user:User
+    func saveUser(){
+        do{
+            try self.managedObjectContext.save()
+        }
+        catch{
+            print(error)
+            exit(EXIT_FAILURE)
+        }
+    }
+    
+    
+    var body: some View {
+        VStack(alignment: .center){
+            ZStack{
+                ImageView(imageName: "jagermeister_icon")
+                    .opacity(self.edit == false ? 1: 0.3)
+                if (self.edit){
+                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)
+                        .offset(x: -30, y: -30)
+                        .frame(alignment: .topLeading)
+                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        self.user.userDrinks.remove(drinkName)
+                        saveUser()
+                    })
+                }
+            }.padding(.horizontal)
+            Text(drinkName)
+                .layoutPriority(1)
+                .frame(width: self.fullText == false ? 100 : .none ,height: 30)
+                .multilineTextAlignment(.center)
+                .opacity(self.edit == false ? 1: 0.3)
+                .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                    self.fullText.toggle()
+                })
+        }
+        .padding(.top, 10.0)
+        .padding(.leading, 22)
+    }
+}

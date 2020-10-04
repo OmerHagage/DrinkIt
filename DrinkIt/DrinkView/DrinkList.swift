@@ -31,6 +31,21 @@ struct DrinkList: View {
           }
     }
     
+    /**
+     searchBar filter function
+     */
+    private func filterSearch(drink: Drink) -> Bool {
+        if self.searchText.isEmpty{
+            return true
+        }
+        for word in drink.id.split(separator: " "){
+            if word.lowercased().starts(with: self.searchText.lowercased()){
+                return true
+            }
+        }
+        return false
+    }
+    
     
     var body: some View {
         VStack{
@@ -40,8 +55,7 @@ struct DrinkList: View {
             
             // Drinks list - show only drinks that the user don't have
             ScrollView(.vertical, showsIndicators: true){
-                ForEach(self.drinksDB.data.filter({self.searchText.isEmpty ? true : $0.id.lowercased().starts(with: self.searchText.lowercased())}))
-                    { drink in
+                ForEach(self.drinksDB.data.filter(filterSearch(drink:))) { drink in
                     if(!self.user.userDrinks.contains(drink.id)){
                         
                         //Drink button
@@ -52,14 +66,7 @@ struct DrinkList: View {
             }
             .padding(.top, 1)
             
-        
- 
-  
-          
-
-
-//            Spacer()
-            
+            // add drinks to the user and dismiss the view
             Button(action: {
                 // add chosen drinks to the user
                 self.user.userDrinks.formUnion(self.drinkToAdd)

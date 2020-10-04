@@ -6,26 +6,24 @@
 //  Copyright © 2020 Omer Hagage. All rights reserved.
 //
 
-import Foundation
 import FirebaseFirestore
-
-
-
-
 
 class DBDrinks: ObservableObject {
 
+    // firestor db reference
     let dbCollection = Firestore.firestore().collection("drinks")
     
     @Published var data = [Drink]()
 
-    
+    /**
+        read all the drinks from the db and save them
+     */
     init() {
         addDrinksFromDB()
     }
     
+    
     func addDrinksFromDB(){
-
         dbCollection.getDocuments() { (querySnapshot, err) in
              if let err = err {
                  print("Error getting documents: \(err)")
@@ -33,43 +31,10 @@ class DBDrinks: ObservableObject {
                  for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
                    
+                    // add drink from db to array
                     self.data.append(Drink(id: document.documentID, summary: document.data()["summary"] as! String))
                  }
              }
          }
-//
-        
-        
-        
-//         dbCollection.addSnapshotListener { (documentSnapshot, err) in
-//                          if err != nil {
-//                              print((err?.localizedDescription)!)
-//                              return
-//                          }else {
-//                              print("read data success")
-//                          }
-//
-//                          documentSnapshot!.documentChanges.forEach { diff in
-//                              // Real time create from server
-//                              if (diff.type == .added) {
-//                               let drink = DrinkView(id: diff.document.documentID, name: diff.document.get("name") as! String)
-//                                  self.data.append(drink)
-//                              }
-//
-//                              // Real time modify from server
-//                              if (diff.type == .modified) {
-//                                  self.data = self.data.map { (eachData) -> DrinkView in
-//                                      var data = eachData
-//                                      if data.id == diff.document.documentID {
-//                                          data.name = diff.document.get("name") as! String
-//                                          return data
-//                                      }else {
-//                                          return eachData
-//                                      }
-//                                  }
-//                              }
-//                          }
-//                      }
     }
-    
 }

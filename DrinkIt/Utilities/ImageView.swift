@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ImageView: View {
     
+    // image to present
     let imageName:String
     
     var body: some View {
