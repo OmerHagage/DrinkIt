@@ -18,19 +18,6 @@ struct DrinkList: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
 
-    
-    
-    //todo: check if we can use the function from contentView
-    func saveUser(){
-          do{
-              try self.managedObjectContext.save()
-          }
-          catch{
-              print(error)
-              exit(EXIT_FAILURE)
-          }
-    }
-    
     /**
      searchBar filter function
      */
@@ -55,13 +42,15 @@ struct DrinkList: View {
             
             // Drinks list - show only drinks that the user don't have
             ScrollView(.vertical, showsIndicators: true){
-                ForEach(self.drinksDB.data.filter(filterSearch(drink:))) { drink in
-                    if(!self.user.userDrinks.contains(drink.id)){
-                        
-                        //Drink button
-                        DrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd)
-                                .padding(.horizontal)
-                    }
+                VStack(spacing: 7){
+                    ForEach(self.drinksDB.data.filter(filterSearch(drink:))) { drink in
+                        if(!self.user.userDrinks.contains(drink.id)){
+                            
+                            //Drink button
+                            DrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd)
+                                    .padding(.horizontal)
+                            }
+                        }
                 }
             }
             .padding(.top, 1)
@@ -70,11 +59,11 @@ struct DrinkList: View {
             Button(action: {
                 // add chosen drinks to the user
                 self.user.userDrinks.formUnion(self.drinkToAdd)
-                self.saveUser()
+                AppDelegate.staticSaveContext(context: self.managedObjectContext)
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 ButtonLableStyle.addStyle(lable: "Add")
-            }
+            }.padding(2.0)
         }.navigationBarTitle("Drinks")
     }
 }

@@ -59,11 +59,11 @@ struct DrinkButtonView: View{
             }
         }
         .frame(height: self.showInfo ? .none : 70)
-        .foregroundColor(Color.black)
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 3))
-        .background(self.pressed ? Color.black.opacity(0.2) : Color.white)
+        .foregroundColor(.white)
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
+        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(radius: 2)
+        .shadow(color: self.pressed ? Color("Rich Black") : Color("Charleston Green"), radius: 3)
     }
 }
 

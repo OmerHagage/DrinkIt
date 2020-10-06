@@ -15,13 +15,14 @@ struct ImageView: View {
     
     var body: some View {
         Image(imageName)
-        .resizable()
-        .scaledToFit()
-        .frame(width: 70, height: 70)
-        .clipShape(Circle())
-        .overlay(
-            Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))
-        .shadow(radius: 5)
+            .resizable()
+            .scaledToFit()
+            .colorInvert()
+            .frame(width: 60, height: 60)
+            .shadow(color: .white, radius: 2)
+            .clipShape(Circle())
+            .overlay(
+                Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))
     }
 }
 

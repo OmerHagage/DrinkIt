@@ -17,16 +17,18 @@ struct CocktailButtonView: View {
 
     var body: some View {
         VStack{
-            Button(action: { self.pressed.toggle() }) {
+            Button(action: { self.pressed = true }) {
                 CocktailButtonDetails(cocktail: self.cocktail)
             }
             .frame(height: 100)
-            .foregroundColor(.black)
+            .foregroundColor(.white)
             .padding()
             .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.black, lineWidth: 3)
+                        .stroke(Color.clear, lineWidth: 1)
             )
-            .shadow(radius: 2)
+            .background(Color("Charleston Green"))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: Color("Charleston Green"), radius: 3)
             .padding(.all, 5.5)
         }
         .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, cocktail: self.cocktail)})
@@ -83,16 +85,6 @@ struct FavoriteButton: View {
     @EnvironmentObject var user:User
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    func saveUser(){
-        do{
-            try self.managedObjectContext.save()
-        }
-        catch{
-            print(error)
-            exit(EXIT_FAILURE)
-        }
-    }
-    
     func checkFavorite(cocktailName:String) {
         if (favorite){
             self.user.userFavoriteCocktails.remove(cocktailName)
@@ -100,7 +92,7 @@ struct FavoriteButton: View {
         else{
             self.user.userFavoriteCocktails.insert(cocktailName)
         }
-        saveUser()
+        AppDelegate.staticSaveContext(context: self.managedObjectContext)
     }
     
     var body: some View {

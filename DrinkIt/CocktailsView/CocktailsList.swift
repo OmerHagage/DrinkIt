@@ -51,9 +51,11 @@ struct CocktailsList: View {
             
             // cocktails list
             ScrollView(.vertical, showsIndicators: true){
-                ForEach(self.datas.data.filter(filterData(cocktail:))){ cocktail in
-                    CocktailButtonView(cocktail: cocktail)
-                        .padding(.horizontal)
+                VStack(spacing: 0 ){
+                    ForEach(self.datas.data.filter(filterData(cocktail:))){ cocktail in
+                        CocktailButtonView(cocktail: cocktail)
+                            .padding(.horizontal)
+                    }
                 }
             }
             .padding(.top, 1)

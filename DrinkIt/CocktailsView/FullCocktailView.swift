@@ -121,7 +121,7 @@ struct NumButtonView: View {
     
     var body: some View{
         Text(String(lable))
-            .foregroundColor(self.num == lable ? .white : Color.black)
+            .foregroundColor(self.num == lable ? .white : Color.white.opacity(0.3))
             .fontWeight(.bold)
             .padding(.vertical, 5)
             .padding(.horizontal, 20)

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
      
-        
+        //todo: לעשות הערות
         
         var user:User
         var startGuide:Bool
@@ -48,10 +48,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user)
      
 
-        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            
+            window.overrideUserInterfaceStyle = .dark
             
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window

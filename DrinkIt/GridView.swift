@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct GridView: View {
+    // grid height
+    let height:CGFloat
     
     // array divided to chunks (number of drinks in each column)
     private var userDrinks:[[String]]
@@ -16,16 +18,19 @@ struct GridView: View {
     // edit the drinks in the cabinet
     @Binding var edit:Bool
     
-    //todo: chrck the real button size
-    private static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/130)
+    //todo: check the real button size
+    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/130)
+    //todo: check the real button size
+    static let NUM_OF_COLS = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
     
     /**
      initialize the  grid view and builds chunks of the array
      */
-    init(drinks:Set<String>, editt:Binding<Bool>) {
+    init(gridHeight:CGFloat, drinks:Set<String>, editt:Binding<Bool>) {
         self.userDrinks = GridView.toArray(drinks: drinks)
         //todo: check what is _edit
         self._edit = editt
+        self.height = gridHeight
     }
     
     /**
@@ -52,11 +57,13 @@ struct GridView: View {
     }
     
     var body: some View {
-        HStack{
+        HStack(spacing: 0){
             ForEach(self.userDrinks, id: \.self){ chunk in
-                VStack{
+                VStack(spacing: 0){
+                    
                     ForEach(chunk, id: \.self){ drink in
                         CabinetDrinkView(drinkName: drink, edit: self.$edit)
+                            .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: self.height / CGFloat(GridView.NUM_OF_ROWS))
                     }
                     Spacer(minLength: 0)
                 }
@@ -81,19 +88,8 @@ struct CabinetDrinkView: View {
     // edit the drinks in the cabinet - add (-) button to the  drink view
     @Binding var edit:Bool
     
-    //todo: check how to fix that
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
-    func saveUser(){
-        do{
-            try self.managedObjectContext.save()
-        }
-        catch{
-            print(error)
-            exit(EXIT_FAILURE)
-        }
-    }
-    
     
     var body: some View {
         VStack(alignment: .center){
@@ -103,23 +99,24 @@ struct CabinetDrinkView: View {
                 if (self.edit){
                     Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)
                         .offset(x: -30, y: -30)
-                        .frame(alignment: .topLeading)
+//                        .frame(alignment: .topLeading)
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                         self.user.userDrinks.remove(drinkName)
-                        saveUser()
+                        AppDelegate.staticSaveContext(context: self.managedObjectContext)
                     })
                 }
-            }.padding(.horizontal)
+            }
+//            .padding(.horizontal)
             Text(drinkName)
                 .layoutPriority(1)
-                .frame(width: self.fullText == false ? 100 : .none ,height: 30)
+                .frame(width: self.fullText == false ? (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) - 20 : .none ,height: 30)
                 .multilineTextAlignment(.center)
                 .opacity(self.edit == false ? 1: 0.3)
                 .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                     self.fullText.toggle()
                 })
         }
-        .padding(.top, 10.0)
-        .padding(.leading, 22)
+//        .padding(.top, 10.0)
+//        .padding(.leading, 22)
     }
 }

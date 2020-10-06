@@ -15,6 +15,9 @@ struct LiquorCabinetView: View {
     // user's drinks
     let userDrinks:Set<String>
     
+    private let height = UIScreen.main.bounds.height * 0.6
+    private let width = UIScreen.main.bounds.width
+    
     // edit the drinks in the cabinet
     @Binding var edit:Bool
     
@@ -22,9 +25,9 @@ struct LiquorCabinetView: View {
         ScrollView(.horizontal, showsIndicators: false){
         
             // grid of drinks
-            GridView(drinks: self.userDrinks, editt: $edit)
+            GridView(gridHeight: self.height, drinks: self.userDrinks, editt: $edit)
             Spacer()
-        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.6)
+        }.frame(width: self.width, height: self.height)
     }
 }
 

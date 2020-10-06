@@ -16,10 +16,10 @@ struct ButtonLableStyle{
                 .bold()
                 .padding(.vertical , 10)
                 .padding(.horizontal , 15)
-                .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.gray, lineWidth: 4))
-                .background(Color.black)
+                .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
+                .background(Color("Charleston Green"))
                 .cornerRadius(20)
-                .shadow(radius: 10)
+                .shadow(color: Color("Charleston Green"), radius: 10)
     }
     
 }

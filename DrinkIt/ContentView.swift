@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import CoreData
+
 
 struct ContentView: View {
     
@@ -17,26 +17,19 @@ struct ContentView: View {
     //use to start the app with user guide
     @State var startGuide:Bool
     
-    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
-
     
-    
-    static func saveUser(x: NSManagedObjectContext){
-        do{
-            try x.save()
-        }
-        catch{
-            print(error)
-            exit(EXIT_FAILURE)
-        }
+    // stop edit the liquer cabinet
+    private func stopEdit() {
+        self.startEdit = false
+        print(self.startEdit)
     }
-
         
     var body: some View {
         NavigationView{
             ZStack{
-//              Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+//                Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Color(red: 0, green: 0, blue: 0).edgesIgnoringSafeArea(.all)
                
                 // full start view
                 VStack{
@@ -48,6 +41,7 @@ struct ContentView: View {
                     Image("DrinkIt")
                         .resizable()
                         .scaledToFit()
+                        .colorInvert()
                         .frame(alignment: .top)
             
                     HStack{
@@ -55,6 +49,8 @@ struct ContentView: View {
                         NavigationLink(destination: CocktailsList()){
                             ButtonLableStyle.addStyle(lable: "All Cocktails")
                         }
+                        
+                
                         Spacer()
                         
                         //add drink button
@@ -72,7 +68,8 @@ struct ContentView: View {
                     //search cocktail button - depending on user drinks
                     NavigationLink(destination: CocktailsList(filterSearch: true)){
                         ButtonLableStyle.addStyle(lable: "Search Cocktails")
-                    }.padding([.top, .leading, .trailing])
+                    }
+                    .padding(2)
                 }
             }
             
@@ -124,27 +121,16 @@ struct EditCabinetButtonsBar: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
 
-    
-    func saveUser(){
-        do{
-            try self.managedObjectContext.save()
-        }
-        catch{
-            print(error)
-            exit(EXIT_FAILURE)
-        }
-    }
-    
     var body: some View {
         HStack{
             Button(action: {
                 self.startEdit.toggle()
             }, label: {
-                startEdit == false ? Text("Edit") : Text ("Done")
+                self.startEdit == false ? Text("Edit") : Text ("Done")
             })
             Spacer()
             
-            if (startEdit){
+            if (self.startEdit){
                 Button(action: {
                     self.showingAlert = true
                 }) {
@@ -156,8 +142,7 @@ struct EditCabinetButtonsBar: View {
                         self.user.userDrinks.removeAll()
                         
                         //todo: check this
-//                        ContentView.saveUser(x: self.managedObjectContext)
-                        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                        AppDelegate.staticSaveContext(context: self.managedObjectContext)
                         self.startEdit = false
                     }))
                 })

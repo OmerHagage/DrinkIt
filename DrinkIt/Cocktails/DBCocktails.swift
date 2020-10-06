@@ -29,7 +29,7 @@ class DBCocktails: ObservableObject {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+//                    print("\(document.documentID) => \(document.data())")
                     
                     // add cocktail from db to array
                     self.data.append(Cocktail(id: document.documentID, recipe: document.data()["recipe"] as! [String],
