@@ -38,10 +38,9 @@ struct ContentView: View {
                     InfoButtonView(startGuide: $startGuide)
                     
                     // app title image
-                    Image("DrinkIt")
+                    Image("DrinkIt white")
                         .resizable()
                         .scaledToFit()
-                        .colorInvert()
                         .frame(alignment: .top)
             
                     HStack{

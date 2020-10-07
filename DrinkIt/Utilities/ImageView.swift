@@ -20,9 +20,9 @@ struct ImageView: View {
             .colorInvert()
             .frame(width: 60, height: 60)
             .shadow(color: .white, radius: 2)
-            .clipShape(Circle())
-            .overlay(
-                Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))
+//            .clipShape(Circle())
+//            .overlay(
+//                Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))
     }
 }
 

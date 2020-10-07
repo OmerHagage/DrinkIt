@@ -19,7 +19,7 @@ struct GridView: View {
     @Binding var edit:Bool
     
     //todo: check the real button size
-    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/130)
+    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/115)
     //todo: check the real button size
     static let NUM_OF_COLS = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
     
@@ -62,8 +62,18 @@ struct GridView: View {
                 VStack(spacing: 0){
                     
                     ForEach(chunk, id: \.self){ drink in
-                        CabinetDrinkView(drinkName: drink, edit: self.$edit)
-                            .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: self.height / CGFloat(GridView.NUM_OF_ROWS))
+                        ZStack(alignment: .bottom){
+                         
+                            Rectangle()
+//                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(Color("Charleston Green"))
+                                .frame(width: (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) / 1.7, height: 5)
+//                                .offset(y: -10)
+                                .shadow(color: .white, radius: 2, x: 0.0, y: -2)
+                            
+                            CabinetDrinkView(drinkName: drink, edit: self.$edit)
+                                .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: self.height / CGFloat(GridView.NUM_OF_ROWS))
+                        }
                     }
                     Spacer(minLength: 0)
                 }
@@ -83,7 +93,8 @@ struct CabinetDrinkView: View {
     let drinkName:String
     
     // make space to see the full drink name
-    @State var fullText = false
+    @State private var fullText = false
+    @State private var delete =  false
     
     // edit the drinks in the cabinet - add (-) button to the  drink view
     @Binding var edit:Bool
@@ -92,31 +103,33 @@ struct CabinetDrinkView: View {
     @EnvironmentObject var user:User
     
     var body: some View {
-        VStack(alignment: .center){
-            ZStack{
-                ImageView(imageName: "jagermeister_icon")
-                    .opacity(self.edit == false ? 1: 0.3)
-                if (self.edit){
-                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)
-                        .offset(x: -30, y: -30)
-//                        .frame(alignment: .topLeading)
-                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                        self.user.userDrinks.remove(drinkName)
-                        AppDelegate.staticSaveContext(context: self.managedObjectContext)
-                    })
-                }
-            }
-//            .padding(.horizontal)
+        VStack(spacing: 0){
+            Spacer()
             Text(drinkName)
                 .layoutPriority(1)
                 .frame(width: self.fullText == false ? (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) - 20 : .none ,height: 30)
                 .multilineTextAlignment(.center)
                 .opacity(self.edit == false ? 1: 0.3)
-                .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                .onTapGesture(count: 1, perform: {
                     self.fullText.toggle()
                 })
+            ZStack{
+                ImageView(imageName: "jagermeister_icon")
+                    .opacity(self.edit == false ? 1: 0.3)
+                if (self.edit){
+                    Image(systemName: "minus.circle.fill").foregroundColor(.red).imageScale(.large)
+                        .offset(x: -27, y: -22)
+                        .onTapGesture(count: 1, perform: {
+                            withAnimation(Animation.easeIn(duration: 0.5)){
+                                self.delete.toggle()
+                                self.user.userDrinks.remove(drinkName)
+                                AppDelegate.staticSaveContext(context: self.managedObjectContext)
+                            }
+                        })
+                }
+            }
         }
-//        .padding(.top, 10.0)
-//        .padding(.leading, 22)
+        .offset(y: delete ? -150 : 0)
+        .scaleEffect(CGSize(width: delete ? 0.1 : 1, height: delete ? 0.1 : 1))
     }
 }

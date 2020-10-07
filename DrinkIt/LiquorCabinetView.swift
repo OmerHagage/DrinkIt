@@ -22,12 +22,26 @@ struct LiquorCabinetView: View {
     @Binding var edit:Bool
     
     var body: some View {
+//        ZStack{
+//            VStack(spacing: (self.height - 10) / CGFloat(GridView.NUM_OF_ROWS)){
+//                ForEach(1...GridView.NUM_OF_ROWS, id: \.self){ i in
+//                    Rectangle()
+//    //                            RoundedRectangle(cornerRadius: 20)
+//                        .foregroundColor(Color("Charleston Green"))
+//                        .frame(height: 5)
+//                        .offset(y: 50)
+//                        .shadow(color: .white, radius: 2, x: 0.0, y: -2)
+//                        .padding(.horizontal)
+//                }
+//            }
+//
+            
         ScrollView(.horizontal, showsIndicators: false){
-        
             // grid of drinks
             GridView(gridHeight: self.height, drinks: self.userDrinks, editt: $edit)
             Spacer()
         }.frame(width: self.width, height: self.height)
+//        }
     }
 }
 
