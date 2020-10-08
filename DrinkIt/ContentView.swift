@@ -22,14 +22,15 @@ struct ContentView: View {
     // stop edit the liquer cabinet
     private func stopEdit() {
         self.startEdit = false
-        print(self.startEdit)
     }
         
     var body: some View {
         NavigationView{
             ZStack{
 //                Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                Color(red: 0, green: 0, blue: 0).edgesIgnoringSafeArea(.all)
+//                Color(red: 0, green: 0, blue: 0).edgesIgnoringSafeArea(.all)
+                LinearGradient(gradient: Gradient(colors: [Color("end"), Color.black]), startPoint: .topTrailing, endPoint: .bottomLeading).edgesIgnoringSafeArea(.all)
+                
                
                 // full start view
                 VStack{
@@ -45,7 +46,7 @@ struct ContentView: View {
             
                     HStack{
                         //show all cocktail button
-                        NavigationLink(destination: CocktailsList()){
+                        NavigationLink(destination: CocktailsList(addToFavorite: user.userFavoriteCocktails)){
                             ButtonLableStyle.addStyle(lable: "All Cocktails")
                         }
                         
@@ -60,12 +61,13 @@ struct ContentView: View {
                     
                     //liquor cabinet and grid view
                     LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit)
+                        .onDisappear(perform: stopEdit)
                                
                     //edit cabinet buttons bar
                     EditCabinetButtonsBar(startEdit: self.$startEdit)
 
                     //search cocktail button - depending on user drinks
-                    NavigationLink(destination: CocktailsList(filterSearch: true)){
+                    NavigationLink(destination: CocktailsList(filterAcordingToUserDrinks: true, addToFavorite: user.userFavoriteCocktails)){
                         ButtonLableStyle.addStyle(lable: "Search Cocktails")
                     }
                     .padding(2)

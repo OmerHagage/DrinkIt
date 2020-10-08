@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct DrinkList: View {
-    @ObservedObject private var drinksDB = DBDrinks()
+//    @ObservedObject private var drinksDB = DBDrinks()
+    @EnvironmentObject var dbDrinks:DBDrinks
     
     @State var drinkToAdd = Set<String>()
     @State var searchText:String = ""
@@ -44,11 +45,11 @@ struct DrinkList: View {
             // Drinks list - show only drinks that the user don't have
             ScrollView(.vertical, showsIndicators: true){
                 VStack(spacing: 7){
-                    ForEach(self.drinksDB.data.filter(filterSearch(drink:))) { drink in
+                    ForEach(self.dbDrinks.data.filter(filterSearch(drink:))) { drink in
                         if(!self.user.userDrinks.contains(drink.id)){
                             
                             //Drink button
-                            DrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd)
+                            DrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id))
                                     .padding(.horizontal)
                             }
                         }

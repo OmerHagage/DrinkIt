@@ -13,7 +13,7 @@ struct DrinkButtonView: View{
     let drink:Drink
   
     @Binding var drinkToAdd:Set<String>
-    @State private var pressed = false
+    @State var pressed:Bool
     @State private var showInfo = false
 
 //    var image:String = "jagermeister_icon"
@@ -23,7 +23,7 @@ struct DrinkButtonView: View{
         // Drink button
         Button(action: {
             self.pressed.toggle()
-
+            
             //add to user if press
             if (self.pressed){
                 self.drinkToAdd.insert(self.drink.id)
@@ -61,7 +61,8 @@ struct DrinkButtonView: View{
         .frame(height: self.showInfo ? .none : 70)
         .foregroundColor(.white)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
-        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
+//        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
+        .background(self.pressed ? LinearGradient(gradient: Gradient(colors: [Color("Rich Black")]), startPoint: .bottomLeading, endPoint: .topTrailing) : LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: self.pressed ? Color("Rich Black") : Color("Charleston Green"), radius: 3)
     }

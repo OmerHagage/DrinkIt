@@ -19,7 +19,7 @@ struct GridView: View {
     @Binding var edit:Bool
     
     //todo: check the real button size
-    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/115)
+    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/100)
     //todo: check the real button size
     static let NUM_OF_COLS = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
     
@@ -65,14 +65,12 @@ struct GridView: View {
                         ZStack(alignment: .bottom){
                          
                             Rectangle()
-//                            RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(Color("Charleston Green"))
                                 .frame(width: (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) / 1.7, height: 5)
-//                                .offset(y: -10)
                                 .shadow(color: .white, radius: 2, x: 0.0, y: -2)
                             
                             CabinetDrinkView(drinkName: drink, edit: self.$edit)
-                                .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: self.height / CGFloat(GridView.NUM_OF_ROWS))
+                                .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: (self.height-10) / CGFloat(GridView.NUM_OF_ROWS))
                         }
                     }
                     Spacer(minLength: 0)

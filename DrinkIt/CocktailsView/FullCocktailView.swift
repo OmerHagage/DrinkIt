@@ -12,12 +12,21 @@ struct FullCocktailView: View {
     
     @State private var peopleNum:Int = 1
     @Binding var showFullCocktail:Bool
+    @Binding var addToFavorite:Set<String>
     
     let cocktail:Cocktail
     
     var body: some View {
         ScrollView{
             VStack{
+                
+                HStack{
+                    Spacer()
+                    
+                    FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
+                        .padding()
+                }
+                
                 //cocktail  name
                 Text(cocktail.id)
                     .font(.title)

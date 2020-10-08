@@ -19,7 +19,7 @@ struct ImageView: View {
             .scaledToFit()
             .colorInvert()
             .frame(width: 60, height: 60)
-            .shadow(color: .white, radius: 2)
+            .shadow(color: .white, radius: 1)
 //            .clipShape(Circle())
 //            .overlay(
 //                Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))

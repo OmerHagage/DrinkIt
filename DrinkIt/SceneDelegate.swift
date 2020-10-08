@@ -42,10 +42,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             exit(EXIT_FAILURE)
         }
         
+        let dbDrinks = DBDrinks()
+        let dbCocktails = DBCocktails()
         
         // Create the SwiftUI view that provides the window contents.
         
-        let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user)
+        let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user).environmentObject(dbDrinks).environmentObject(dbCocktails)
      
 
         // Use a UIHostingController as window root view controller.

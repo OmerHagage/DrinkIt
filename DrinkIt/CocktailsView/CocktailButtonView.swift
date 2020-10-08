@@ -14,11 +14,36 @@ struct CocktailButtonView: View {
     
     @EnvironmentObject var user:User
     @State private var pressed = false
+    
+    @Binding var addToFavorite:Set<String>
 
     var body: some View {
         VStack{
-            Button(action: { self.pressed = true }) {
-                CocktailButtonDetails(cocktail: self.cocktail)
+            Button(action: { self.pressed = true })
+            {
+                // button detail view
+                VStack{
+                    // cocktail name and favorite button
+                    HStack{
+                        Text(cocktail.id)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
+                    }
+                    Spacer()
+                    // cocktail ingredients and image
+                    HStack{
+                        VStack(alignment: .leading){
+                            ForEach(0..<self.cocktail.alcoholIngredients.count, id: \.self){ i in
+                                BulletedText(text: self.cocktail.alcoholIngredients[i])
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }
+                    Spacer()
+                    ImageView(imageName: self.imageName).padding([.bottom, .trailing])
+                    }
+                }
             }
             .frame(height: 100)
             .foregroundColor(.white)
@@ -26,12 +51,13 @@ struct CocktailButtonView: View {
             .overlay( RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.clear, lineWidth: 1)
             )
-            .background(Color("Charleston Green"))
+//            .background(Color("Charleston Green"))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .shadow(color: Color("Charleston Green"), radius: 3)
             .padding(.all, 5.5)
         }
-        .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, cocktail: self.cocktail)})
+        .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
     }
 }
 
@@ -41,74 +67,3 @@ struct CocktailButtonView: View {
 //        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", recipe: "ldnkfg", ingredients: ["Df","sdf","sdf"], quantities: [1,2,3]))
 //    }
 //}
-
-
-struct CocktailButtonDetails: View {
-    let cocktail: Cocktail
-    let imageName:String = "cocktail_icon"
-    
-    @EnvironmentObject var user:User
-    
-    var body: some View {
-        VStack{
-            // cocktail name and favorite button
-            HStack{
-                Text(cocktail.id)
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                FavoriteButton(favorite: self.user.userFavoriteCocktails.contains(cocktail.id), cocktailName: cocktail.id)
-            }
-            Spacer()
-            // cocktail ingredients and image
-            HStack{
-                VStack(alignment: .leading){
-                    ForEach(0..<self.cocktail.alcoholIngredients.count, id: \.self){ i in
-                        BulletedText(text: self.cocktail.alcoholIngredients[i])
-                            .multilineTextAlignment(.leading)
-                    }
-                }
-            Spacer()
-            ImageView(imageName: self.imageName).padding([.bottom, .trailing])
-            }
-        }
-    }
-}
-
-
-//todo: fix the favorite button
-struct FavoriteButton: View {
-    @State var favorite:Bool
-    let cocktailName:String
-    
-    
-    @EnvironmentObject var user:User
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    func checkFavorite(cocktailName:String) {
-        if (favorite){
-            self.user.userFavoriteCocktails.remove(cocktailName)
-        }
-        else{
-            self.user.userFavoriteCocktails.insert(cocktailName)
-        }
-        AppDelegate.staticSaveContext(context: self.managedObjectContext)
-    }
-    
-    var body: some View {
-        Button(action: {
-            checkFavorite(cocktailName: cocktailName)
-            favorite.toggle()
-        }, label: {
-            //                                    if (self.user.userFavoriteCocktails.contains(cocktail.id)){
-            if (favorite){
-                Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-            } else {
-                Image(systemName: "star")
-            }
-        })
-       
-    }
-}
-
