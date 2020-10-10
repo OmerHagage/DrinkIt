@@ -81,6 +81,7 @@ struct CocktailsList: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding([.top, .leading, .trailing])
             
+            
             // search bar
             SearchBar(text: $searchText).padding(.top)
             

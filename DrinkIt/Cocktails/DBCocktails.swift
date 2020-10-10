@@ -11,7 +11,7 @@ import FirebaseFirestore
 class DBCocktails: ObservableObject {
     
     // firestore db reference
-    let dbCollection = Firestore.firestore().collection("cocktails")
+    private let dbCollection = Firestore.firestore().collection("cocktails")
     
     @Published var data = [Cocktail]()
     

@@ -18,7 +18,13 @@ struct SearchBar: View {
         HStack {
  
             // placeholder text
-            TextField("Search", text: $text)
+            TextField("Search", text: $text, onEditingChanged: {
+                _ in self.isEditing = true
+            })
+                // tap on the search bar
+//                .onTapGesture {
+//                    self.isEditing = true
+//                }
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -44,17 +50,15 @@ struct SearchBar: View {
                     }
                 )
                 .padding(.horizontal, 10)
-                // tap on the search bar
-                .onTapGesture {
-                    self.isEditing = true
-                }
+                
  
             // add Cancel button to close the keyboard
             if isEditing {
                 Button(action: {
+                    UIApplication.shared.endEditing(true)
                     self.isEditing = false
                     self.text = ""
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) {
                     Text("Cancel")
                 }
@@ -62,5 +66,15 @@ struct SearchBar: View {
                 .animation(.default)
             }
         }.padding(.horizontal, 7)
+    }
+}
+
+
+extension UIApplication {
+    func endEditing(_ force: Bool) {
+        self.windows
+            .filter{$0.isKeyWindow}
+            .first?
+            .endEditing(force)
     }
 }

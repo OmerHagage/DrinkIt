@@ -17,47 +17,58 @@ struct FullCocktailView: View {
     let cocktail:Cocktail
     
     var body: some View {
-        ScrollView{
-            VStack{
-                
-                HStack{
-                    Spacer()
-                    
-                    FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
-                        .padding()
-                }
-                
-                //cocktail  name
-                Text(cocktail.id)
-                    .font(.title)
-                    .bold()
-                    .padding()
-                
-                //cocktail image
-                ImageView(imageName: "cocktail_icon")
-                    .padding()
-                
-                //number of pepole slide
-                NumPeopleView(num: self.$peopleNum)
-
-                //cocktail ingredients view
-                IngredientsView(cocktail: self.cocktail, peopleNum: self.$peopleNum)
-                
-                //cocktail recipe
-                VStack(alignment: .leading){
-                    ForEach(cocktail.recipe, id: \.self){step in
-                        BulletedText(text: step).multilineTextAlignment(.leading)
-                    }
-                }
-                .padding()
-                
-                //cocktail summary
-                Text(cocktail.summary)
-                    .multilineTextAlignment(.leading)
-                    .padding()
-                
-                Button("Dismiss") {
+        VStack{
+            //dismiss and favorite button
+            HStack{
+                Button(action: {
                     self.showFullCocktail = false
+                }, label: {
+                    Image(systemName: "multiply")
+                        .foregroundColor(.white)
+                }).padding()
+                
+                Spacer()
+                
+                FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
+                    .padding()
+            }
+            
+            //cocktail  name
+            Text(cocktail.id)
+                .font(.title)
+                .bold()
+                
+            
+            ScrollView{
+                VStack{
+                    VStack{
+                       
+                        
+                        //cocktail image
+                        ImageView(imageName: "cocktail_icon")
+                            .padding()
+                        
+                        //number of pepole slide
+                        NumPeopleView(num: self.$peopleNum)
+
+                        //cocktail ingredients view
+                        IngredientsView(cocktail: self.cocktail, peopleNum: self.$peopleNum)
+                        
+                    }
+                    VStack(alignment: .leading){
+                        //cocktail recipe
+                        VStack(alignment: .leading){
+                            ForEach(cocktail.recipe, id: \.self){step in
+                                BulletedText(text: step).multilineTextAlignment(.leading)
+                            }
+                        }
+                        .padding()
+                        
+                        //cocktail summary
+                        Text(cocktail.summary)
+                            .multilineTextAlignment(.leading)
+                            .padding()
+                    }
                 }
             }
         }
@@ -80,10 +91,10 @@ struct IngredientsView: View {
         HStack{
             VStack(alignment: .leading, spacing: 5.0){
                 ForEach(0..<self.cocktail.alcoholQuantities.count, id: \.self){ i in
-                    Text(String(self.cocktail.alcoholQuantities[i] * Double(self.peopleNum)))
+                    Text("\(self.cocktail.alcoholQuantities[i] * Double(self.peopleNum), specifier: "%.2f")")
                 }
                 ForEach(0..<self.cocktail.nonAlcoholQuantities.count, id: \.self){ i in
-                    Text(String(self.cocktail.nonAlcoholQuantities[i] * Double(self.peopleNum)))
+                    Text("\(self.cocktail.nonAlcoholQuantities[i] * Double(self.peopleNum), specifier: "%.2f")")
                 }
             }.frame(width: 70)
             VStack(alignment: .leading, spacing: 5.0){

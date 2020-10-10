@@ -37,6 +37,7 @@ struct ContentView: View {
 
                     // info and start guide button
                     InfoButtonView(startGuide: $startGuide)
+                        .padding(.top, 2)
                     
                     // app title image
                     Image("DrinkIt white")
