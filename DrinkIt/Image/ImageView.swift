@@ -8,42 +8,31 @@
 
 import SwiftUI
 import FirebaseStorage
-import Foundation
-
 
 struct ImageView: View {
     
-    // image to present
-    let imageName:String
+    
+    var image:String
     
     
-//    let r:[UIImage]
-//
-//    var flag:Bool
     
     
     init(imageName:String) {
-//        let db = DBImages()
-//        self.flag = false
-//        self.r = UIimage(nme)
-        self.imageName = imageName
-//        if (imageName == "Dry Matrini"){
-////            self.r = db.cocktailImageRequest(cocktailName: imageName)
-//            db.cocktailImageRequest(cocktailName: imageName)
-//            self.flag = true
-//        }
-//        self.r = db.cocktailImageRequest(cocktailName: imageName)
-        
-        
+        self.image = imageName
+
+       
     }
     
     var body: some View {
-        Image(self.imageName)
+    
+        Image(self.image)
             .resizable()
             .scaledToFit()
             .colorInvert()
             .frame(width: 60, height: 60)
             .shadow(color: .white, radius: 1)
+//
+            
 //            .clipShape(Circle())
 //            .overlay(
 //                Circle().stroke(Color.white.opacity(0.5), lineWidth: 2))
@@ -55,3 +44,4 @@ struct ImageView: View {
 //        ImageView(imageName: "star")
 //    }
 //}
+

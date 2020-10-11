@@ -55,7 +55,7 @@ struct ContentView: View {
                         Spacer()
                         
                         //add drink button
-                        NavigationLink(destination: DrinkList()){
+                        NavigationLink(destination: DrinkList(categoriesOrList: user.drinksViewPriority)){
                             ButtonLableStyle.addStyle(lable: "Add drink")
                         }
                     }.padding(.horizontal)

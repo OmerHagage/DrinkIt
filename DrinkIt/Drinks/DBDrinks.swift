@@ -39,7 +39,7 @@ class DBDrinks: ObservableObject {
                    
                     // add drink from db to array
 //                    let category = document.data()["Category"] as! String
-                    let category = ["Whisky","Gin","Rum"][i%3]
+                    let category = ["Whisky","Gin","Rum","Vodka","Wine"][i%5]
                     i+=1
                     
                     //todo: לבדוק אם זה מספיק מהיר

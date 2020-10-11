@@ -13,7 +13,7 @@ struct CocktailButtonView: View {
     let imageName:String = "cocktail_icon"
     
     @EnvironmentObject var user:User
-    @State private var pressed = false
+    @State private var pressed:Bool = false
     
     @Binding var addToFavorite:Set<String>
 
@@ -41,7 +41,8 @@ struct CocktailButtonView: View {
                             }
                         }
                     Spacer()
-                    ImageView(imageName: self.imageName).padding([.bottom, .trailing])
+                        //todo: לשנות לשם של התמונה
+                        ImageView(imageName: self.imageName).padding([.bottom, .trailing])
                     }
                 }
             }

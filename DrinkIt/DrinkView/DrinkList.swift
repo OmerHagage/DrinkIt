@@ -19,7 +19,7 @@ struct DrinkList: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
     
-    @State var categoriesOrList = "categories"
+    @State var categoriesOrList:String
 //    @State var categoriesOrList = "list"
     
     
@@ -27,7 +27,14 @@ struct DrinkList: View {
     @State var infoDrink = Drink(id: "", summary: "", category: "")
     
     @State var emptyAdd:Bool = false
+    @State var showEditCategoriesOrListSheet:Bool = false
 
+    
+//    init() {
+//        self.categoriesOrList = "categories"
+////            user.drinksViewPriority
+//    }
+    
     /**
      searchBar filter function
      */
@@ -62,7 +69,13 @@ struct DrinkList: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }) {
-                    ButtonLableStyle.addStyle(lable: "Add to your liquor cabinet")
+                    //todo: לבדוק אם אפשר לשנות את העיצוב לכל הhstack
+//                    HStack{
+//                        Image(systemName: "plus").foregroundColor(.green)
+//                        Text("Add to your liquor cabinet")
+                        ButtonLableStyle.addStyle(lable: "+ Add to your liquor cabinet")
+//                    }
+                    
                 }
                 .alert(isPresented: self.$emptyAdd, content: {
                     Alert(title: Text("Add drinks"), message: Text("Please select drinks in order to add to your liquor cabinet"), dismissButton: .default(Text("OK")))
@@ -70,7 +83,13 @@ struct DrinkList: View {
                 
                 Spacer()
                 
-                EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList)
+                Button(action: {self.showEditCategoriesOrListSheet = true}, label: {
+                    Image(systemName: "slider.horizontal.3").foregroundColor(.white)
+                })
+                
+                //todo: למחוק
+//                EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList)
+                
             }.padding(.horizontal)
             
             
@@ -176,6 +195,10 @@ struct DrinkList: View {
                 }
             }
             
+            HalfModalView(isShown: self.$showEditCategoriesOrListSheet, modalHeight: 200){
+                EditCategoriesOrListButton(isShown: self.$showEditCategoriesOrListSheet, categoriesOrList: self.$categoriesOrList)
+            }
+            
         
         }
     }
@@ -183,37 +206,60 @@ struct DrinkList: View {
 
 struct DrinkList_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkList()
+        DrinkList(categoriesOrList: "category")
     }
 }
 
 
 struct EditCategoriesOrListButton: View {
+    @Binding var isShown:Bool
     @Binding var categoriesOrList:String
     
+    @EnvironmentObject var user:User
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     var body: some View {
-        Image(systemName: "line.horizontal.3")
-            .contextMenu(/*@START_MENU_TOKEN@*/ContextMenu(menuItems: {
+        VStack{
+            HStack{
                 Button(action: {
-                    self.categoriesOrList = "categories"
+                    self.isShown = false
                 }, label: {
-                    HStack{
-                        Text("Categories")
-                        if (self.categoriesOrList == "categories"){
-                            Image(systemName: "checkmark.circle.fill")
-                        }
-                    }
+                    Image(systemName: "multiply")
+                        .foregroundColor(.white)
                 })
-                Button(action: {
-                    self.categoriesOrList = "list"
-                }, label: {
-                    HStack{
-                        Text("List")
-                        if (self.categoriesOrList == "list"){
-                            Image(systemName: "checkmark.circle.fill")
-                        }
+                
+                Spacer()
+            }.padding(.bottom)
+            Divider()
+            Button(action: {
+                self.categoriesOrList = "categories"
+                self.user.drinksViewPriority  = "categories"
+                AppDelegate.staticSaveContext(context: managedObjectContext)
+            }, label: {
+                HStack{
+                    Text("Categories view").foregroundColor(.white)
+                    Spacer()
+                    if (self.categoriesOrList == "categories"){
+                        Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
                     }
-                })
-            })/*@END_MENU_TOKEN@*/)
+                }
+            })
+            Divider()
+            Button(action: {
+                self.categoriesOrList = "list"
+                self.user.drinksViewPriority  = "list"
+                AppDelegate.staticSaveContext(context: managedObjectContext)
+            }, label: {
+                HStack{
+                    Text("List view").foregroundColor(.white)
+                    Spacer()
+                    if (self.categoriesOrList == "list"){
+                        Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
+                    }
+                }
+            })
+        Spacer()
+        
+        }.padding(.top)
     }
 }

@@ -40,7 +40,8 @@ struct LiquorCabinetView: View {
             // grid of drinks
             GridView(gridHeight: self.height, drinks: self.userDrinks, editt: $edit)
             Spacer()
-        }.frame(width: self.width, height: self.height)
+        }
+        .frame(width: self.width, height: self.height)
 //        }
     }
 }

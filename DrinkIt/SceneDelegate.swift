@@ -31,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let temp:[User] = try managedObjectContext.fetch(User.fetchRequest())
             if (temp.isEmpty){
                 user = User(context: managedObjectContext)
+                user.drinksViewPriority = "categories"
                 startGuide = true
             }
             else{
