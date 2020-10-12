@@ -55,6 +55,7 @@ struct ListDrinkButtonView: View{
                         // Drink info button
                         Button(action: {
                             self.infoDrink = drink
+                            UIApplication.shared.endEditing()
                             self.showSheetDrinkInfo = true
                                 }, label: {
                                     Image(systemName: "info.circle")

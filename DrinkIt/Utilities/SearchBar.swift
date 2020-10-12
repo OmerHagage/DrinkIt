@@ -55,7 +55,7 @@ struct SearchBar: View {
             // add Cancel button to close the keyboard
             if isEditing {
                 Button(action: {
-                    UIApplication.shared.endEditing(true)
+                    UIApplication.shared.endEditing()
                     self.isEditing = false
                     self.text = ""
 //                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -71,10 +71,11 @@ struct SearchBar: View {
 
 
 extension UIApplication {
-    func endEditing(_ force: Bool) {
-        self.windows
-            .filter{$0.isKeyWindow}
-            .first?
-            .endEditing(force)
+    func endEditing() {
+//        self.windows
+//            .filter{$0.isKeyWindow}
+//            .first?
+//            .endEditing(true)
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

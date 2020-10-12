@@ -38,7 +38,7 @@ struct LiquorCabinetView: View {
             
         ScrollView(.horizontal, showsIndicators: false){
             // grid of drinks
-            GridView(gridHeight: self.height, drinks: self.userDrinks, editt: $edit)
+            GridView(gridHeight: self.height, drinks: self.userDrinks, edit: $edit)
             Spacer()
         }
         .frame(width: self.width, height: self.height)

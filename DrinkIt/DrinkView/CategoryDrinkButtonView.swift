@@ -41,6 +41,7 @@ struct CategoryDrinkButtonView: View{
                     Spacer()
                     Button(action: {
                         self.infoDrink = drink
+                        UIApplication.shared.endEditing()
                         self.showSheetDrinkInfo = true
                             }, label: {
                                 Image(systemName: "info.circle")

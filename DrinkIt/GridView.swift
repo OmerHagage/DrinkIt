@@ -10,43 +10,54 @@ import SwiftUI
 
 struct GridView: View {
     // grid height
-    let height:CGFloat
+    private let heightEntry:CGFloat
+    private let widthEntry:CGFloat
     
     // array divided to chunks (number of drinks in each column)
-    private var userDrinks:[[String]]
+    private let userDrinks:[[String]]
+    
    
     // edit the drinks in the cabinet
     @Binding var edit:Bool
     
     //todo: check the real button size
-    static let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/100)
-    //todo: check the real button size
-    static let NUM_OF_COLS = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
+//    @State var NUM_OF_ROWS:Int// = Int((UIScreen.main.bounds.height * 0.6)/100)
+//    //todo: check the real button size
+//    @State var NUM_OF_COLS:Int// = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
     
     /**
      initialize the  grid view and builds chunks of the array
      */
-    init(gridHeight:CGFloat, drinks:Set<String>, editt:Binding<Bool>) {
-        self.userDrinks = GridView.toArray(drinks: drinks)
+    init(gridHeight:CGFloat, drinks:Set<String>, edit:Binding<Bool>) {
+        
         //todo: check what is _edit
-        self._edit = editt
-        self.height = gridHeight
+        self._edit = edit
+//        self.height = gridHeight
+        
+        let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/100)
+        let NUM_OF_COLS = Int(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(NUM_OF_ROWS))))
+        
+        self.userDrinks = GridView.toArray(drinks: drinks, numOfRows: NUM_OF_ROWS)
+        
+        self.heightEntry = (gridHeight - 10) / CGFloat(NUM_OF_ROWS)
+        self.widthEntry = (UIScreen.main.bounds.width / CGFloat(NUM_OF_COLS))
+        
     }
     
     /**
      build by alphabetical order the chunks of the array
      */
-    static func toArray(drinks:Set<String>) -> [[String]] {
+    static func toArray(drinks:Set<String>, numOfRows:Int) -> [[String]] {
         
         var count = 0
         var arr = [[String]]()
         var innerArr = [String]()
         for item in drinks.sorted() {
-            if (count < GridView.NUM_OF_ROWS){
+            if (count < numOfRows){
                 innerArr.append(item)
                 count += 1
             }
-            if (count == GridView.NUM_OF_ROWS) {
+            if (count == numOfRows) {
                 arr.append(innerArr)
                 innerArr = [String]()
                 count = 0
@@ -66,11 +77,11 @@ struct GridView: View {
                          
                             Rectangle()
                                 .foregroundColor(Color("Charleston Green"))
-                                .frame(width: (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) / 1.7, height: 5)
+                                .frame(width: self.widthEntry / 1.7, height: 5)
                                 .shadow(color: .white, radius: 2, x: 0.0, y: -2)
                             
-                            CabinetDrinkView(drinkName: drink, edit: self.$edit)
-                                .frame(width: UIScreen.main.bounds.width / GridView.NUM_OF_COLS, height: (self.height-10) / CGFloat(GridView.NUM_OF_ROWS))
+                            CabinetDrinkView(drinkName: drink, edit: self.$edit, cabinetDrinkViewWidth: self.widthEntry)
+                                .frame(width: self.widthEntry, height: self.heightEntry)
                         }
                     }
                     Spacer(minLength: 0)
@@ -96,6 +107,7 @@ struct CabinetDrinkView: View {
     
     // edit the drinks in the cabinet - add (-) button to the  drink view
     @Binding var edit:Bool
+    @State var cabinetDrinkViewWidth:CGFloat
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var user:User
@@ -105,7 +117,7 @@ struct CabinetDrinkView: View {
             Spacer()
             Text(drinkName)
                 .layoutPriority(1)
-                .frame(width: self.fullText == false ? (UIScreen.main.bounds.width / GridView.NUM_OF_COLS) - 20 : .none ,height: 30)
+                .frame(width: self.fullText == false ? self.cabinetDrinkViewWidth - 20 : .none ,height: 30)
                 .multilineTextAlignment(.center)
                 .opacity(self.edit == false ? 1: 0.3)
                 .onTapGesture(count: 1, perform: {

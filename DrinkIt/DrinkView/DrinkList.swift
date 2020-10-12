@@ -73,7 +73,7 @@ struct DrinkList: View {
 //                    HStack{
 //                        Image(systemName: "plus").foregroundColor(.green)
 //                        Text("Add to your liquor cabinet")
-                        ButtonLableStyle.addStyle(lable: "+ Add to your liquor cabinet")
+                        ButtonLableStyle.addStyle(image: Image(systemName: "plus"),lable: " Add to your liquor cabinet")
 //                    }
                     
                 }
@@ -83,7 +83,10 @@ struct DrinkList: View {
                 
                 Spacer()
                 
-                Button(action: {self.showEditCategoriesOrListSheet = true}, label: {
+                Button(action: {
+                    self.showEditCategoriesOrListSheet = true
+                    UIApplication.shared.endEditing()
+                }, label: {
                     Image(systemName: "slider.horizontal.3").foregroundColor(.white)
                 })
                 
@@ -121,6 +124,9 @@ struct DrinkList: View {
                     }
                     .listRowInsets(EdgeInsets())
                 }.padding(.top, 1)
+                .gesture(DragGesture().onChanged { _ in
+                    UIApplication.shared.endEditing()
+                })
                 .onAppear(){
                     UITableView.appearance().showsVerticalScrollIndicator = false
                 }
@@ -138,6 +144,9 @@ struct DrinkList: View {
                         }
                     }
                 }
+                .gesture(DragGesture().onChanged { _ in
+                    UIApplication.shared.endEditing()
+                })
                 .padding(.top, 1)
             }
             
@@ -241,7 +250,10 @@ struct EditCategoriesOrListButton: View {
                     Spacer()
                     if (self.categoriesOrList == "categories"){
                         Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
+                    } else {
+                        Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
                     }
+
                 }
             })
             Divider()
@@ -255,7 +267,10 @@ struct EditCategoriesOrListButton: View {
                     Spacer()
                     if (self.categoriesOrList == "list"){
                         Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
+                    } else {
+                        Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
                     }
+
                 }
             })
         Spacer()
