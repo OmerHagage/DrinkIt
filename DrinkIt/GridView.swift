@@ -24,6 +24,9 @@ struct GridView: View {
 //    @State var NUM_OF_ROWS:Int// = Int((UIScreen.main.bounds.height * 0.6)/100)
 //    //todo: check the real button size
 //    @State var NUM_OF_COLS:Int// = CGFloat(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(GridView.NUM_OF_ROWS))))
+
+
+    
     
     /**
      initialize the  grid view and builds chunks of the array
@@ -43,6 +46,7 @@ struct GridView: View {
         self.widthEntry = (UIScreen.main.bounds.width / CGFloat(NUM_OF_COLS))
         
     }
+    
     
     /**
      build by alphabetical order the chunks of the array

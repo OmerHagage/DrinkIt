@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ButtonLableStyle{
+struct ButtonLableStyle {
     
     
     
@@ -31,9 +31,9 @@ struct ButtonLableStyle{
                 .padding(.horizontal , 15)
                 .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
 //                .background(Color("Charleston Green"))
-                .background(LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
+            .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
-                .shadow(color: Color("Charleston Green"), radius: 10)
+            .shadow(color: .black, radius: 10)
     }
     
     static func addStyle(image:Image, lable:String) -> some View {
@@ -51,9 +51,9 @@ struct ButtonLableStyle{
                 .padding(.horizontal , 15)
                 .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
 //                .background(Color("Charleston Green"))
-                .background(LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
+                .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
-                .shadow(color: Color("Charleston Green"), radius: 10)
+            .shadow(color: .black, radius: 10)
     }
     
 }

@@ -192,7 +192,7 @@ struct DrinkList: View {
                         Spacer()
                         
                         //todo: set image drink
-                        ImageView(imageName: "jagermeister_icon")
+                        ImageView(imageName: "drink_bottle")
                     }.padding(.top)
                    
                     Text(self.infoDrink.summary)

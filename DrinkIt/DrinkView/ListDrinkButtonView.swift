@@ -41,14 +41,14 @@ struct ListDrinkButtonView: View{
                     
                     // Drink name
                     VStack(alignment: .leading){
-                        Text(drink.id).font(.title).fontWeight(.bold)
-                        Text("\(drink.volume)% Vol").font(.body)
+                        Text(drink.id).font(.headline).fontWeight(.bold)
+                        Text("\(drink.volume)% Vol").font(.subheadline)
                     }
                     
                     Spacer()
                     
                     // Drink image
-                    ImageView(imageName: "jagermeister_icon")
+                    ImageView(imageName: "drink_bottle")
                         .padding(.trailing, 20)
                     
                     HStack(alignment: .top){
@@ -70,9 +70,9 @@ struct ListDrinkButtonView: View{
         .foregroundColor(.white)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
 //        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
-        .background(self.pressed ? LinearGradient(gradient: Gradient(colors: [Color("Rich Black")]), startPoint: .bottomLeading, endPoint: .topTrailing) : LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
+        .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton())
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: self.pressed ? Color("Rich Black") : Color("Charleston Green"), radius: 3)
+        .shadow(color: .black, radius: 3)
     }
 }
 

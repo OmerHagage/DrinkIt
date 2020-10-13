@@ -19,6 +19,7 @@ struct ContentView: View {
     
     @EnvironmentObject var user:User
     
+    
     // stop edit the liquer cabinet
     private func stopEdit() {
         self.startEdit = false
@@ -27,9 +28,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ZStack{
-//                Color.white.opacity(0.85).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-//                Color(red: 0, green: 0, blue: 0).edgesIgnoringSafeArea(.all)
-                LinearGradient(gradient: Gradient(colors: [Color("end"), Color.black]), startPoint: .topTrailing, endPoint: .bottomLeading).edgesIgnoringSafeArea(.all)
+                
+                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
+                    
                 
                
                 // full start view

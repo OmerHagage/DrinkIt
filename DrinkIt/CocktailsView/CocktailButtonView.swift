@@ -53,9 +53,9 @@ struct CocktailButtonView: View {
                         .stroke(Color.clear, lineWidth: 1)
             )
 //            .background(Color("Charleston Green"))
-            .background(LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
+            .background(DesignStyle.drinkOrCocktailButton())
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .shadow(color: Color("Charleston Green"), radius: 3)
+            .shadow(color: .black, radius: 3)
             .padding(.all, 5.5)
         }
         .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})

@@ -80,9 +80,9 @@ struct CategoryDrinkButtonView: View{
         .foregroundColor(.white)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
 //        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
-        .background(self.pressed ? LinearGradient(gradient: Gradient(colors: [Color("Rich Black")]), startPoint: .bottomLeading, endPoint: .topTrailing) : LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
+        .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton())
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: self.pressed ? Color("Rich Black") : Color("Charleston Green"), radius: 3)
+        .shadow(color: .black, radius: 3)
     }
 }
 

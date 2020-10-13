@@ -28,7 +28,7 @@ struct ImageView: View {
         Image(self.image)
             .resizable()
             .scaledToFit()
-            .colorInvert()
+//            .colorInvert()
             .frame(width: 60, height: 60)
             .shadow(color: .white, radius: 1)
 //
