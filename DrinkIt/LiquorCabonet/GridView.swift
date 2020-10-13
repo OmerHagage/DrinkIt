@@ -20,6 +20,8 @@ struct GridView: View {
     // edit the drinks in the cabinet
     @Binding var edit:Bool
     
+    
+    
     //todo: check the real button size
 //    @State var NUM_OF_ROWS:Int// = Int((UIScreen.main.bounds.height * 0.6)/100)
 //    //todo: check the real button size

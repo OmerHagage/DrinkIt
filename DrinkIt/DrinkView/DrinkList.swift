@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DrinkList: View {
-//    @ObservedObject private var drinksDB = DBDrinks()
+    //    @ObservedObject private var drinksDB = DBDrinks()
     @EnvironmentObject var dbDrinks:DBDrinks
     
     @State var drinkToAdd = Set<String>()
@@ -20,7 +20,7 @@ struct DrinkList: View {
     @EnvironmentObject var user:User
     
     @State var categoriesOrList:String
-//    @State var categoriesOrList = "list"
+    //    @State var categoriesOrList = "list"
     
     
     @State var showDrinkInfo:Bool = false
@@ -28,12 +28,12 @@ struct DrinkList: View {
     
     @State var emptyAdd:Bool = false
     @State var showEditCategoriesOrListSheet:Bool = false
-
     
-//    init() {
-//        self.categoriesOrList = "categories"
-////            user.drinksViewPriority
-//    }
+    
+    //    init() {
+    //        self.categoriesOrList = "categories"
+    ////            user.drinksViewPriority
+    //    }
     
     /**
      searchBar filter function
@@ -53,174 +53,120 @@ struct DrinkList: View {
     
     var body: some View {
         ZStack{
-        
-        
-        VStack{
             
-            HStack{
-                Button(action: {
-                    // add chosen drinks to the user
-                    if (self.drinkToAdd.isEmpty){
-                        self.emptyAdd = true
-                    }
-                    else{
-                        self.user.userDrinks.formUnion(self.drinkToAdd)
-                        AppDelegate.staticSaveContext(context: self.managedObjectContext)
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                }) {
-                    //todo: לבדוק אם אפשר לשנות את העיצוב לכל הhstack
-//                    HStack{
-//                        Image(systemName: "plus").foregroundColor(.green)
-//                        Text("Add to your liquor cabinet")
-                        ButtonLableStyle.addStyle(image: Image(systemName: "plus"),lable: " Add to your liquor cabinet")
-//                    }
-                    
-                }
-                .alert(isPresented: self.$emptyAdd, content: {
-                    Alert(title: Text("Add drinks"), message: Text("Please select drinks in order to add to your liquor cabinet"), dismissButton: .default(Text("OK")))
-                })
+            
+            VStack{
                 
-                Spacer()
-                
-                Button(action: {
-                    self.showEditCategoriesOrListSheet = true
-                    UIApplication.shared.endEditing()
-                }, label: {
-                    Image(systemName: "slider.horizontal.3").foregroundColor(.white)
-                })
-                
-                //todo: למחוק
-//                EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList)
-                
-            }.padding(.horizontal)
-            
-            
-            // search bar
-            SearchBar(text: $searchText).padding(.top)
-            
-            
-            // Drinks list - show only drinks that the user don't have
-            if (self.categoriesOrList == "categories"){
-                List{
-                    ForEach(self.dbDrinks.data.keys.sorted(), id: \.self){ category in
-                        VStack(alignment: .leading){
-                            Text(category).font(.headline).fontWeight(.bold)
-                                .padding(.leading)
-                                .padding(.top, 3)
-                            ScrollView(.horizontal, showsIndicators: false){
-                                HStack(spacing: 5){
-                                    ForEach(self.dbDrinks.data[category]!.filter(filterSearch(drink:))){
-                                        drink in
-                                        CategoryDrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id) || self.user.userDrinks.contains(drink.id), showSheetDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
-                                            
-                                    
-                                            
-                                    }
-                                }.padding(.leading)
-                            }.padding(.bottom, 3)
+                HStack{
+                    Button(action: {
+                        // add chosen drinks to the user
+                        if (self.drinkToAdd.isEmpty){
+                            self.emptyAdd = true
                         }
-                    
+                        else{
+                            self.user.userDrinks.formUnion(self.drinkToAdd)
+                            AppDelegate.staticSaveContext(context: self.managedObjectContext)
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                    }) {
+                        ButtonLableStyle.addStyle(image: Image(systemName: "plus"),lable: " Add to your liquor cabinet")
                     }
-                    .listRowInsets(EdgeInsets())
-                }.padding(.top, 1)
-                .gesture(DragGesture().onChanged { _ in
-                    UIApplication.shared.endEditing()
-                })
-                .onAppear(){
-                    UITableView.appearance().showsVerticalScrollIndicator = false
-                }
-            }
-            else{
-                ScrollView(.vertical, showsIndicators: true){
-                    VStack(spacing: 7){
+                    .alert(isPresented: self.$emptyAdd, content: {
+                        Alert(title: Text("Add drinks"), message: Text("Please select drinks in order to add to your liquor cabinet"), dismissButton: .default(Text("OK")))
+                    })
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        self.showEditCategoriesOrListSheet = true
+                        UIApplication.shared.endEditing()
+                    }, label: {
+                        Image(systemName: "slider.horizontal.3").foregroundColor(.white)
+                    })
+                    
+                    //todo: למחוק
+                    //                EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList)
+                    
+                }.padding(.horizontal)
+                
+                
+                // search bar
+                SearchBar(text: $searchText).padding(.top)
+                
+                
+                // Drinks list - show only drinks that the user don't have
+                if (self.categoriesOrList == "Categories"){
+                    List{
                         ForEach(self.dbDrinks.data.keys.sorted(), id: \.self){ category in
-                            ForEach(self.dbDrinks.data[category]!.filter(filterSearch(drink:))){
-                                drink in
-                                ListDrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id) || self.user.userDrinks.contains(drink.id), showSheetDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
+                            VStack(alignment: .leading){
+                                Text(category).font(.headline).fontWeight(.bold)
+                                    .padding(.leading)
+                                    .padding(.top, 3)
+                                ScrollView(.horizontal, showsIndicators: false){
+                                    HStack(spacing: 5){
+                                        ForEach(self.dbDrinks.data[category]!.filter(filterSearch(drink:))){
+                                            drink in
+                                            CategoryDrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id) || self.user.userDrinks.contains(drink.id), showSheetDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
+                                            
+                                            
+                                            
+                                        }
+                                    }.padding(.leading)
+                                }.padding(.bottom, 3)
+                            }
+                            
+                        }
+                        .listRowInsets(EdgeInsets())
+                    }.padding(.top, 1)
+                    .gesture(DragGesture().onChanged { _ in
+                        UIApplication.shared.endEditing()
+                    })
+                    .onAppear(){
+                        UITableView.appearance().showsVerticalScrollIndicator = false
+                    }
+                }
+                else{
+                    ScrollView(.vertical, showsIndicators: true){
+                        VStack(spacing: 7){
+                            ForEach(self.dbDrinks.data.keys.sorted(), id: \.self){ category in
+                                ForEach(self.dbDrinks.data[category]!.filter(filterSearch(drink:))){
+                                    drink in
+                                    ListDrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id) || self.user.userDrinks.contains(drink.id), showSheetDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
                                         .padding(.horizontal)
-
+                                    
+                                }
                             }
                         }
                     }
+                    .gesture(DragGesture().onChanged { _ in
+                        UIApplication.shared.endEditing()
+                    })
+                    .padding(.top, 1)
                 }
-                .gesture(DragGesture().onChanged { _ in
-                    UIApplication.shared.endEditing()
-                })
-                .padding(.top, 1)
+                
             }
-            
-
-            
-            // add drinks to the user and dismiss the view
-//            Button(action: {
-//                // add chosen drinks to the user
-//                self.user.userDrinks.formUnion(self.drinkToAdd)
-//                AppDelegate.staticSaveContext(context: self.managedObjectContext)
-//                self.presentationMode.wrappedValue.dismiss()
-//
-//            }) {
-//                ButtonLableStyle.addStyle(lable: "Add")
-//            }.padding(2.0)
-            
-        }
-        .navigationBarTitle("Drinks")
-//        .navigationBarItems(trailing: EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList))
-
-
+            .navigationBarTitle("Drinks")
             
             
-            HalfModalView(isShown: self.$showDrinkInfo){
-                VStack(alignment: .leading){
-                    HStack{
-                        Button(action: {
-                            self.showDrinkInfo = false
-                        }, label: {
-                            Image(systemName: "multiply")
-                                .foregroundColor(.white)
-                        })
-                        
-                        Spacer()
-                    }
-                    HStack{
-                        VStack(alignment: .leading){
-                            Text(self.infoDrink.id).font(.title).fontWeight(.bold)
-                            Text("\(self.infoDrink.volume)% Vol").font(.body)
-                        }
-                        
-                        
-                        Spacer()
-                        
-                        //todo: set image drink
-                        ImageView(imageName: "drink_bottle")
-                    }.padding(.top)
-                   
-                    Text(self.infoDrink.summary)
-                        .font(.footnote)
-                        .multilineTextAlignment(.leading)
-                   
-                    Spacer()
-                    
-                }
-            }
+            HalfModalView(isShown: self.$showDrinkInfo){DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)}
             
             HalfModalView(isShown: self.$showEditCategoriesOrListSheet, modalHeight: 200){
-                EditCategoriesOrListButton(isShown: self.$showEditCategoriesOrListSheet, categoriesOrList: self.$categoriesOrList)
+                EditCategoriesOrListView(isShown: self.$showEditCategoriesOrListSheet, categoriesOrList: self.$categoriesOrList)
             }
             
-        
+            
         }
     }
 }
 
 struct DrinkList_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkList(categoriesOrList: "category")
+        DrinkList(categoriesOrList: "Category")
     }
 }
 
 
-struct EditCategoriesOrListButton: View {
+struct EditCategoriesOrListView: View {
     @Binding var isShown:Bool
     @Binding var categoriesOrList:String
     
@@ -229,52 +175,79 @@ struct EditCategoriesOrListButton: View {
     
     var body: some View {
         VStack{
+            XButton(isShown: self.$isShown).padding(.bottom)
+            
+            
+            Divider()
+            EditCategoriesOrListButton(lable: "Categories", categoriesOrList: self.$categoriesOrList)
+            Divider()
+            EditCategoriesOrListButton(lable: "List", categoriesOrList: self.$categoriesOrList)
+            Spacer()
+            
+        }.padding(.top)
+    }
+}
+
+
+struct EditCategoriesOrListButton: View {
+    
+    let lable:String
+    
+    @Binding var categoriesOrList:String
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var user:User
+    
+    var body: some View{
+        Button(action: {
+            self.categoriesOrList = lable
+            self.user.drinksViewPriority  = lable
+            AppDelegate.staticSaveContext(context: managedObjectContext)
+        }, label: {
             HStack{
-                Button(action: {
-                    self.isShown = false
-                }, label: {
-                    Image(systemName: "multiply")
-                        .foregroundColor(.white)
-                })
+                Text("\(lable) view").foregroundColor(.white)
+                Spacer()
+                if (self.categoriesOrList == lable){
+                    Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
+                } else {
+                    Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
+                }
+                
+            }
+        })
+    }
+
+}
+
+
+struct DrinkInfoView: View {
+    
+    @Binding var showDrinkInfo:Bool
+    @Binding var infoDrink:Drink
+    
+    var body: some View{
+        VStack(alignment: .leading){
+            XButton(isShown: self.$showDrinkInfo)
+            
+            HStack{
+                VStack(alignment: .leading){
+                    Text(self.infoDrink.id).font(.title).fontWeight(.bold)
+                    Text("\(self.infoDrink.volume)% Vol").font(.body)
+                }
+                
                 
                 Spacer()
-            }.padding(.bottom)
-            Divider()
-            Button(action: {
-                self.categoriesOrList = "categories"
-                self.user.drinksViewPriority  = "categories"
-                AppDelegate.staticSaveContext(context: managedObjectContext)
-            }, label: {
-                HStack{
-                    Text("Categories view").foregroundColor(.white)
-                    Spacer()
-                    if (self.categoriesOrList == "categories"){
-                        Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
-                    } else {
-                        Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
-                    }
-
-                }
-            })
-            Divider()
-            Button(action: {
-                self.categoriesOrList = "list"
-                self.user.drinksViewPriority  = "list"
-                AppDelegate.staticSaveContext(context: managedObjectContext)
-            }, label: {
-                HStack{
-                    Text("List view").foregroundColor(.white)
-                    Spacer()
-                    if (self.categoriesOrList == "list"){
-                        Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
-                    } else {
-                        Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
-                    }
-
-                }
-            })
-        Spacer()
-        
-        }.padding(.top)
+                
+                //todo: set image drink
+                ImageView(imageName: "drink_bottle")
+            }.padding(.top)
+            
+            Text(self.infoDrink.summary)
+                .font(.footnote)
+                .multilineTextAlignment(.leading)
+            
+            Spacer()
+            
+        }
     }
 }

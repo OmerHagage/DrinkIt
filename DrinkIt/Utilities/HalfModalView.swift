@@ -11,7 +11,7 @@ import SwiftUI
 struct HalfModalView<Content: View> : View {
     @GestureState private var dragState = DragState.inactive
     @Binding var isShown:Bool
-    
+    @EnvironmentObject var model:Model
     private func onDragEnded(drag: DragGesture.Value) {
         let dragThreshold = modalHeight * (2/3)
         if drag.predictedEndTranslation.height > dragThreshold || drag.translation.height > dragThreshold{
@@ -43,26 +43,27 @@ struct HalfModalView<Content: View> : View {
                                 self.isShown = false
                         }
                 )
-                
-                //Foreground
-                VStack{
-                    Spacer()
-                    ZStack{
-                        Color("sheetColor").opacity(1.0)
-                            .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                        self.content()
-                            .padding()
-                            .padding(.bottom, 65)
-                            .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
-                            .clipped()
+                if isShown{
+                    //Foreground
+                    VStack{
+                        Spacer()
+                        ZStack{
+                            Color("sheetColor").opacity(1.0)
+                                .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                            self.content()
+                                .padding()
+                                .padding(.bottom, 65)
+                                .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
+                                .clipped()
+                        }
+                        .offset(y: (self.dragState.isDragging && dragState.translation.height >= 1) ?       dragState.translation.height : 0)
+                        .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
+                        .gesture(drag)
+                        
+                        
                     }
-                    .offset(y: isShown ? ((self.dragState.isDragging && dragState.translation.height >= 1) ? dragState.translation.height : 0) : modalHeight)
-                    .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
-                    .gesture(drag)
-                    
-                    
                 }
             }.edgesIgnoringSafeArea(.all)
         }
@@ -112,3 +113,23 @@ func fraction_progress(lowerLimit: Double = 0, upperLimit:Double, current:Double
     }
     
 }
+
+
+struct XButton : View {
+    
+    @Binding var isShown:Bool
+
+    var body: some View{
+        HStack{
+            Button(action: {
+                self.isShown = false
+            }, label: {
+                Image(systemName: "multiply")
+                    .foregroundColor(.white)
+            })
+            
+            Spacer()
+        }
+    }
+}
+

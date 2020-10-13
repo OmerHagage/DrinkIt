@@ -19,6 +19,8 @@ struct ContentView: View {
     
     @EnvironmentObject var user:User
     
+    @EnvironmentObject var model:Model
+    
     
     // stop edit the liquer cabinet
     private func stopEdit() {
