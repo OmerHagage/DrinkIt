@@ -13,13 +13,15 @@ struct CocktailButtonView: View {
     let imageName:String = "cocktail_icon"
     
     @EnvironmentObject var user:User
-    @State private var pressed:Bool = false
+    @State private var isPressed:Bool = false
     
     @Binding var addToFavorite:Set<String>
 
     var body: some View {
         VStack{
-            Button(action: { self.pressed = true })
+            Button(action: {
+                    self.isPressed = true
+            })
             {
                 // button detail view
                 VStack{
@@ -35,8 +37,9 @@ struct CocktailButtonView: View {
                     // cocktail ingredients and image
                     HStack{
                         VStack(alignment: .leading){
-                            ForEach(0..<self.cocktail.alcoholIngredients.count, id: \.self){ i in
-                                BulletedText(text: self.cocktail.alcoholIngredients[i])
+                            ForEach(0..<self.cocktail.uncommonIngredients.count, id: \.self){ i in
+                                BulletedText(text: self.cocktail.uncommonIngredients[i])
+                                    .font(.subheadline)
                                     .multilineTextAlignment(.leading)
                             }
                         }
@@ -47,18 +50,18 @@ struct CocktailButtonView: View {
                 }
             }
             .frame(height: 100)
-            .foregroundColor(.white)
+            .foregroundColor(Color("textColor"))
             .padding()
             .overlay( RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.clear, lineWidth: 1)
             )
 //            .background(Color("Charleston Green"))
-            .background(DesignStyle.drinkOrCocktailButton())
+            .background(DesignStyle.drinkOrCocktailButton(category: ""))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .shadow(color: .black, radius: 3)
             .padding(.all, 5.5)
         }
-        .sheet(isPresented: self.$pressed, content: { FullCocktailView(showFullCocktail: self.$pressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
+        .sheet(isPresented: self.$isPressed, content: { FullCocktailView(showFullCocktailInfo: self.$isPressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
     }
 }
 

@@ -12,10 +12,20 @@ struct Cocktail: Identifiable {
     // coctail name
     let id: String
     
+    let uncommonIngredients: [String]
+    let uncommonQuantities: [Double]
+    let uncommonQuantitiesTypes: [String]
+    
+    let commonIngredients: [String]
+    let commonQuantities: [Double]
+    let commonQuantitiesTypes: [String]
+    
+    let garnish: [String]
+    let glassKind: String
+    
     let recipe: [String]
-    let alcoholIngredients: [String]
-    let alcoholQuantities: [Double]
-    let nonAlcoholIngredients: [String]
-    let nonAlcoholQuantities: [Double]
+    
     let summary: String
+    
+    let rating:Int
 }

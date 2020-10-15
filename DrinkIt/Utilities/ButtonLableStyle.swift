@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ButtonLableStyle {
     
-    
-    
 //    var content: () -> Content
 //
 //    var body: some View{
@@ -25,7 +23,7 @@ struct ButtonLableStyle {
     
     static func addStyle(lable:String) -> some View {
         return Text(lable)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color("textColor"))
                 .bold()
                 .padding(.vertical , 10)
                 .padding(.horizontal , 15)
@@ -33,7 +31,7 @@ struct ButtonLableStyle {
 //                .background(Color("Charleston Green"))
             .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
-            .shadow(color: .black, radius: 10)
+            .shadow(color: .black, radius: 4)
     }
     
     static func addStyle(image:Image, lable:String) -> some View {
@@ -44,7 +42,7 @@ struct ButtonLableStyle {
                     .imageScale(.large)
                     
                 Text(lable)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("textColor"))
                     .bold()
             }
                 .padding(.vertical , 10)
@@ -53,7 +51,7 @@ struct ButtonLableStyle {
 //                .background(Color("Charleston Green"))
                 .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
-            .shadow(color: .black, radius: 10)
+            .shadow(color: .black, radius: 4)
     }
     
 }

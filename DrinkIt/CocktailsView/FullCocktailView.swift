@@ -11,7 +11,7 @@ import SwiftUI
 struct FullCocktailView: View {
     
     @State private var peopleNum:Int = 1
-    @Binding var showFullCocktail:Bool
+    @Binding var showFullCocktailInfo:Bool
     @Binding var addToFavorite:Set<String>
     
     let cocktail:Cocktail
@@ -21,11 +21,11 @@ struct FullCocktailView: View {
             //dismiss and favorite button
             HStack{
                 Button(action: {
-                    self.showFullCocktail = false
-                }, label: {
+                    self.showFullCocktailInfo = false
+                }) {
                     Image(systemName: "multiply")
-                        .foregroundColor(.white)
-                }).padding()
+                        .foregroundColor(Color("textColor"))
+                }.padding()
                 
                 Spacer()
                 
@@ -48,6 +48,18 @@ struct FullCocktailView: View {
                         ImageView(imageName: "cocktail_icon")
                             .padding()
                         
+                        // cocktail rating
+                        HStack{
+                            Text("Rating: ")
+                            ForEach(1...5, id: \.self){ i in
+                                if (i <= self.cocktail.rating){
+                                    Image(systemName: "star.fill")
+                                } else {
+                                    Image(systemName: "star")
+                                }
+                            }
+                        }.padding()
+                        
                         //number of pepole slide
                         NumPeopleView(num: self.$peopleNum)
 
@@ -55,9 +67,29 @@ struct FullCocktailView: View {
                         IngredientsView(cocktail: self.cocktail, peopleNum: self.$peopleNum)
                         
                     }
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading, spacing: 2){
+                        
+                        // cocktail glass
+                        Text("Cocktail glass:  \(self.cocktail.glassKind)").padding()
+                        
+                        // cocktail garnish
+                        if (!self.cocktail.garnish.isEmpty){
+                            HStack(spacing: 0){
+                                Text("Garnish:  ")
+                                Text(cocktail.garnish[0])
+                                ForEach(1..<cocktail.garnish.count, id: \.self){ i in
+                                    Text(", \(cocktail.garnish[i])")
+                                }
+                            }.padding()
+                        }
+              
                         //cocktail recipe
-                        VStack(alignment: .leading){
+                        HStack {
+                            Spacer()
+                            Text("How to make it:").font(.headline).fontWeight(.heavy).underline()
+                            Spacer()
+                        }.padding(.top)
+                        VStack(alignment: .leading, spacing: 7){
                             ForEach(cocktail.recipe, id: \.self){step in
                                 BulletedText(text: step).multilineTextAlignment(.leading)
                             }
@@ -89,20 +121,21 @@ struct IngredientsView: View {
     
     var body: some View {
         HStack{
-            VStack(alignment: .leading, spacing: 5.0){
-                ForEach(0..<self.cocktail.alcoholQuantities.count, id: \.self){ i in
-                    Text("\(self.cocktail.alcoholQuantities[i] * Double(self.peopleNum), specifier: "%.2f")")
+            VStack(alignment: .leading, spacing: 7.0){
+                ForEach(0..<self.cocktail.uncommonQuantities.count, id: \.self){ i in
+                    Text("\(self.cocktail.uncommonQuantities[i] * Double(self.peopleNum), specifier: "%.2f")  \(self.cocktail.uncommonQuantitiesTypes[i])")
                 }
-                ForEach(0..<self.cocktail.nonAlcoholQuantities.count, id: \.self){ i in
-                    Text("\(self.cocktail.nonAlcoholQuantities[i] * Double(self.peopleNum), specifier: "%.2f")")
+                ForEach(0..<self.cocktail.commonQuantities.count, id: \.self){ i in
+                    Text("\(self.cocktail.commonQuantities[i] * Double(self.peopleNum), specifier: "%.2f")  \(self.cocktail.commonQuantitiesTypes[i])")
                 }
-            }.frame(width: 70)
-            VStack(alignment: .leading, spacing: 5.0){
-                ForEach(0..<self.cocktail.alcoholIngredients.count, id: \.self){ i in
-                    Text(self.cocktail.alcoholIngredients[i])
+            }
+            .frame(width: 115)
+            VStack(alignment: .leading, spacing: 7.0){
+                ForEach(0..<self.cocktail.uncommonIngredients.count, id: \.self){ i in
+                    Text(self.cocktail.uncommonIngredients[i])
                 }
-                ForEach(0..<self.cocktail.nonAlcoholIngredients.count, id: \.self){ i in
-                    Text(self.cocktail.nonAlcoholIngredients[i])
+                ForEach(0..<self.cocktail.commonIngredients.count, id: \.self){ i in
+                    Text(self.cocktail.commonIngredients[i])
                 }
             }
         }

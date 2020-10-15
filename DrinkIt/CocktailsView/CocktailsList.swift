@@ -19,6 +19,7 @@ struct CocktailsList: View {
     
     @State var addToFavorite:Set<String>
     @State private var ShowScroll = "All Cocktails"
+
   
     
     /**
@@ -41,7 +42,7 @@ struct CocktailsList: View {
      */
     private func filterByUserDrinks(cocktail: Cocktail) -> Bool {
         if filterAcordingToUserDrinks{
-            return user.userDrinks.isSuperset(of: cocktail.alcoholIngredients)
+            return user.userDrinks.isSuperset(of: cocktail.uncommonIngredients)
         }
         return true
     }
@@ -77,7 +78,7 @@ struct CocktailsList: View {
                 BarButtonView(num: self.$ShowScroll, lable: "All Cocktails")
                 BarButtonView(num: self.$ShowScroll, lable: "Favorite Cocktails")
             }
-            .background(Color.white.opacity(0.3))
+            .background(Color.black.opacity(0.3))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding([.top, .leading, .trailing])
             
@@ -91,6 +92,7 @@ struct CocktailsList: View {
                     ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
                         CocktailButtonView(cocktail: cocktail, addToFavorite: self.$addToFavorite)
                             .padding(.horizontal)
+                        
                     }
                 }
             }
@@ -114,11 +116,11 @@ struct BarButtonView: View {
     
     var body: some View{
         Text(String(lable))
-            .foregroundColor(self.num == lable ? .white : Color.white.opacity(0.4))
+            .foregroundColor(self.num == lable ? .white : Color.white.opacity(0.3))
             .fontWeight(.bold)
             .padding(.vertical, 5)
             .padding(.horizontal, 20)
-            .background(Color.white.opacity(self.num == lable ? 0.6 : 0))
+            .background(Color.black.opacity(self.num == lable ? 0.5 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .onTapGesture {
                 self.num = self.lable

@@ -67,10 +67,10 @@ struct ListDrinkButtonView: View{
                 .padding(.trailing, 15)
         }
         .frame(height: 70)
-        .foregroundColor(.white)
+        .foregroundColor(Color("textColor"))
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
 //        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
-        .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton())
+        .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton(category: ""))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: .black, radius: 3)
     }

@@ -20,7 +20,7 @@ struct ContentView: View {
     @EnvironmentObject var user:User
     
     @EnvironmentObject var model:Model
-    
+
     
     // stop edit the liquer cabinet
     private func stopEdit() {
@@ -31,7 +31,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 
-                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
+//                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
                     
                 
                
@@ -43,10 +43,11 @@ struct ContentView: View {
                         .padding(.top, 2)
                     
                     // app title image
-                    Image("DrinkIt white")
+                    Image("DrinkIt")
                         .resizable()
                         .scaledToFit()
                         .frame(alignment: .top)
+            
             
                     HStack{
                         //show all cocktail button

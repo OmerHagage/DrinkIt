@@ -30,24 +30,20 @@ class DBDrinks: ObservableObject {
              if let err = err {
                  print("Error getting documents: \(err)")
              } else {
-                
-                var i = 0
-                
-                
+                  
                  for document in querySnapshot!.documents {
 //                    print("\(document.documentID) => \(document.data())")
                    
                     // add drink from db to array
-//                    let category = document.data()["Category"] as! String
-                    let category = ["Whisky","Gin","Rum","Vodka","Wine"][i%5]
-                    i+=1
+                    let category = document.data()["category"] as! String
+                   
                     
                     //todo: לבדוק אם זה מספיק מהיר
                     if (self.data.keys.contains(category)){
-                        self.data[category]!.append(Drink(id: document.documentID, summary: document.data()["summary"] as! String, category: category))
+                        self.data[category]!.append(Drink(id: document.documentID, category: category, volume: document.data()["volume"] as! Int, summary: document.data()["summary"] as! String))
                     }
                     else{
-                        self.data[category] = [Drink(id: document.documentID, summary: document.data()["summary"] as! String, category: category)]
+                        self.data[category] = [Drink(id: document.documentID, category: category, volume: document.data()["volume"] as! Int, summary: document.data()["summary"] as! String)]
                     }
                     
                     

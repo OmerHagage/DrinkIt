@@ -84,7 +84,7 @@ struct GridView: View {
                             Rectangle()
                                 .foregroundColor(Color("Charleston Green"))
                                 .frame(width: self.widthEntry / 1.7, height: 5)
-                                .shadow(color: .white, radius: 2, x: 0.0, y: -2)
+                                .shadow(color: Color("textColor"), radius: 2, x: 0.0, y: -2)
                             
                             CabinetDrinkView(drinkName: drink, edit: self.$edit, cabinetDrinkViewWidth: self.widthEntry)
                                 .frame(width: self.widthEntry, height: self.heightEntry)
@@ -107,8 +107,7 @@ struct CabinetDrinkView: View {
     // drink name
     let drinkName:String
     
-    // make space to see the full drink name
-    @State private var fullText = false
+    
     @State private var delete =  false
     
     // edit the drinks in the cabinet - add (-) button to the  drink view
@@ -123,12 +122,9 @@ struct CabinetDrinkView: View {
             Spacer()
             Text(drinkName)
                 .layoutPriority(1)
-                .frame(width: self.fullText == false ? self.cabinetDrinkViewWidth - 20 : .none ,height: 30)
+                .frame(width: self.cabinetDrinkViewWidth - 20,height: 30)
                 .multilineTextAlignment(.center)
                 .opacity(self.edit == false ? 1: 0.3)
-                .onTapGesture(count: 1, perform: {
-                    self.fullText.toggle()
-                })
             ZStack{
                 ImageView(imageName: "jagermeister_icon")
                     .opacity(self.edit == false ? 1: 0.3)

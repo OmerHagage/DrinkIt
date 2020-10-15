@@ -47,6 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dbDrinks = DBDrinks()
         let dbCocktails = DBCocktails()
         
+        
         // Create the SwiftUI view that provides the window contents.
         
         let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user).environmentObject(dbDrinks).environmentObject(dbCocktails).environmentObject(model)
@@ -56,7 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            window.overrideUserInterfaceStyle = .dark
+//            window.overrideUserInterfaceStyle = .dark
             
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window

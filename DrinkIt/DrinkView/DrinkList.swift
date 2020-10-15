@@ -24,7 +24,7 @@ struct DrinkList: View {
     
     
     @State var showDrinkInfo:Bool = false
-    @State var infoDrink = Drink(id: "", summary: "", category: "")
+    @State var infoDrink = Drink(id: "", category: "", volume: 0, summary: "")
     
     @State var emptyAdd:Bool = false
     @State var showEditCategoriesOrListSheet:Bool = false
@@ -81,7 +81,7 @@ struct DrinkList: View {
                         self.showEditCategoriesOrListSheet = true
                         UIApplication.shared.endEditing()
                     }, label: {
-                        Image(systemName: "slider.horizontal.3").foregroundColor(.white)
+                        Image(systemName: "slider.horizontal.3").foregroundColor(Color("textColor"))
                     })
                     
                     //todo: למחוק
@@ -111,7 +111,7 @@ struct DrinkList: View {
                                             
                                             
                                         }
-                                    }.padding(.leading)
+                                    }.padding()
                                 }.padding(.bottom, 3)
                             }
                             
@@ -205,12 +205,12 @@ struct EditCategoriesOrListButton: View {
             AppDelegate.staticSaveContext(context: managedObjectContext)
         }, label: {
             HStack{
-                Text("\(lable) view").foregroundColor(.white)
+                Text("\(lable) view").foregroundColor(Color("textColor"))
                 Spacer()
                 if (self.categoriesOrList == lable){
                     Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
                 } else {
-                    Image(systemName: "circle").foregroundColor(.white).opacity(0.8)
+                    Image(systemName: "circle").foregroundColor(Color("textColor")).opacity(0.8)
                 }
                 
             }
@@ -243,7 +243,8 @@ struct DrinkInfoView: View {
             }.padding(.top)
             
             Text(self.infoDrink.summary)
-                .font(.footnote)
+                .layoutPriority(1)
+                .font(.callout)
                 .multilineTextAlignment(.leading)
             
             Spacer()

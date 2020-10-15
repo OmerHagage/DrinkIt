@@ -13,7 +13,7 @@ struct Drink: Identifiable, Hashable{
     // drink name
     let id: String
     
-    let summary: String
     let category: String
-    let volume: Int = 17
+    let volume: Int
+    let summary: String
 }

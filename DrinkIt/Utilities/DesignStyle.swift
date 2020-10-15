@@ -12,20 +12,21 @@ struct DesignStyle {
     @Environment(\.colorScheme) var colorScheme
     
     static func backgroundStyle() -> LinearGradient {
-        return LinearGradient(gradient: Gradient(colors: [Color("end"), Color.black]), startPoint: .topTrailing, endPoint: .bottomLeading)
+        return LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .topTrailing, endPoint: .bottomLeading)
     }
     
     static func buttonStyle() -> LinearGradient {
-        return LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+        return LinearGradient(gradient: Gradient(colors: [Color("1"),Color("2"),  Color("3")]), startPoint: .bottomLeading, endPoint: .topTrailing)
     }
     
     
-    static func drinkOrCocktailButton() -> LinearGradient {
-        return LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+    static func drinkOrCocktailButton(category:String) -> LinearGradient {
+        return LinearGradient(gradient: Gradient(colors:
+                        [Color("\(category)1"), Color("\(category)2"), Color("\(category)3")]), startPoint: .bottomLeading, endPoint: .topTrailing)
     }
     
     static func drinkButtonPressed() -> LinearGradient {
-        return LinearGradient(gradient: Gradient(colors: [Color("Rich Black")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+        return LinearGradient(gradient: Gradient(colors: [Color("pressed")]), startPoint: .bottomLeading, endPoint: .topTrailing)
     }
     
 }

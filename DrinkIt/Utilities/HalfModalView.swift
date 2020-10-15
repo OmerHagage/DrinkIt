@@ -125,7 +125,7 @@ struct XButton : View {
                 self.isShown = false
             }, label: {
                 Image(systemName: "multiply")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("textColor"))
             })
             
             Spacer()

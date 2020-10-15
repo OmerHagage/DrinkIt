@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ImageView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     
     var image:String
     
@@ -24,14 +24,13 @@ struct ImageView: View {
     }
     
     var body: some View {
-    
         Image(self.image)
             .resizable()
             .scaledToFit()
-//            .colorInvert()
             .frame(width: 60, height: 60)
             .shadow(color: .white, radius: 1)
-//
+        
+            //
             
 //            .clipShape(Circle())
 //            .overlay(
