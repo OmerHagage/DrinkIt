@@ -14,7 +14,7 @@ struct FullCocktailView: View {
     @Binding var showFullCocktailInfo:Bool
     @Binding var addToFavorite:Set<String>
     
-    let cocktail:Cocktail
+    @Binding var cocktail:Cocktail
     
     var body: some View {
         VStack{
@@ -24,7 +24,7 @@ struct FullCocktailView: View {
                     self.showFullCocktailInfo = false
                 }) {
                     Image(systemName: "multiply")
-                        .foregroundColor(Color("textColor"))
+                        .foregroundColor(.primary)
                 }.padding()
                 
                 Spacer()
@@ -33,14 +33,17 @@ struct FullCocktailView: View {
                     .padding()
             }
             
-            //cocktail  name
-            Text(cocktail.id)
-                .font(.title)
-                .bold()
+           
                 
             
             ScrollView{
                 VStack{
+                    
+                    //cocktail  name
+                    Text(cocktail.id)
+                        .font(.title)
+                        .bold()
+                    
                     VStack{
                        
                         
@@ -62,9 +65,10 @@ struct FullCocktailView: View {
                         
                         //number of pepole slide
                         NumPeopleView(num: self.$peopleNum)
+                        
 
                         //cocktail ingredients view
-                        IngredientsView(cocktail: self.cocktail, peopleNum: self.$peopleNum)
+                        IngredientsView(cocktail: self.$cocktail, peopleNum: self.$peopleNum)
                         
                     }
                     VStack(alignment: .leading, spacing: 2){
@@ -116,7 +120,7 @@ struct FullCocktailView: View {
 
 
 struct IngredientsView: View {
-    let cocktail:Cocktail
+    @Binding var cocktail:Cocktail
     @Binding var peopleNum:Int
     
     var body: some View {
@@ -155,33 +159,12 @@ struct NumPeopleView: View {
                 .frame(width: 110)
             
             // numbers Buttons
-            HStack{
+            Picker(selection: self.$num, label: Text("Picker"), content: /*@START_MENU_TOKEN@*/{
                 ForEach(1...4, id:\.self){ i in
-                    NumButtonView(num: $num, lable: i)
+                    Text(String(i)).tag(i)
                 }
-            }
-            .background(Color.black.opacity(0.3))
-            .clipShape(Capsule())
-            .padding()
-        }
-    }
-}
-
-
-struct NumButtonView: View {
-    @Binding var num:Int
-    let lable:Int
-    
-    var body: some View{
-        Text(String(lable))
-            .foregroundColor(self.num == lable ? .white : Color.white.opacity(0.3))
-            .fontWeight(.bold)
-            .padding(.vertical, 5)
-            .padding(.horizontal, 20)
-            .background(Color.black.opacity(self.num == lable ? 0.5 : 0))
-            .clipShape(Capsule())
-            .onTapGesture {
-                self.num = self.lable
+            }/*@END_MENU_TOKEN@*/).pickerStyle(SegmentedPickerStyle())
+            .padding(.trailing)
         }
     }
 }

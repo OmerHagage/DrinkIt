@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     let model = Model()
+    @Environment(\.colorScheme) var colorScheme
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -33,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if (temp.isEmpty){
                 user = User(context: managedObjectContext)
                 user.drinksViewPriority = "Categories"
+                user.darkMode = false
                 startGuide = true
             }
             else{
@@ -48,16 +50,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dbCocktails = DBCocktails()
         
         
+        
+        
+        
         // Create the SwiftUI view that provides the window contents.
         
-        let contentView = ContentView(startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user).environmentObject(dbDrinks).environmentObject(dbCocktails).environmentObject(model)
+        let contentView = ContentView(appDarkMode: user.darkMode, startGuide: startGuide).environment(\.managedObjectContext, managedObjectContext).environmentObject(user).environmentObject(dbDrinks).environmentObject(dbCocktails).environmentObject(model)
      
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-//            window.overrideUserInterfaceStyle = .dark
+            //todo: למחוק
+            window.overrideUserInterfaceStyle = user.darkMode ? .dark : .light
             
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window

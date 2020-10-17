@@ -81,10 +81,11 @@ struct GridView: View {
                     ForEach(chunk, id: \.self){ drink in
                         ZStack(alignment: .bottom){
                          
-                            Rectangle()
+//                            Rectangle()
+                            RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color("Charleston Green"))
                                 .frame(width: self.widthEntry / 1.7, height: 5)
-                                .shadow(color: Color("textColor"), radius: 2, x: 0.0, y: -2)
+                                .shadow(color: .primary, radius: 2, x: 0.0, y: -2)
                             
                             CabinetDrinkView(drinkName: drink, edit: self.$edit, cabinetDrinkViewWidth: self.widthEntry)
                                 .frame(width: self.widthEntry, height: self.heightEntry)

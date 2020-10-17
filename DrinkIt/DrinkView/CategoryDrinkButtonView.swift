@@ -77,7 +77,7 @@ struct CategoryDrinkButtonView: View{
             
         }
         .frame(width: 150, height: 170)
-        .foregroundColor(Color("textColor"))
+        .foregroundColor(.primary)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
 //        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
         .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton(category: ""))

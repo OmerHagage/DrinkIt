@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct DrinkList: View {
     //    @ObservedObject private var drinksDB = DBDrinks()
     @EnvironmentObject var dbDrinks:DBDrinks
@@ -24,7 +25,7 @@ struct DrinkList: View {
     
     
     @State var showDrinkInfo:Bool = false
-    @State var infoDrink = Drink(id: "", category: "", volume: 0, summary: "")
+    @State var infoDrink = Drink()
     
     @State var emptyAdd:Bool = false
     @State var showEditCategoriesOrListSheet:Bool = false
@@ -81,7 +82,7 @@ struct DrinkList: View {
                         self.showEditCategoriesOrListSheet = true
                         UIApplication.shared.endEditing()
                     }, label: {
-                        Image(systemName: "slider.horizontal.3").foregroundColor(Color("textColor"))
+                        Image(systemName: "slider.horizontal.3").foregroundColor(.primary)
                     })
                     
                     //todo: למחוק
@@ -98,7 +99,7 @@ struct DrinkList: View {
                 if (self.categoriesOrList == "Categories"){
                     List{
                         ForEach(self.dbDrinks.data.keys.sorted(), id: \.self){ category in
-                            VStack(alignment: .leading){
+                            VStack(alignment: .leading, spacing: 0){
                                 Text(category).font(.headline).fontWeight(.bold)
                                     .padding(.leading)
                                     .padding(.top, 3)
@@ -136,7 +137,7 @@ struct DrinkList: View {
                                     
                                 }
                             }
-                        }
+                        }.padding(.top)
                     }
                     .gesture(DragGesture().onChanged { _ in
                         UIApplication.shared.endEditing()
@@ -205,12 +206,12 @@ struct EditCategoriesOrListButton: View {
             AppDelegate.staticSaveContext(context: managedObjectContext)
         }, label: {
             HStack{
-                Text("\(lable) view").foregroundColor(Color("textColor"))
+                Text("\(lable) view").foregroundColor(.primary)
                 Spacer()
                 if (self.categoriesOrList == lable){
                     Image(systemName: "checkmark.circle.fill").foregroundColor(.red)
                 } else {
-                    Image(systemName: "circle").foregroundColor(Color("textColor")).opacity(0.8)
+                    Image(systemName: "circle").foregroundColor(.primary).opacity(0.8)
                 }
                 
             }

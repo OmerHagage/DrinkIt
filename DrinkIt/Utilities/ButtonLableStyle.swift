@@ -23,7 +23,7 @@ struct ButtonLableStyle {
     
     static func addStyle(lable:String) -> some View {
         return Text(lable)
-                .foregroundColor(Color("textColor"))
+            .foregroundColor(.primary)
                 .bold()
                 .padding(.vertical , 10)
                 .padding(.horizontal , 15)
@@ -40,9 +40,10 @@ struct ButtonLableStyle {
                 image
                     .foregroundColor(.green)
                     .imageScale(.large)
+                    .font(Font.callout.weight(.semibold))
                     
                 Text(lable)
-                    .foregroundColor(Color("textColor"))
+                    .foregroundColor(.primary)
                     .bold()
             }
                 .padding(.vertical , 10)

@@ -9,18 +9,21 @@
 import SwiftUI
 
 struct CocktailsList: View {
-//    @ObservedObject private var datas = DBCocktails()
+    //    @ObservedObject private var datas = DBCocktails()
     @EnvironmentObject var dbCocktails:DBCocktails
     @State private var searchText:String = ""
     @State var filterAcordingToUserDrinks:Bool = false
     
     @EnvironmentObject var user:User
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.colorScheme) var colorScheme
     
     @State var addToFavorite:Set<String>
-    @State private var ShowScroll = "All Cocktails"
-
-  
+    @State private var ShowOnlyFavorite:Bool = false
+    
+    @State var showCocktailInfo:Bool = false
+    @State var infoCocktail = Cocktail()
+    
     
     /**
      searchBar filter function
@@ -51,7 +54,7 @@ struct CocktailsList: View {
      filter by showing scroll
      */
     private func filterByShowingScroll(cocktail: Cocktail) -> Bool {
-        if (self.ShowScroll == "Favorite Cocktails"){
+        if (self.ShowOnlyFavorite){
             return self.addToFavorite.contains(cocktail.id)
         }
         return true
@@ -59,8 +62,8 @@ struct CocktailsList: View {
     
     /**
      filter function:
-        filter the cocktail db acording to the searchBar
-        if @filteSearch == true, filter the cocktail db acording to the user drinks
+     filter the cocktail db acording to the searchBar
+     if @filteSearch == true, filter the cocktail db acording to the user drinks
      */
     private func filterData(cocktail:Cocktail) -> Bool {
         return filterSearch(cocktailName: cocktail.id) && filterByUserDrinks(cocktail: cocktail) && filterByShowingScroll(cocktail: cocktail)
@@ -70,16 +73,16 @@ struct CocktailsList: View {
         self.user.userFavoriteCocktails = self.addToFavorite
         AppDelegate.staticSaveContext(context: self.managedObjectContext)
     }
-
+    
     var body: some View {
+        
         VStack{
             
-            HStack{
-                BarButtonView(num: self.$ShowScroll, lable: "All Cocktails")
-                BarButtonView(num: self.$ShowScroll, lable: "Favorite Cocktails")
-            }
-            .background(Color.black.opacity(0.3))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            // show only favorite
+            Picker("mode", selection: self.$ShowOnlyFavorite, content: /*@START_MENU_TOKEN@*/{
+                Text("All Cocktails").tag(false)
+                Text("Favorite Cocktails").tag(true)
+            }/*@END_MENU_TOKEN@*/).pickerStyle(SegmentedPickerStyle())
             .padding([.top, .leading, .trailing])
             
             
@@ -88,17 +91,20 @@ struct CocktailsList: View {
             
             // cocktails list
             ScrollView(.vertical, showsIndicators: true){
-                VStack(spacing: 0 ){
-                    ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
-                        CocktailButtonView(cocktail: cocktail, addToFavorite: self.$addToFavorite)
+                ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
+                    VStack(spacing: 0){
+                        CocktailButtonView(cocktail: cocktail, isPressed: self.$showCocktailInfo, infoCocktail: self.$infoCocktail, addToFavorite: self.$addToFavorite)
                             .padding(.horizontal)
-                        
                     }
                 }
             }
             .padding(.top, 1)
             .onDisappear(perform: updateFavorite)
         }.navigationBarTitle("Cocktails List")
+        .sheet(isPresented: self.$showCocktailInfo){
+            FullCocktailView(showFullCocktailInfo: self.$showCocktailInfo, addToFavorite: self.$addToFavorite, cocktail: self.$infoCocktail)
+                .preferredColorScheme(self.colorScheme)
+        }
     }
 }
 
@@ -110,20 +116,3 @@ struct CocktailsList: View {
 //}
 
 
-struct BarButtonView: View {
-    @Binding var num:String
-    let lable:String
-    
-    var body: some View{
-        Text(String(lable))
-            .foregroundColor(self.num == lable ? .white : Color.white.opacity(0.3))
-            .fontWeight(.bold)
-            .padding(.vertical, 5)
-            .padding(.horizontal, 20)
-            .background(Color.black.opacity(self.num == lable ? 0.5 : 0))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .onTapGesture {
-                self.num = self.lable
-        }
-    }
-}

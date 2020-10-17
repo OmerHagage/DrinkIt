@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DesignStyle {
-    @Environment(\.colorScheme) var colorScheme
+//    @Environment(\.colorScheme) var colorScheme
     
     static func backgroundStyle() -> LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .topTrailing, endPoint: .bottomLeading)

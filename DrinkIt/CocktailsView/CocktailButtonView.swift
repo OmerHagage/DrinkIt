@@ -13,14 +13,16 @@ struct CocktailButtonView: View {
     let imageName:String = "cocktail_icon"
     
     @EnvironmentObject var user:User
-    @State private var isPressed:Bool = false
+    @Binding var isPressed:Bool
+    @Binding var infoCocktail:Cocktail
     
     @Binding var addToFavorite:Set<String>
 
     var body: some View {
         VStack{
             Button(action: {
-                    self.isPressed = true
+                self.infoCocktail = self.cocktail
+                self.isPressed = true
             })
             {
                 // button detail view
@@ -50,7 +52,7 @@ struct CocktailButtonView: View {
                 }
             }
             .frame(height: 100)
-            .foregroundColor(Color("textColor"))
+            .foregroundColor(.primary)
             .padding()
             .overlay( RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.clear, lineWidth: 1)
@@ -61,7 +63,7 @@ struct CocktailButtonView: View {
             .shadow(color: .black, radius: 3)
             .padding(.all, 5.5)
         }
-        .sheet(isPresented: self.$isPressed, content: { FullCocktailView(showFullCocktailInfo: self.$isPressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
+//        .sheet(isPresented: self.$isPressed, content: { FullCocktailView(showFullCocktailInfo: self.$isPressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
     }
 }
 

@@ -13,13 +13,17 @@ struct ContentView: View {
     
     
     @State private var startEdit = false
+    @State var appDarkMode:Bool
     
     //use to start the app with user guide
     @State var startGuide:Bool
     
+    @State var pressed:Bool = false
+    
     @EnvironmentObject var user:User
     
     @EnvironmentObject var model:Model
+    
 
     
     // stop edit the liquer cabinet
@@ -39,7 +43,7 @@ struct ContentView: View {
                 VStack{
 
                     // info and start guide button
-                    InfoButtonView(startGuide: $startGuide)
+                    BarButtonView(pressed: self.$pressed, startGuide: self.$startGuide)
                         .padding(.top, 2)
                     
                     // app title image
@@ -54,8 +58,7 @@ struct ContentView: View {
                         NavigationLink(destination: CocktailsList(addToFavorite: user.userFavoriteCocktails)){
                             ButtonLableStyle.addStyle(lable: "All Cocktails")
                         }
-                        
-                
+                   
                         Spacer()
                         
                         //add drink button
@@ -77,6 +80,11 @@ struct ContentView: View {
                     }
                     .padding(2)
                 }
+                
+                HalfModalView(isShown: self.$pressed, modalHeight: 200){
+                    Menu(isShown: self.$pressed, appDarkMode: self.$appDarkMode, startGuide: self.$startGuide)
+                }
+                
             }
             
             .navigationBarHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
@@ -93,28 +101,107 @@ struct ContentView: View {
 //}
 
 
-struct InfoButtonView: View {
+struct BarButtonView: View {
+    @Binding var pressed:Bool
     @Binding var startGuide:Bool
     
     var body: some View {
         HStack{
+            NavigationLink(
+                "",
+                destination: StartGuide(startGuide: self.$startGuide, firstTime: true),
+                isActive: self.$startGuide)
+            
             Spacer()
-            Image(systemName: "info.circle")
-                .onTapGesture(count: 1, perform: {
-                    self.startGuide = true
-                }).padding(.trailing, 20)
-                .sheet(isPresented: $startGuide, content: {
+            
+            Button(action: {
+                self.pressed = true
+            }, label: {
+                Image(systemName: "gear").padding(.trailing, 20)
+                    .foregroundColor(.primary)
+            })
+
+            
+        }
+    }
+}
+
+
+struct StartGuide: View {
+    @Binding var startGuide:Bool
+    @State var firstTime = false
+    
+    
+    var body: some View{
+        VStack{
+           
+            Text("Start Guide").font(.title)
+               
+            
+            // dismiss start guide view
+            Button(action: {
+                self.startGuide = false
+            }, label: {
+                Text("I am old")
+            })
+            .navigationBarHidden(firstTime)
+        }
+    }
+}
+
+
+
+struct Menu: View {
+    @Binding var isShown:Bool
+    @Binding var appDarkMode:Bool
+    
+    //use to start the app with user guide
+    @Binding var startGuide:Bool
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var user:User
+    
+    var body: some View{
+        VStack{
+            XButton(isShown: self.$isShown)
+                .padding(.top)
+                .padding(.bottom, 5)
+            Divider()
+            Toggle(isOn: self.$appDarkMode, label: {
+                HStack{
+                    Image(systemName: "moon.fill").font(.title)
+                        .rotationEffect(.init(degrees: appDarkMode ? 0 : -450))
                     
-                    Text("Start Guide").font(.title)
+                    Text("Dark Mode").padding(.horizontal)
+                }
+            }).onReceive([self.appDarkMode].publisher.first(), perform: { val in
+                if (!val){
+                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .light
                     
-                    // dismiss start guide view
-                    Button(action: {
-                        startGuide = false
-                    }, label: {
-                        Text("Done")
-                    })
+                }
+                else{
+                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .dark
+                }
+                self.user.darkMode = val
+            })
+            
+            Divider()
+            
+            NavigationLink(
+                destination: StartGuide(startGuide: self.$startGuide),
+                label: {
+                    HStack{
+                        Image(systemName: "info.circle").font(.title)
+                        Text("Show start guide")
+                            .padding(.horizontal)
+                        Spacer()
+                    }.foregroundColor(.primary)
+                    
                 })
         }
+        .onDisappear(perform: {
+            AppDelegate.staticSaveContext(context: self.managedObjectContext)
+        })
     }
 }
 

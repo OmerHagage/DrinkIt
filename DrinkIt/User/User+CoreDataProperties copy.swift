@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  
 //
-//  Created by Omer Hagage on 11/10/2020.
+//  Created by Omer Hagage on 17/10/2020.
 //
 //
 
@@ -16,8 +16,9 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
+    @NSManaged public var drinksViewPriority: String
     @NSManaged public var userDrinks: Set<String>
     @NSManaged public var userFavoriteCocktails: Set<String>
-    @NSManaged public var drinksViewPriority: String
+    @NSManaged public var darkMode: Bool
 
 }

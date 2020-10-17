@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ImageView: View {
-    @Environment(\.colorScheme) var colorScheme
+    
     
     var image:String
     
