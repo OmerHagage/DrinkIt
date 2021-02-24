@@ -48,20 +48,21 @@ struct FullCocktailView: View {
                        
                         
                         //cocktail image
-                        ImageView(imageName: "cocktail_icon")
+                        //todo: אולי לשנות לשם של הקוקטייל במקום סוג הכוס?
+                        CocktailImageView(imageName: self.cocktail.glassKind)
                             .padding()
                         
                         // cocktail rating
-                        HStack{
-                            Text("Rating: ")
-                            ForEach(1...5, id: \.self){ i in
-                                if (i <= self.cocktail.rating){
-                                    Image(systemName: "star.fill")
-                                } else {
-                                    Image(systemName: "star")
-                                }
-                            }
-                        }.padding()
+//                        HStack{
+//                            Text("Rating: ")
+//                            ForEach(1...5, id: \.self){ i in
+//                                if (i <= self.cocktail.rating){
+//                                    Image(systemName: "star.fill")
+//                                } else {
+//                                    Image(systemName: "star")
+//                                }
+//                            }
+//                        }.padding()
                         
                         //number of pepole slide
                         NumPeopleView(num: self.$peopleNum)

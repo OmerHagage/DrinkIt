@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CocktailButtonView: View {
     let cocktail: Cocktail
-    let imageName:String = "cocktail_icon"
     
     @EnvironmentObject var user:User
     @Binding var isPressed:Bool
@@ -46,8 +45,8 @@ struct CocktailButtonView: View {
                             }
                         }
                     Spacer()
-                        //todo: לשנות לשם של התמונה
-                        ImageView(imageName: self.imageName).padding([.bottom, .trailing])
+                        //todo: אולי לשנות לשם של הקוקטייל במקום סוג הכוס?
+                        CocktailImageView(imageName: self.cocktail.glassKind).padding([.bottom, .trailing])
                     }
                 }
             }

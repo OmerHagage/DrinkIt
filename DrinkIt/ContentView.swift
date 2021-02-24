@@ -139,13 +139,15 @@ struct StartGuide: View {
                
             
             // dismiss start guide view
-            Button(action: {
-                self.startGuide = false
-            }, label: {
-                Text("I am old")
-            })
-            .navigationBarHidden(firstTime)
+            if (self.firstTime){
+                Button(action: {
+                    self.startGuide = false
+                }, label: {
+                    Text("I am old")
+                })
+            }
         }
+        .navigationBarHidden(firstTime)
     }
 }
 
@@ -233,8 +235,7 @@ struct EditCabinetButtonsBar: View {
                 .alert(isPresented: $showingAlert, content: {
                     Alert(title: Text("Remove all"), message: Text("Are you sure you want to remove all your drinks?"), primaryButton: .default(Text("No")), secondaryButton: .destructive(Text("Yes"), action: {
                         self.user.userDrinks.removeAll()
-                        
-                        //todo: check this
+
                         AppDelegate.staticSaveContext(context: self.managedObjectContext)
                         self.startEdit = false
                     }))

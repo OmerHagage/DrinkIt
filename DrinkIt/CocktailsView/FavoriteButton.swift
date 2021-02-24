@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-//todo: fix the favorite button
 struct FavoriteButton: View {
     let cocktailName:String
     

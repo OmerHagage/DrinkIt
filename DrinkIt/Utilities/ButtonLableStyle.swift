@@ -23,15 +23,14 @@ struct ButtonLableStyle {
     
     static func addStyle(lable:String) -> some View {
         return Text(lable)
-            .foregroundColor(.primary)
+                .foregroundColor(.primary)
                 .bold()
                 .padding(.vertical , 10)
                 .padding(.horizontal , 15)
                 .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
-//                .background(Color("Charleston Green"))
-            .background(DesignStyle.buttonStyle())
+                .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
-            .shadow(color: .black, radius: 4)
+                .shadow(color: .black, radius: 4)
     }
     
     static func addStyle(image:Image, lable:String) -> some View {
@@ -49,7 +48,6 @@ struct ButtonLableStyle {
                 .padding(.vertical , 10)
                 .padding(.horizontal , 15)
                 .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
-//                .background(Color("Charleston Green"))
                 .background(DesignStyle.buttonStyle())
                 .cornerRadius(20)
             .shadow(color: .black, radius: 4)

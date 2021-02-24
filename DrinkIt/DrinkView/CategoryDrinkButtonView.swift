@@ -65,7 +65,7 @@ struct CategoryDrinkButtonView: View{
                 HStack{
                     Spacer()
                     // Drink image
-                    ImageView(imageName: "jagermeister_icon")
+                    DrinkImageView(imageName: self.drink.id)
 
                 }
                     

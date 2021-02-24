@@ -48,7 +48,7 @@ struct ListDrinkButtonView: View{
                     Spacer()
                     
                     // Drink image
-                    ImageView(imageName: "drink_bottle")
+                    DrinkImageView(imageName: self.drink.id)
                         .padding(.trailing, 20)
                     
                     HStack(alignment: .top){
@@ -69,7 +69,6 @@ struct ListDrinkButtonView: View{
         .frame(height: 70)
         .foregroundColor(.primary)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.clear, lineWidth: 1))
-//        .background(self.pressed ? Color("Rich Black") : Color("Charleston Green"))
         .background(self.pressed ? DesignStyle.drinkButtonPressed() : DesignStyle.drinkOrCocktailButton(category: ""))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: .black, radius: 3)

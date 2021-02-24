@@ -85,8 +85,6 @@ struct DrinkList: View {
                         Image(systemName: "slider.horizontal.3").foregroundColor(.primary)
                     })
                     
-                    //todo: למחוק
-                    //                EditCategoriesOrListButton(categoriesOrList: self.$categoriesOrList)
                     
                 }.padding(.horizontal)
                 
@@ -239,8 +237,7 @@ struct DrinkInfoView: View {
                 
                 Spacer()
                 
-                //todo: set image drink
-                ImageView(imageName: "drink_bottle")
+                DrinkImageView(imageName: self.infoDrink.id)
             }.padding(.top)
             
             Text(self.infoDrink.summary)

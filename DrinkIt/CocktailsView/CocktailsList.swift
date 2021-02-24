@@ -85,14 +85,13 @@ struct CocktailsList: View {
             }/*@END_MENU_TOKEN@*/).pickerStyle(SegmentedPickerStyle())
             .padding([.top, .leading, .trailing])
             
-            
             // search bar
             SearchBar(text: $searchText).padding(.top)
             
             // cocktails list
             ScrollView(.vertical, showsIndicators: true){
-                ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
-                    VStack(spacing: 0){
+                VStack(spacing: 0){
+                    ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
                         CocktailButtonView(cocktail: cocktail, isPressed: self.$showCocktailInfo, infoCocktail: self.$infoCocktail, addToFavorite: self.$addToFavorite)
                             .padding(.horizontal)
                     }
