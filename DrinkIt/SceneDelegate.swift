@@ -65,6 +65,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //todo: למחוק
             window.overrideUserInterfaceStyle = user.darkMode ? .dark : .light
             
+            
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
@@ -113,3 +114,27 @@ final class Model: ObservableObject {
 
     var environment: Bool = false { willSet { objectWillChange.send() } }
 }
+
+
+
+//todo: delete
+//class ContentHostingController<ContentView: View>: UIHostingController<ContentView> {
+//      // 1. We change this variable
+//    private var currentStatusBarStyle: UIStatusBarStyle = .default
+//      // 2. To change this property of `UIHostingController`
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        currentStatusBarStyle
+//    }
+//      // 3. A function we can call to change the style programmatically
+//    func changeStatusBarStyle(_ style: UIStatusBarStyle) {
+//        self.currentStatusBarStyle = style
+//        print("kbkjbkjbkjbkjbkbkjbkjbkjbkjbkjbkjbkjbkjbkjbkbkjbkjbkjbkjbkjb")
+//          // 4. Required for view to update
+//        self.setNeedsStatusBarAppearanceUpdate()
+//    }
+//
+//
+//
+////    var x = UIApplication.shared.windows.first?.rootViewController as? ContentHostingController<ContentView>
+////    x?.changeStatusBarStyle(val ? .lightContent : .darkContent)
+//}

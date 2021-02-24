@@ -79,6 +79,7 @@ struct ContentView: View {
                         ButtonLableStyle.addStyle(lable: "Search Cocktails")
                     }
                     .padding(2)
+                    .padding(.bottom, 2)
                 }
                 
                 HalfModalView(isShown: self.$pressed, modalHeight: 200){
@@ -177,13 +178,14 @@ struct Menu: View {
                     Text("Dark Mode").padding(.horizontal)
                 }
             }).onReceive([self.appDarkMode].publisher.first(), perform: { val in
-                if (!val){
-                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .light
-                    
+                if (val){
+                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .dark
+                    print("ppppppppppppppppppp")
                 }
                 else{
-                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .dark
+                    UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .light
                 }
+                
                 self.user.darkMode = val
             })
             

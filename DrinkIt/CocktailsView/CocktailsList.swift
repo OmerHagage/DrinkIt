@@ -99,6 +99,9 @@ struct CocktailsList: View {
             }
             .padding(.top, 1)
             .onDisappear(perform: updateFavorite)
+            .gesture(DragGesture().onChanged { _ in
+                    UIApplication.shared.endEditing()
+            })
         }.navigationBarTitle("Cocktails List")
         .sheet(isPresented: self.$showCocktailInfo){
             FullCocktailView(showFullCocktailInfo: self.$showCocktailInfo, addToFavorite: self.$addToFavorite, cocktail: self.$infoCocktail)
