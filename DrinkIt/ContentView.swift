@@ -35,6 +35,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 
+                //todo: decide on the background color
 //                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
                     
                 
@@ -63,7 +64,7 @@ struct ContentView: View {
                         
                         //add drink button
                         NavigationLink(destination: DrinkList(categoriesOrList: user.drinksViewPriority)){
-                            ButtonLableStyle.addStyle(lable: "Add drink")
+                            ButtonLableStyle.addStyle(lable: "Add drinks")
                         }
                     }.padding(.horizontal)
                     
@@ -128,28 +129,109 @@ struct BarButtonView: View {
 }
 
 
+
 struct StartGuide: View {
     @Binding var startGuide:Bool
     @State var firstTime = false
+    @State var termAgree = false
+    @State var showTerms = false
     
     
     var body: some View{
         VStack{
-           
-            Text("Start Guide").font(.title)
-               
+            Divider()
+            ScrollView{
+                VStack(alignment: .leading, spacing: 10){
+                    
+                    Guide()
+                    
+                    if (self.firstTime){
+                        Divider().padding(.vertical, 20)
+                    }
+                    
+                    Button(action: {
+                        self.showTerms.toggle()
+                    }, label: {
+                        HStack{
+                            Text("Terms and conditions")
+                            Image(systemName: self.showTerms ? "arrowtriangle.up.circle" : "arrowtriangle.down.circle")
+                            Spacer()
+                        }
+                    }).padding(.top, 10)
+                    
+                    if (self.showTerms){
+                        //todo: enter terms and donditions
+                        Text("fdjgbj jbfdg knk gjngj eknmkn").font(/*@START_MENU_TOKEN@*/.caption/*@END_MENU_TOKEN@*/)
+                    }
             
             // dismiss start guide view
-            if (self.firstTime){
-                Button(action: {
-                    self.startGuide = false
-                }, label: {
-                    Text("I am old")
-                })
+                    if (self.firstTime){
+                        
+                            Toggle("I agree to terms and conditions", isOn: self.$termAgree)
+                        
+                           
+                            
+                            HStack(spacing: 20){
+                                Spacer()
+                                
+                                VStack(spacing: 20){
+                                    Text("Are you of legal drinking age?").font(.headline)
+                                    
+                                    HStack(spacing: 100){
+                                        Button(action: {
+                                            self.startGuide = false
+                                        }){
+                                            ButtonLableStyle.addStyle(lable: "Yes")
+                                        }.disabled(!self.termAgree)
+                                        .opacity(self.termAgree ? 1 : 0.5)
+                                        
+                                        Button(action: {
+                                            exit(0)
+                                        }){
+                                            ButtonLableStyle.addStyle(lable: "No")
+                                        }
+                                    }
+                                }
+                                   
+                                Spacer()
+                            }.padding(.vertical, 20)
+                        }
+                }.padding(.horizontal, 10)
             }
         }
-        .navigationBarHidden(firstTime)
+        .navigationBarBackButtonHidden(firstTime)
+        .navigationBarTitle("Start Guide")
     }
+}
+
+
+
+struct Guide: View {
+    
+    var body: some View{
+        Text("Welcome to DrinkIt, the place where you can make cocktails at ease, at your home, at your friend’s house or anywhere else with the ingredients you already have!").font(.body).bold()
+        
+        BulletedGuideText(text: "Add all the drinks you have at home.")
+        
+        Image("addDrinksGuide")
+            .resizable()
+            .scaledToFit()
+            
+        BulletedGuideText(text: "Search for all the cocktails you can make with those drinks.")
+        
+        Image("findCocktailsGuide")
+            .resizable()
+            .scaledToFit()
+        
+        BulletedGuideText(text: "Make the cocktail with an easy recipe.")
+        
+        HStack{
+            Spacer()
+            Text("Enjoy!").font(.title).bold()
+            Spacer()
+        }
+    }
+
 }
 
 
@@ -180,7 +262,6 @@ struct Menu: View {
             }).onReceive([self.appDarkMode].publisher.first(), perform: { val in
                 if (val){
                     UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .dark
-                    print("ppppppppppppppppppp")
                 }
                 else{
                     UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .light

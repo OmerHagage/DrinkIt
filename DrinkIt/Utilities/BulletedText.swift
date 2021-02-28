@@ -20,6 +20,19 @@ struct BulletedText: View {
     }
 }
 
+
+struct BulletedGuideText: View {
+    
+    let text:String
+
+    var body: some View {
+        HStack(alignment: .top){
+            Text("• ").font(.body).bold()
+            Text(text).font(.body).bold()
+        }
+    }
+}
+
 struct BulletedText_Previews: PreviewProvider {
     static var previews: some View {
         BulletedText(text: "")

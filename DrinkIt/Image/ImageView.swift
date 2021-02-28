@@ -28,7 +28,6 @@ struct DrinkImageView: View {
     }
     
     var body: some View {
-//        Image(self.image)
         self.getSafeImage(named: self.image)
             .resizable()
             .scaledToFit()
@@ -36,6 +35,9 @@ struct DrinkImageView: View {
             .shadow(color: .white, radius: 1)
     }
 }
+
+
+
 
 struct CocktailImageView: View {
     

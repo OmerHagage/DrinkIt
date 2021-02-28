@@ -33,7 +33,7 @@ struct CocktailButtonView: View {
                             .fontWeight(.bold)
                         Spacer()
                         FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
-                    }
+                    }.padding(.top, 4)
                     Spacer()
                     // cocktail ingredients and image
                     HStack{
@@ -43,8 +43,9 @@ struct CocktailButtonView: View {
                                     .font(.subheadline)
                                     .multilineTextAlignment(.leading)
                             }
+                            Spacer()
                         }
-                    Spacer()
+                        Spacer()
                         //todo: אולי לשנות לשם של הקוקטייל במקום סוג הכוס?
                         CocktailImageView(imageName: self.cocktail.glassKind).padding([.bottom, .trailing])
                     }

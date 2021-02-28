@@ -10,17 +10,6 @@ import SwiftUI
 
 struct ButtonLableStyle {
     
-//    var content: () -> Content
-//
-//    var body: some View{
-//        self.content()
-//            .overlay(RoundedRectangle(cornerRadius:20).stroke(Color.clear, lineWidth: 1))
-////                .background(Color("Charleston Green"))
-//            .background(LinearGradient(gradient: Gradient(colors: [Color("Charleston Green"),Color("Outer Space Crayola")]), startPoint: .bottomLeading, endPoint: .topTrailing))
-//            .cornerRadius(20)
-//            .shadow(color: Color("Charleston Green"), radius: 10)
-//    }
-    
     static func addStyle(lable:String) -> some View {
         return Text(lable)
                 .foregroundColor(.primary)
