@@ -40,6 +40,9 @@
 		60CB93B42534B5B300596265 /* DesignStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CB93B32534B5B300596265 /* DesignStyle.swift */; };
 		60D85C10252CABC700FD604A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D85C0F252CABC600FD604A /* ContentView.swift */; };
 		60E8AC7D2530E92A001849D9 /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8AC7C2530E929001849D9 /* HalfModalView.swift */; };
+		60FE6A0525F106DE0041EF4B /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FE6A0425F106DE0041EF4B /* drinks.json */; };
+		60FE6A0F25F11FAB0041EF4B /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FE6A0E25F11FAB0041EF4B /* cocktails.json */; };
+		60FE6A5025F152330041EF4B /* PrivacyAndTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE6A4F25F152330041EF4B /* PrivacyAndTerms.swift */; };
 		F8C1A67A597463FF686B34CA /* Pods_DrinkItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F42EF6EBF5232B52967C982 /* Pods_DrinkItTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,9 @@
 		60CB93B32534B5B300596265 /* DesignStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStyle.swift; sourceTree = "<group>"; };
 		60D85C0F252CABC600FD604A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60E8AC7C2530E929001849D9 /* HalfModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
+		60FE6A0425F106DE0041EF4B /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		60FE6A0E25F11FAB0041EF4B /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
+		60FE6A4F25F152330041EF4B /* PrivacyAndTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndTerms.swift; sourceTree = "<group>"; };
 		7F42EF6EBF5232B52967C982 /* Pods_DrinkItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D522079DB4466BE8A188EEC /* Pods-DrinkIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkIt.debug.xcconfig"; path = "Target Support Files/Pods-DrinkIt/Pods-DrinkIt.debug.xcconfig"; sourceTree = "<group>"; };
 		B2543414A47A8E6ABC194067 /* Pods_DrinkIt_DrinkItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkIt_DrinkItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,7 @@
 		600AFF722506426400BC17D9 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
+				60FE6A0E25F11FAB0041EF4B /* cocktails.json */,
 				600AFF6D25062C4900BC17D9 /* DBCocktails.swift */,
 				602EC11E25093DD70057AA9E /* Cocktail.swift */,
 			);
@@ -149,6 +156,7 @@
 		600AFF742506790000BC17D9 /* Drinks */ = {
 			isa = PBXGroup;
 			children = (
+				60FE6A0425F106DE0041EF4B /* drinks.json */,
 				600AFF792506836900BC17D9 /* DBDrinks.swift */,
 				600AFF7725067AC900BC17D9 /* Drink.swift */,
 			);
@@ -241,6 +249,7 @@
 			children = (
 				60ADAE752504FE6B006628F9 /* AppDelegate.swift */,
 				60ADAE772504FE6B006628F9 /* SceneDelegate.swift */,
+				60FE6A4F25F152330041EF4B /* PrivacyAndTerms.swift */,
 				60D85C0F252CABC600FD604A /* ContentView.swift */,
 				6069C26E2535ED7C00AC4FA2 /* LiquorCabonet */,
 				606316F02508DCB1008D0AC3 /* User */,
@@ -424,7 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60ADAE822504FE6D006628F9 /* LaunchScreen.storyboard in Resources */,
+				60FE6A0525F106DE0041EF4B /* drinks.json in Resources */,
 				60ADAEA925050323006628F9 /* GoogleService-Info.plist in Resources */,
+				60FE6A0F25F11FAB0041EF4B /* cocktails.json in Resources */,
 				60ADAE7F2504FE6D006628F9 /* Preview Assets.xcassets in Resources */,
 				60ADAE7C2504FE6D006628F9 /* Assets.xcassets in Resources */,
 			);
@@ -595,6 +606,7 @@
 				600AFF7E250696C600BC17D9 /* ListDrinkButtonView.swift in Sources */,
 				60292D8525110B11004081CF /* SearchBar.swift in Sources */,
 				60292D832510F5C8004081CF /* GridView.swift in Sources */,
+				60FE6A5025F152330041EF4B /* PrivacyAndTerms.swift in Sources */,
 				60292D812510E211004081CF /* FullCocktailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

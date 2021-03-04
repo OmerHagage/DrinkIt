@@ -36,7 +36,7 @@ struct ContentView: View {
             ZStack{
                 
                 //todo: decide on the background color
-//                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
+                DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
                     
                 
                
@@ -153,21 +153,22 @@ struct StartGuide: View {
                         self.showTerms.toggle()
                     }, label: {
                         HStack{
-                            Text("Terms and conditions")
+                            Text("Privacy Policy and Terms & Conditions")
                             Image(systemName: self.showTerms ? "arrowtriangle.up.circle" : "arrowtriangle.down.circle")
                             Spacer()
                         }
                     }).padding(.top, 10)
                     
                     if (self.showTerms){
-                        //todo: enter terms and donditions
-                        Text("fdjgbj jbfdg knk gjngj eknmkn").font(/*@START_MENU_TOKEN@*/.caption/*@END_MENU_TOKEN@*/)
+                        PrivacyAndTerms().onTapGesture {
+                            self.showTerms.toggle()
+                        }
                     }
             
             // dismiss start guide view
                     if (self.firstTime){
                         
-                            Toggle("I agree to terms and conditions", isOn: self.$termAgree)
+                            Toggle("I agree to the Privacy Policy and Terms & Conditions", isOn: self.$termAgree)
                         
                            
                             
@@ -209,7 +210,7 @@ struct StartGuide: View {
 struct Guide: View {
     
     var body: some View{
-        Text("Welcome to DrinkIt, the place where you can make cocktails at ease, at your home, at your friend’s house or anywhere else with the ingredients you already have!").font(.body).bold()
+        Text("Welcome to DrinkIt, the place where you can make cocktails at ease, at your home, at your friend’s house or anywhere else with the ingredients you already have!").font(.system(size: 22)).bold().padding(.bottom, 5)
         
         BulletedGuideText(text: "Add all the drinks you have at home.")
         
@@ -266,7 +267,6 @@ struct Menu: View {
                 else{
                     UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = .light
                 }
-                
                 self.user.darkMode = val
             })
             

@@ -54,7 +54,7 @@ struct DrinkList: View {
     
     var body: some View {
         ZStack{
-            
+            DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
             
             VStack{
                 
@@ -102,26 +102,27 @@ struct DrinkList: View {
                                     .padding(.leading)
                                     .padding(.top, 3)
                                 ScrollView(.horizontal, showsIndicators: false){
-                                    HStack(spacing: 5){
+                                    HStack(spacing: 7){
                                         ForEach(self.dbDrinks.data[category]!.filter(filterSearch(drink:))){
                                             drink in
                                             CategoryDrinkButtonView(drink: drink, drinkToAdd: self.$drinkToAdd, pressed: self.drinkToAdd.contains(drink.id) || self.user.userDrinks.contains(drink.id), showSheetDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
-                                            
-                                            
                                             
                                         }
                                     }.padding()
                                 }.padding(.bottom, 3)
                             }
-                            
                         }
+                        .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets())
-                    }.padding(.top, 1)
+                    }
+                    .padding(.top, 1)
                     .gesture(DragGesture().onChanged { _ in
                         UIApplication.shared.endEditing()
                     })
                     .onAppear(){
                         UITableView.appearance().showsVerticalScrollIndicator = false
+                        UITableView.appearance().backgroundColor = .clear
+                        UITableViewCell.appearance().backgroundColor = .clear
                     }
                 }
                 else{
@@ -145,15 +146,12 @@ struct DrinkList: View {
                 
             }
             .navigationBarTitle("Drinks")
-            
-            
+        
             HalfModalView(isShown: self.$showDrinkInfo){DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)}
             
             HalfModalView(isShown: self.$showEditCategoriesOrListSheet, modalHeight: 200){
                 EditCategoriesOrListView(isShown: self.$showEditCategoriesOrListSheet, categoriesOrList: self.$categoriesOrList)
             }
-            
-            
         }
     }
 }

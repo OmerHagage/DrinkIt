@@ -75,37 +75,40 @@ struct CocktailsList: View {
     }
     
     var body: some View {
-        
-        VStack{
+        ZStack{
+            DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
             
-            // show only favorite
-            Picker("mode", selection: self.$ShowOnlyFavorite, content: /*@START_MENU_TOKEN@*/{
-                Text("All Cocktails").tag(false)
-                Text("Favorite Cocktails").tag(true)
-            }/*@END_MENU_TOKEN@*/).pickerStyle(SegmentedPickerStyle())
-            .padding([.top, .leading, .trailing])
-            
-            // search bar
-            SearchBar(text: $searchText).padding(.top)
-            
-            // cocktails list
-            ScrollView(.vertical, showsIndicators: true){
-                VStack(spacing: 0){
-                    ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
-                        CocktailButtonView(cocktail: cocktail, isPressed: self.$showCocktailInfo, infoCocktail: self.$infoCocktail, addToFavorite: self.$addToFavorite)
-                            .padding(.horizontal)
+            VStack{
+                
+                // show only favorite
+                Picker("mode", selection: self.$ShowOnlyFavorite, content: /*@START_MENU_TOKEN@*/{
+                    Text("All Cocktails").tag(false)
+                    Text("Favorite Cocktails").tag(true)
+                }/*@END_MENU_TOKEN@*/).pickerStyle(SegmentedPickerStyle())
+                .padding([.top, .leading, .trailing])
+                
+                // search bar
+                SearchBar(text: $searchText).padding(.top)
+                
+                // cocktails list
+                ScrollView(.vertical, showsIndicators: true){
+                    VStack(spacing: 0){
+                        ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
+                            CocktailButtonView(cocktail: cocktail, isPressed: self.$showCocktailInfo, infoCocktail: self.$infoCocktail, addToFavorite: self.$addToFavorite)
+                                .padding(.horizontal)
+                        }
                     }
                 }
+                .padding(.top, 1)
+                .onDisappear(perform: updateFavorite)
+                .gesture(DragGesture().onChanged { _ in
+                        UIApplication.shared.endEditing()
+                })
+            }.navigationBarTitle("Cocktails List")
+            .sheet(isPresented: self.$showCocktailInfo){
+                FullCocktailView(showFullCocktailInfo: self.$showCocktailInfo, addToFavorite: self.$addToFavorite, cocktail: self.$infoCocktail)
+                    .preferredColorScheme(self.colorScheme)
             }
-            .padding(.top, 1)
-            .onDisappear(perform: updateFavorite)
-            .gesture(DragGesture().onChanged { _ in
-                    UIApplication.shared.endEditing()
-            })
-        }.navigationBarTitle("Cocktails List")
-        .sheet(isPresented: self.$showCocktailInfo){
-            FullCocktailView(showFullCocktailInfo: self.$showCocktailInfo, addToFavorite: self.$addToFavorite, cocktail: self.$infoCocktail)
-                .preferredColorScheme(self.colorScheme)
         }
     }
 }

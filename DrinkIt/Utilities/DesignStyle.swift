@@ -12,7 +12,7 @@ struct DesignStyle {
 //    @Environment(\.colorScheme) var colorScheme
     
     static func backgroundStyle() -> LinearGradient {
-        return LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .topTrailing, endPoint: .bottomLeading)
+        return LinearGradient(gradient: Gradient(colors: [Color("backGroundL"),Color("backGroundM"),  Color("backGroundH")]), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
     
     static func buttonStyle() -> LinearGradient {

@@ -32,7 +32,7 @@ struct FavoriteButton: View {
                     .foregroundColor(.yellow)
             } else {
                 Image(systemName: "star")
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
             }
         })
        

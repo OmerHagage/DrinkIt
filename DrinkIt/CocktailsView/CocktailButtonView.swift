@@ -32,6 +32,7 @@ struct CocktailButtonView: View {
                             .font(.title)
                             .fontWeight(.bold)
                         Spacer()
+            
                         FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
                     }.padding(.top, 4)
                     Spacer()
