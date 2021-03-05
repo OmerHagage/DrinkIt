@@ -50,7 +50,7 @@ struct PrivacyAndTerms: View {
                     Health information
                     We and our service only provide information about drinks and cocktails and do not sell or encourage you to drink alcoholic beverages.
                     We do not take any responsibility for any misuse of the information that we provide in our service.
-                    We want to inform you that excessive drinking of alcoholic beverages can cause medical problems, we are not responsible for any problems that arise due to the drinking of alcoholic beverages whose recipe is published in our service.
+                    We want to inform you that excessive drinking of alcoholic beverages can cause medical problems, we are not responsible for any problems or medical problems that arise due to the drinking of alcoholic beverages whose recipe is published in our service.
 
                     Changes to This Privacy Policy
                     I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
@@ -77,7 +77,7 @@ struct PrivacyAndTerms: View {
                     We and our service only provide information about drinks and cocktails and do not sell or encourage you to
                     drink alcoholic beverages.
                     We do not take any responsibility for any misuse of the information that we provide in our service.
-                    We want to inform you that excessive drinking of alcoholic beverages can cause medical problems, we are not responsible for any problems that arise due to the drinking of alcoholic beverages whose recipe is published in our service.
+                    We want to inform you that excessive drinking of alcoholic beverages can cause medical problems, we are not responsible for any problems or medical problems that arise due to the drinking of alcoholic beverages whose recipe is published in our service.
 
                     Changes to This Terms and Conditions
                     I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page.
