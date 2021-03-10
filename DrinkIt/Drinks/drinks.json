@@ -1,346 +1,364 @@
 {
     "drinks": [
         {
-            "name": "Coffee Liqueur",
+            "name": "Aperol",
             "category": "Liqueurs",
-            "alcohol_percentage": 20,
+            "alcohol_percentage": 11.0,
             "summary": ""
         },
         {
             "name": "Grenadine",
             "category": "Non Alcoholic",
-            "alcohol_percentage": 0,
+            "alcohol_percentage": 0.0,
             "summary": ""
         },
         {
-            "name": "Dry Vermouth",
-            "category": "Vermouth",
-            "alcohol_percentage": 18,
-            "summary": ""
-        },
-        {
-            "name": "Single Malt Scotch",
-            "category": "Whiskey",
-            "alcohol_percentage": 43,
-            "summary": ""
-        },
-        {
-            "name": "Vanilla Vodka",
-            "category": "Vodka",
-            "alcohol_percentage": 17,
-            "summary": ""
-        },
-        {
-            "name": "Campari",
-            "category": "Bitters",
-            "alcohol_percentage": 25,
-            "summary": "Campari is an Italian alcoholic liqueur, considered an aperitif, obtained from the infusion of herbs and fruit (including chinotto and cascarilla) in alcohol and water. It is a bitter, characterised by its dark red colour. Campari is often used in cocktails and is commonly served with soda water or citrus juice."
-        },
-        {
-            "name": "Creme De Cassis",
-            "category": "Liqueurs",
-            "alcohol_percentage": 25,
-            "summary": ""
-        },
-        {
-            "name": "Triple Sec",
-            "category": "Liqueurs",
-            "alcohol_percentage": 24,
-            "summary": "Triple sec, originally Curacao triple sec, is a type of strong, sweet and colorless orange-flavored liqueur. It is a variety of Curacao liqueur, an orange-flavored liqueur made from the dried peels of bitter and sweet oranges. Triple sec may be consumed neat as a digestif, or on the rocks."
-        },
-        {
-            "name": "Blended Scotch",
-            "category": "Whiskey",
-            "alcohol_percentage": 40,
+            "name": "Pisco",
+            "category": "Brandy",
+            "alcohol_percentage": 41.0,
             "summary": ""
         },
         {
             "name": "Peychauds Bitters",
             "category": "Bitters",
-            "alcohol_percentage": 35,
+            "alcohol_percentage": 35.0,
             "summary": ""
         },
         {
-            "name": "Green Chartreuse Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 55,
+            "name": "Vanilla Vodka",
+            "category": "Vodka",
+            "alcohol_percentage": 17.0,
             "summary": ""
         },
         {
-            "name": "Cachaca",
+            "name": "Cherry Vodka",
+            "category": "Vodka",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Triple Sec",
             "category": "Liqueurs",
-            "alcohol_percentage": 37,
+            "alcohol_percentage": 24.0,
+            "summary": "Triple sec, originally Curacao triple sec, is a type of strong, sweet and colorless orange-flavored liqueur. It is a variety of Curacao liqueur, an orange-flavored liqueur made from the dried peels of bitter and sweet oranges. Triple sec may be consumed neat as a digestif, or on the rocks."
+        },
+        {
+            "name": "Appleton Estate Reserve Blend",
+            "category": "Rum",
+            "alcohol_percentage": 40.0,
+            "summary": "Appleton Estate Reserve Blend is a traditional blended rum which is sweet, smooth that fits perfectly to high quality cocktails."
+        },
+        {
+            "name": "Tequila",
+            "category": "Tequila",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Dry Sherry",
+            "category": "Wine",
+            "alcohol_percentage": 15.0,
             "summary": ""
         },
         {
             "name": "Amaretto Liqueur",
             "category": "Liqueurs",
-            "alcohol_percentage": 28,
-            "summary": ""
-        },
-        {
-            "name": "Champagne",
-            "category": "Wine",
-            "alcohol_percentage": 12,
-            "summary": ""
-        },
-        {
-            "name": "Angostura Bitters",
-            "category": "Bitters",
-            "alcohol_percentage": 45,
-            "summary": "Angostura bitters is a concentrated bitters (herbal alcoholic preparation) based on gentian, herbs, and spices, by House of Angostura in Trinidad and Tobago. It is typically used for flavouring beverages or, less often, food."
-        },
-        {
-            "name": "Irish Whiskey",
-            "category": "Whiskey",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Gin",
-            "category": "Gin",
-            "alcohol_percentage": 38,
-            "summary": "Gin is a distilled alcoholic drink that derives its predominant flavour from juniper berries. Gin originated as a medicinal liquor made by monks and alchemists across Europe to provide aqua vita from distillates of grapes and grains."
-        },
-        {
-            "name": "Apple Schnapps",
-            "category": "Liqueurs",
-            "alcohol_percentage": 17,
-            "summary": ""
-        },
-        {
-            "name": "Rye Whiskey",
-            "category": "Whiskey",
-            "alcohol_percentage": 40,
-            "summary": "Rye whiskey can refer to two different types of whiskey: American rye whiskey, which is similar to bourbon whiskey, but must be distilled from at least 51 percent rye grain. Canadian whiskey, which is often referred to as rye whisky, although it may or may not actually include any rye grain in its production process."
-        },
-        {
-            "name": "Banana Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 25,
-            "summary": ""
-        },
-        {
-            "name": "Orange Flower Water",
-            "category": "Non Alcoholic",
-            "alcohol_percentage": 0,
-            "summary": ""
-        },
-        {
-            "name": "Cognac",
-            "category": "Brandy",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Passion Fruit Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 15,
-            "summary": ""
-        },
-        {
-            "name": "Sparkling Wine",
-            "category": "Wine",
-            "alcohol_percentage": 12,
-            "summary": ""
-        },
-        {
-            "name": "Pimms No. 1",
-            "category": "Liqueurs",
-            "alcohol_percentage": 25,
-            "summary": ""
-        },
-        {
-            "name": "Punt E Mes",
-            "category": "Vermouth",
-            "alcohol_percentage": 16,
-            "summary": "Punt e Mes is an Italian vermouth. It is dark brown in color and has a bitter flavor. According to its producer, the name refers to the flavor being characterized as half a \"point\" of bitterness and one \"point\" of sweetness. Punt e Mes has a strong, distinctive flavor, half-way between regular rosso vermouth and Campari."
-        },
-        {
-            "name": "Fernet Branca",
-            "category": "Bitters",
-            "alcohol_percentage": 39,
-            "summary": ""
-        },
-        {
-            "name": "Elderflower Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 20,
-            "summary": ""
-        },
-        {
-            "name": "Appleton Estate Reserve Blend",
-            "category": "Rum",
-            "alcohol_percentage": 40,
-            "summary": "Appleton Estate Reserve Blend is a traditional blended rum which is sweet, smooth that fits perfectly to high quality cocktails."
-        },
-        {
-            "name": "Prosecco",
-            "category": "Wine",
-            "alcohol_percentage": 11,
-            "summary": ""
-        },
-        {
-            "name": "Tequila",
-            "category": "Tequila",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Dark Rum",
-            "category": "Rum",
-            "alcohol_percentage": 40,
-            "summary": "Dark rums, also known by their particular colour, such as brown, black, or red rums, are classes a grade darker than gold rums. They are usually made from caramelized sugar or molasses. They are generally aged longer, in heavily charred barrels, giving them much stronger flavors than either light or gold rums."
-        },
-        {
-            "name": "Raspberry Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 17,
-            "summary": ""
-        },
-        {
-            "name": "Honey Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 35,
-            "summary": ""
-        },
-        {
-            "name": "Violet Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 18,
-            "summary": ""
-        },
-        {
-            "name": "Curacao Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 20,
-            "summary": "Curacao is a liqueur flavored with the dried peel of the bitter orange laraha, a citrus fruit, grown on the Dutch island of Curacao."
-        },
-        {
-            "name": "Blackberry Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Absinthe",
-            "category": "Anise",
-            "alcohol_percentage": 65,
+            "alcohol_percentage": 28.0,
             "summary": ""
         },
         {
             "name": "Orange Bitters",
             "category": "Bitters",
-            "alcohol_percentage": 28,
+            "alcohol_percentage": 28.0,
             "summary": "Orange bitters is a form of bitters, a cocktail flavoring made from such ingredients as the peels of Seville oranges, cardamom, caraway seed, coriander, anise, and burnt sugar in an alcohol base. "
         },
         {
-            "name": "Demerara Rum",
-            "category": "Rum",
-            "alcohol_percentage": 45,
-            "summary": ""
-        },
-        {
-            "name": "Brandy",
-            "category": "Brandy",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Creme De Cacao",
-            "category": "Liqueurs",
-            "alcohol_percentage": 25,
-            "summary": ""
-        },
-        {
-            "name": "Scotch Whiskey",
+            "name": "Irish Whiskey",
             "category": "Whiskey",
-            "alcohol_percentage": 40,
+            "alcohol_percentage": 40.0,
             "summary": ""
         },
         {
-            "name": "Silver Tequila",
-            "category": "Tequila",
-            "alcohol_percentage": 38,
-            "summary": "Tequila is a distilled beverage made from the blue agave plant. Silver (\"plata\") or White (\"blanco\") is white spirit, unaged and bottled or stored immediately after distillation, or aged less than two months in stainless steel or neutral oak barrels."
+            "name": "Champagne",
+            "category": "Wine",
+            "alcohol_percentage": 12.0,
+            "summary": ""
+        },
+        {
+            "name": "Blackberry Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Fernet Branca",
+            "category": "Bitters",
+            "alcohol_percentage": 39.0,
+            "summary": ""
+        },
+        {
+            "name": "Dark Rum",
+            "category": "Rum",
+            "alcohol_percentage": 40.0,
+            "summary": "Dark rums, also known by their particular colour, such as brown, black, or red rums, are classes a grade darker than gold rums. They are usually made from caramelized sugar or molasses. They are generally aged longer, in heavily charred barrels, giving them much stronger flavors than either light or gold rums."
+        },
+        {
+            "name": "Irish Cream Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 17.0,
+            "summary": ""
+        },
+        {
+            "name": "Cachaca",
+            "category": "Liqueurs",
+            "alcohol_percentage": 37.0,
+            "summary": ""
+        },
+        {
+            "name": "Angostura Bitters",
+            "category": "Bitters",
+            "alcohol_percentage": 45.0,
+            "summary": "Angostura bitters is a concentrated bitters (herbal alcoholic preparation) based on gentian, herbs, and spices, by House of Angostura in Trinidad and Tobago. It is typically used for flavouring beverages or, less often, food."
+        },
+        {
+            "name": "Banana Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 25.0,
+            "summary": ""
         },
         {
             "name": "Lillet Blanc",
             "category": "Wine",
-            "alcohol_percentage": 17,
+            "alcohol_percentage": 17.0,
             "summary": ""
         },
         {
-            "name": "Sweet Vermouth",
+            "name": "Punt E Mes",
             "category": "Vermouth",
-            "alcohol_percentage": 15,
-            "summary": "Vermouth is an aromatized, fortified wine, flavoured with various botanicals (roots, barks, flowers, seeds, herbs, and spices) and sometimes colored. Sweet vermouths usually contain 10\u201315% sugar. The sugar content in dry vermouths generally does not exceed 4%."
+            "alcohol_percentage": 16.0,
+            "summary": "Punt e Mes is an Italian vermouth. It is dark brown in color and has a bitter flavor. According to its producer, the name refers to the flavor being characterized as half a \"point\" of bitterness and one \"point\" of sweetness. Punt e Mes has a strong, distinctive flavor, half-way between regular rosso vermouth and Campari."
         },
         {
-            "name": "Benedictine Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Cherry Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 24,
-            "summary": ""
-        },
-        {
-            "name": "Bourbon Whiskey",
+            "name": "Single Malt Scotch",
             "category": "Whiskey",
-            "alcohol_percentage": 40,
-            "summary": "Bourbon whiskey  a type of American whiskey, a barrel-aged distilled spirit made primarily from corn. The name ultimately derives from the French Bourbon dynasty, although the precise inspiration for the whiskey's name is uncertain."
-        },
-        {
-            "name": "Cherry Vodka",
-            "category": "Vodka",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Orange Liqueur",
-            "category": "Liqueurs",
-            "alcohol_percentage": 40,
-            "summary": ""
-        },
-        {
-            "name": "Orgeat Syrup",
-            "category": "Non Alcoholic",
-            "alcohol_percentage": 0,
-            "summary": "Orgeat syrup is a sweet syrup made from almonds, sugar, and rose water or orange flower water. It was originally made with a barley-almond blend. It has a pronounced almond taste and is used to flavor many cocktails. Orgeat syrup is an important ingredient in the Mai Tai and many Tiki drinks."
-        },
-        {
-            "name": "Dry Sherry",
-            "category": "Wine",
-            "alcohol_percentage": 15,
-            "summary": ""
-        },
-        {
-            "name": "Averna Amaro",
-            "category": "Liqueurs",
-            "alcohol_percentage": 29,
-            "summary": "Amaro Averna is an Italian liqueur in the Amaro category produced in Caltanissetta, Sicily. It is named after its inventor, Salvatore Averna, who invented the recipe in 1868. This drink is produced on the Island of Sicily and is considered a traditional drink. The Averna company was acquired in 2014 by Gruppo Campari."
-        },
-        {
-            "name": "White Rum",
-            "category": "Rum",
-            "alcohol_percentage": 40,
-            "summary": "White rums, also referred to as \"silver\" or \"light\" rums, in general, have very little flavor aside from a general sweetness. White rums are sometimes filtered after aging to remove any colour. Their milder flavors make them popular for use in mixed drinks, as opposed to drinking them straight."
-        },
-        {
-            "name": "Peach Schnapps",
-            "category": "Liqueurs",
-            "alcohol_percentage": 17,
+            "alcohol_percentage": 43.0,
             "summary": ""
         },
         {
             "name": "Vodka",
             "category": "Vodka",
-            "alcohol_percentage": 40,
+            "alcohol_percentage": 40.0,
             "summary": "Vodka is a clear distilled alcoholic beverage with different varieties originating in Poland, Russia and Sweden. It is composed primarily of water and ethanol, but sometimes with traces of impurities and flavorings."
+        },
+        {
+            "name": "Cognac",
+            "category": "Brandy",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "White Rum",
+            "category": "Rum",
+            "alcohol_percentage": 40.0,
+            "summary": "White rums, also referred to as \"silver\" or \"light\" rums, in general, have very little flavor aside from a general sweetness. White rums are sometimes filtered after aging to remove any colour. Their milder flavors make them popular for use in mixed drinks, as opposed to drinking them straight."
+        },
+        {
+            "name": "Bourbon Whiskey",
+            "category": "Whiskey",
+            "alcohol_percentage": 40.0,
+            "summary": "Bourbon whiskey  a type of American whiskey, a barrel-aged distilled spirit made primarily from corn. The name ultimately derives from the French Bourbon dynasty, although the precise inspiration for the whiskey's name is uncertain."
+        },
+        {
+            "name": "Dry Vermouth",
+            "category": "Vermouth",
+            "alcohol_percentage": 18.0,
+            "summary": ""
+        },
+        {
+            "name": "Apple Schnapps",
+            "category": "Liqueurs",
+            "alcohol_percentage": 17.0,
+            "summary": ""
+        },
+        {
+            "name": "Orange Flower Water",
+            "category": "Non Alcoholic",
+            "alcohol_percentage": 0.0,
+            "summary": ""
+        },
+        {
+            "name": "Orange Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Passion Fruit Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 15.0,
+            "summary": ""
+        },
+        {
+            "name": "Creme De Cacao",
+            "category": "Liqueurs",
+            "alcohol_percentage": 25.0,
+            "summary": ""
+        },
+        {
+            "name": "Raspberry Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 17.0,
+            "summary": ""
+        },
+        {
+            "name": "Brandy",
+            "category": "Brandy",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Green Chartreuse Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 55.0,
+            "summary": ""
+        },
+        {
+            "name": "Absinthe",
+            "category": "Anise",
+            "alcohol_percentage": 65.0,
+            "summary": ""
+        },
+        {
+            "name": "Campari",
+            "category": "Bitters",
+            "alcohol_percentage": 25.0,
+            "summary": "Campari is an Italian alcoholic liqueur, considered an aperitif, obtained from the infusion of herbs and fruit (including chinotto and cascarilla) in alcohol and water. It is a bitter, characterised by its dark red colour. Campari is often used in cocktails and is commonly served with soda water or citrus juice."
+        },
+        {
+            "name": "Sparkling Wine",
+            "category": "Wine",
+            "alcohol_percentage": 12.0,
+            "summary": ""
+        },
+        {
+            "name": "Prosecco",
+            "category": "Wine",
+            "alcohol_percentage": 11.0,
+            "summary": ""
+        },
+        {
+            "name": "Cherry Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 24.0,
+            "summary": ""
+        },
+        {
+            "name": "Rye Whiskey",
+            "category": "Whiskey",
+            "alcohol_percentage": 40.0,
+            "summary": "Rye whiskey can refer to two different types of whiskey: American rye whiskey, which is similar to bourbon whiskey, but must be distilled from at least 51 percent rye grain. Canadian whiskey, which is often referred to as rye whisky, although it may or may not actually include any rye grain in its production process."
+        },
+        {
+            "name": "Agave Syrup",
+            "category": "Non Alcoholic",
+            "alcohol_percentage": 0.0,
+            "summary": ""
+        },
+        {
+            "name": "Scotch Whiskey",
+            "category": "Whiskey",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Benedictine Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Sweet Vermouth",
+            "category": "Vermouth",
+            "alcohol_percentage": 15.0,
+            "summary": "Vermouth is an aromatized, fortified wine, flavoured with various botanicals (roots, barks, flowers, seeds, herbs, and spices) and sometimes colored. Sweet vermouths usually contain 10\u201315% sugar. The sugar content in dry vermouths generally does not exceed 4%."
+        },
+        {
+            "name": "Violet Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 18.0,
+            "summary": ""
+        },
+        {
+            "name": "Silver Tequila",
+            "category": "Tequila",
+            "alcohol_percentage": 38.0,
+            "summary": "Tequila is a distilled beverage made from the blue agave plant. Silver (\"plata\") or White (\"blanco\") is white spirit, unaged and bottled or stored immediately after distillation, or aged less than two months in stainless steel or neutral oak barrels."
+        },
+        {
+            "name": "Demerara Rum",
+            "category": "Rum",
+            "alcohol_percentage": 45.0,
+            "summary": ""
+        },
+        {
+            "name": "Amaro Averna",
+            "category": "Liqueurs",
+            "alcohol_percentage": 29.0,
+            "summary": "Amaro Averna is an Italian liqueur in the Amaro category produced in Caltanissetta, Sicily. It is named after its inventor, Salvatore Averna, who invented the recipe in 1868. This drink is produced on the Island of Sicily and is considered a traditional drink. The Averna company was acquired in 2014 by Gruppo Campari."
+        },
+        {
+            "name": "Gin",
+            "category": "Gin",
+            "alcohol_percentage": 38.0,
+            "summary": "Gin is a distilled alcoholic drink that derives its predominant flavour from juniper berries. Gin originated as a medicinal liquor made by monks and alchemists across Europe to provide aqua vita from distillates of grapes and grains."
+        },
+        {
+            "name": "Elderflower Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 20.0,
+            "summary": ""
+        },
+        {
+            "name": "Coffee Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 20.0,
+            "summary": ""
+        },
+        {
+            "name": "Creme De Cassis",
+            "category": "Liqueurs",
+            "alcohol_percentage": 25.0,
+            "summary": ""
+        },
+        {
+            "name": "Peach Schnapps",
+            "category": "Liqueurs",
+            "alcohol_percentage": 17.0,
+            "summary": ""
+        },
+        {
+            "name": "Honey Liqueur",
+            "category": "Liqueurs",
+            "alcohol_percentage": 35.0,
+            "summary": ""
+        },
+        {
+            "name": "Pimms No. 1",
+            "category": "Liqueurs",
+            "alcohol_percentage": 25.0,
+            "summary": ""
+        },
+        {
+            "name": "Blended Scotch",
+            "category": "Whiskey",
+            "alcohol_percentage": 40.0,
+            "summary": ""
+        },
+        {
+            "name": "Orgeat Syrup",
+            "category": "Non Alcoholic",
+            "alcohol_percentage": 0.0,
+            "summary": "Orgeat syrup is a sweet syrup made from almonds, sugar, and rose water or orange flower water. It was originally made with a barley-almond blend. It has a pronounced almond taste and is used to flavor many cocktails. Orgeat syrup is an important ingredient in the Mai Tai and many Tiki drinks."
         }
     ]
 }

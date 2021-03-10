@@ -93,7 +93,13 @@ struct CocktailsList: View {
                 // cocktails list
                 ScrollView(.vertical, showsIndicators: true){
                     VStack(spacing: 0){
-                        ForEach(self.dbCocktails.data.filter(filterData(cocktail:))){ cocktail in
+                        let filterdCocktails = self.dbCocktails.data.filter(filterData(cocktail:))
+                        Text("\(filterdCocktails.count) / \(self.dbCocktails.data.count)")
+                            .font(.caption)
+                            .opacity(0.5)
+                            .frame(width: 100)
+                        
+                        ForEach(filterdCocktails){ cocktail in
                             CocktailButtonView(cocktail: cocktail, isPressed: self.$showCocktailInfo, infoCocktail: self.$infoCocktail, addToFavorite: self.$addToFavorite)
                                 .padding(.horizontal)
                         }
@@ -104,7 +110,7 @@ struct CocktailsList: View {
                 .gesture(DragGesture().onChanged { _ in
                         UIApplication.shared.endEditing()
                 })
-            }.navigationBarTitle("Cocktails List")
+            }.navigationBarTitle(self.filterAcordingToUserDrinks ? "Cocktails List" : "All Cocktails")
             .sheet(isPresented: self.$showCocktailInfo){
                 FullCocktailView(showFullCocktailInfo: self.$showCocktailInfo, addToFavorite: self.$addToFavorite, cocktail: self.$infoCocktail)
                     .preferredColorScheme(self.colorScheme)

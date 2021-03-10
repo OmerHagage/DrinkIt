@@ -1,342 +1,83 @@
 {
     "cocktails": [
         {
-            "name": "Gimlet",
+            "name": "Apple Martini",
             "uncommon_ingredients": [
-                "Gin"
+                "Vodka",
+                "Apple Schnapps"
             ],
             "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Simple Syrup"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into an old cocktail glass",
-                "Garnish with a lime slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Penicillin",
-            "uncommon_ingredients": [
-                "Blended Scotch",
-                "Single Malt Scotch"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Honey-ginger Syrup"
-            ],
-            "common_quantities": [
-                1.0,
+                1.5,
                 1.0
             ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Candied Ginger"
-            ],
-            "glass_kind": "Rocks",
-            "recipe": [
-                "Add the blended scotch, lemon juice and honey-ginger syrup into a shaker filled with ice and shake",
-                "Strain into a rocks glass filled with ice",
-                "Top with the single malt scotch",
-                "Garnish with candied ginger"
-            ],
-            "summary": "The way to make honey-ginger syrup is: add honey, water and ginger root to a pot to boil. Reduce heat and simmer for 5 minutes, then cool the syrup in the fride for a night.",
-            "rating": 0
-        },
-        {
-            "name": "Chocolate Covered Cherry",
-            "uncommon_ingredients": [
-                "Cherry Vodka",
-                "Creme De Cacao",
-                "Grenadine"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                2.0,
-                0.5
-            ],
             "uncommon_quantity_types": [
-                "part",
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Heavy Cream",
-                "Chocolate Syrup"
+                "Lemon Juice"
             ],
             "common_quantities": [
-                2.0,
-                1.0
+                0.5
             ],
             "common_quantity_types": [
-                "part",
                 "part"
             ],
             "garnish": [
-                "Cherry"
+                "Apple Slice"
             ],
             "glass_kind": "Martini",
             "recipe": [
                 "Add all ingredients into a shaker filled with ice and shake",
-                "Drizzle the chocolate syrup in a martini glass",
-                "Strain into a the glass",
-                "Garnish with a cherry"
+                "Strain into a martini glass",
+                "Garnish with an apple slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Brandy Crusta",
+            "name": "Bellini",
             "uncommon_ingredients": [
-                "Brandy",
-                "Cherry Liqueur",
-                "Orange Liqueur",
-                "Angostura Bitters"
+                "Prosecco"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Peach Puree"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Peach Slice"
+            ],
+            "glass_kind": "Champagne",
+            "recipe": [
+                "Add the peach puree into a champgane glass",
+                "Then, add the prosecco and stir",
+                "Granish with a slice of peach"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Longshoreman",
+            "uncommon_ingredients": [
+                "Rye Whiskey",
+                "Amaro Averna",
+                "Punt E Mes"
             ],
             "uncommon_quantities": [
                 2.0,
                 0.5,
-                0.5,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Sugar"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "dash"
-            ],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Rim a coupe glass with sugar",
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into the rimmed glass",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Daiquiri",
-            "uncommon_ingredients": [
-                "White Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Simple Syrup",
-                "Lime Juice"
-            ],
-            "common_quantities": [
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lime Wedge"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Combine all ingredients with ice into a shaker and shake",
-                "Strain into a coupe glass",
-                "Garnish with a lime wedge"
-            ],
-            "summary": "Daiquiri is also a name of a beach and an iron mine in Cuba. According to the stories this cocktail was made by an American who was in Cuba in the strarting of the 20th century.",
-            "rating": 0
-        },
-        {
-            "name": "Blueberry Collins",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Blueberries",
-                "Lemon Juice",
-                "Soda",
-                "Simple Syrup"
-            ],
-            "common_quantities": [
-                6.0,
-                0.5,
-                0.5,
-                0.6
-            ],
-            "common_quantity_types": [
-                "fresh",
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lemon Slice"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Muddle the raspberries and the gin in a shaker",
-                "Add the lemon juice, sugar syrup and ice and shake",
-                "Strain into a collins glass",
-                "Top with the soda Garnish with a lemon slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Navy Grog",
-            "uncommon_ingredients": [
-                "White Rum",
-                "Dark Rum",
-                "Demerara Rum"
-            ],
-            "uncommon_quantities": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Honey Syrup",
-                "Grapefruit Juice",
-                "Soda"
-            ],
-            "common_quantities": [
-                0.75,
-                1.0,
-                0.75,
-                0.75
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Rocks",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a rocks glass",
-                "Garnish with a lime slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Last Word",
-            "uncommon_ingredients": [
-                "Gin",
-                "Green Chartreuse Liqueur",
-                "Cherry Liqueur"
-            ],
-            "uncommon_quantities": [
-                0.75,
-                0.75,
-                0.75
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice"
-            ],
-            "common_quantities": [
-                0.75
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Cherry"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with a cherry"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Negroni",
-            "uncommon_ingredients": [
-                "Gin",
-                "Campari",
-                "Sweet Vermouth"
-            ],
-            "uncommon_quantities": [
-                1.0,
-                1.0,
-                1.0
+                0.5
             ],
             "uncommon_quantity_types": [
                 "part",
@@ -347,106 +88,56 @@
             "common_quantities": [],
             "common_quantity_types": [],
             "garnish": [
-                "Orange Peel"
+                "Flamed Orange Peel"
             ],
-            "glass_kind": "Old Fashioned",
+            "glass_kind": "Coupe",
             "recipe": [
-                "Combine all ingredients into an Old Fashioned glass filled with ice and stir",
-                "Garnish with an orange peel"
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a chilled coupe glass",
+                "Garnish with a flamed orange peel"
             ],
-            "summary": "Negroni is a popular Italian cocktail, was made first in Florence (Italy) in 1919.",
-            "rating": 4
+            "summary": "Longshoreman is  variation on the Manhattan cocktail.",
+            "rating": 3
         },
         {
-            "name": "Long Island Iced Tea",
+            "name": "Espresso Martini",
             "uncommon_ingredients": [
                 "Vodka",
-                "White Rum",
-                "Silver Tequila",
-                "Gin",
-                "Triple Sec"
-            ],
-            "uncommon_quantities": [
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Simple Syrup",
-                "Lemon Juice",
-                "Cola"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lemon Wedge"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Shake all ingredients with ice (except the cola) in a shaker",
-                "Strain into a collins glass and top with the cola",
-                "Garnish with a lemon wedge\n"
-            ],
-            "summary": "Long Island Iced Tea was popular in the 1980s. It is a mix of many flavors.",
-            "rating": 4
-        },
-        {
-            "name": "Tequila Sunrise",
-            "uncommon_ingredients": [
-                "Tequila",
-                "Grenadine"
+                "Coffee Liqueur"
             ],
             "uncommon_quantities": [
                 2.0,
-                0.5
+                1.0
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Orange Juice"
+                "Espresso"
             ],
             "common_quantities": [
-                4.0
+                1.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Orange Slice And Cherry"
+                "Coffee Beans"
             ],
-            "glass_kind": "Highball",
+            "glass_kind": "Cocktail",
             "recipe": [
-                "Add the tequila into a highball glass filled with ice",
-                "Then, add the orange juice",
-                "Top with the grenadine",
-                "Garnish with an orange slice and a cherry"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with 3 coffee beans"
             ],
-            "summary": "",
+            "summary": "Kahlua is the preffered coffee liqueur for this cocktail.",
             "rating": 0
         },
         {
-            "name": "Bucks Fizz",
+            "name": "Salty Dog",
             "uncommon_ingredients": [
-                "Champagne"
+                "Vodka"
             ],
             "uncommon_quantities": [
                 2.0
@@ -455,102 +146,64 @@
                 "part"
             ],
             "common_ingredients": [
-                "Orange Juice"
+                "Grapefruit Juice",
+                "Salt"
             ],
             "common_quantities": [
+                4.0,
                 1.0
             ],
             "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Orange Twist"
-            ],
-            "glass_kind": "Champagne",
-            "recipe": [
-                "Add the orange juice into a champagne glass",
-                "Add the champagne",
-                "Garnish with an orange twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Lemon Drop Martini",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Triple Sec"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Sugar"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
                 "part",
                 "dash"
             ],
             "garnish": [
-                "Lemon Twist"
+                "Grapefruit Slice"
             ],
-            "glass_kind": "Martini",
+            "glass_kind": "Highball",
             "recipe": [
-                "Rim a cocktail glass with sugar",
+                "Rim a highball glass with salt",
                 "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into the rimmed glass",
-                "Garnish with a lemon twist"
+                "Strain into the rimmed glass filled with ice",
+                "Garnish with a grapefruit slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Sex On The Beach",
+            "name": "Vieux Carre",
             "uncommon_ingredients": [
-                "Vodka",
-                "Peach Schnapps"
+                "Rye Whiskey",
+                "Cognac",
+                "Sweet Vermouth",
+                "Benedictine Liqueur",
+                "Peychauds Bitters"
             ],
             "uncommon_quantities": [
-                2.0,
-                1.0
+                1.0,
+                1.0,
+                1.0,
+                0.5,
+                2.0
             ],
             "uncommon_quantity_types": [
                 "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Orange Juice",
-                "Cranberry Juice"
-            ],
-            "common_quantities": [
-                2.0,
-                2.0
-            ],
-            "common_quantity_types": [
                 "part",
-                "part"
+                "part",
+                "part",
+                "dash"
             ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
             "garnish": [
-                "Orange Slice"
+                "Cherry"
             ],
-            "glass_kind": "Hurricane",
+            "glass_kind": "Old Fashioned",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a hurricane glass",
-                "Garnish with an orange slice"
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into an old fashioned glass",
+                "Garnish with a cherry"
             ],
             "summary": "",
             "rating": 0
@@ -591,90 +244,115 @@
             "rating": 0
         },
         {
-            "name": "Dark N Stormy",
+            "name": "Woo Woo",
             "uncommon_ingredients": [
-                "Dark Rum"
+                "Vodka",
+                "Peach Schnapps"
             ],
             "uncommon_quantities": [
-                2.0
+                2.0,
+                1.0
             ],
             "uncommon_quantity_types": [
+                "part",
                 "part"
             ],
             "common_ingredients": [
-                "Lime Juice",
-                "Ginger Beer"
+                "Cranberry Juice"
             ],
             "common_quantities": [
-                0.5,
                 4.0
             ],
             "common_quantity_types": [
-                "part",
                 "part"
             ],
             "garnish": [
                 "Lime Wedge"
             ],
-            "glass_kind": "Tall",
+            "glass_kind": "Highball",
             "recipe": [
-                "Add the dark rum and the lime juice into a tall glass filled with ice",
-                "Top with the ginger beer and strir",
-                "Garnish with a lime wedge"
+                "Add all ingredients into a highball glass filled with ice and stir",
+                "Garnish with an lime wedge"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Jungle Bird",
+            "name": "Hanky Panky",
             "uncommon_ingredients": [
-                "Dark Rum",
-                "Campari"
+                "Gin",
+                "Sweet Vermouth",
+                "Fernet Branca"
             ],
             "uncommon_quantities": [
                 1.5,
-                1.0
+                1.5,
+                2.0
             ],
             "uncommon_quantity_types": [
                 "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Simple Syrup",
-                "Pineapple Juice"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                1.5
-            ],
-            "common_quantity_types": [
                 "part",
-                "part",
-                "part"
+                "dash"
             ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
             "garnish": [
-                "Pineapple Wedge"
+                "Orange Peel"
             ],
-            "glass_kind": "Rocks",
+            "glass_kind": "Cocktail",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a rocks glass",
-                "Garnish with a pineapple wedge"
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a cocktail glass",
+                "Garnish with an orange peel"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Black Russian",
+            "name": "Bourbon Old Fashioned",
             "uncommon_ingredients": [
-                "Vodka",
-                "Coffee Liqueur"
+                "Bourbon Whiskey",
+                "Angostura Bitters"
             ],
             "uncommon_quantities": [
                 2.0,
-                1.0
+                3.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                0.5
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Orange Peel"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Combine all ingredients into a Old Fashioned glass and stir",
+                "Add ice",
+                "Garnish with a orange peel"
+            ],
+            "summary": "The Bourbon Old Fashioned is a classic and one of the most popular cocktails in the world, made first in the 19th century.",
+            "rating": 4
+        },
+        {
+            "name": "French Connection",
+            "uncommon_ingredients": [
+                "Amaretto Liqueur",
+                "Cognac"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                2.0
             ],
             "uncommon_quantity_types": [
                 "part",
@@ -684,154 +362,86 @@
             "common_quantities": [],
             "common_quantity_types": [],
             "garnish": [],
-            "glass_kind": "Rocks",
+            "glass_kind": "Old Fashioned",
             "recipe": [
-                "Add the vodka and the coffee liqueur into a mixing glass filled with ice and stir",
-                "Strain into a rocks glass filled with ice"
+                "Add all ingredients into an old fashioned glass filled with ice and stir"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Pink Gin",
+            "name": "Tommys Margarita",
             "uncommon_ingredients": [
-                "Gin",
-                "Angostura Bitters"
+                "Tequila"
             ],
             "uncommon_quantities": [
-                2.0,
-                4.0
+                2.0
             ],
             "uncommon_quantity_types": [
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with an lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Hemingway Daiquiri",
-            "uncommon_ingredients": [
-                "White Rum",
-                "Cherry Liqueur"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
                 "part"
             ],
             "common_ingredients": [
-                "Grapefruit Juice",
-                "Lime Juice"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with a lime slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Royal Hawaiian",
-            "uncommon_ingredients": [
-                "Gin",
-                "Orgeat Syrup"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Pineapple Juice",
-                "Lemon Juice"
+                "Lime Juice",
+                "Agave Nectar",
+                "Salt"
             ],
             "common_quantities": [
                 1.0,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Pineapple Slice"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with pineapple slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Lemongrad",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Elderflower Liqueur"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Tonic Water"
-            ],
-            "common_quantities": [
                 0.5,
                 1.0
             ],
             "common_quantity_types": [
                 "part",
+                "part",
+                "dash"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Rim a rocks glass with salt",
+                "Combine all ingredients with ice into a shaker and shake",
+                "Strain into the rimmed glass filled with ice",
+                "Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Bronx",
+            "uncommon_ingredients": [
+                "Gin",
+                "Dry Vermouth",
+                "Sweet Vermouth"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Orange Juice"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Lemon Wedge"
+                "Orange Twist"
             ],
-            "glass_kind": "Highball",
+            "glass_kind": "Cocktail",
             "recipe": [
-                "Add all ingredients (except the tonic water) into a shaker filled with ice and shake",
-                "Strain into a highball glass",
-                "Top with the tonic water",
-                "Garnish with a lemon wedge"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with an orange twist"
             ],
             "summary": "",
             "rating": 0
@@ -872,186 +482,16 @@
             "rating": 0
         },
         {
-            "name": "Zombie",
-            "uncommon_ingredients": [
-                "Dark Rum",
-                "White Rum",
-                "Grenadine"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                2.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "teaspoon"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Pineapple Juice"
-            ],
-            "common_quantities": [
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Mint Sprig"
-            ],
-            "glass_kind": "Hurricane",
-            "recipe": [
-                "Add all ingredients (without the grenadine) into a shaker filled with ice and shake",
-                "Strain into a hurricane glass",
-                "Slowly pour the grenadine",
-                "Garnish with a mint sprig"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "French 75",
+            "name": "Pink Gin",
             "uncommon_ingredients": [
                 "Gin",
-                "Champagne"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                3.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lemon Peel"
-            ],
-            "glass_kind": "Champagne",
-            "recipe": [
-                "Add the lemon juice, simple syrup and gin into a shaker filled with ice and shake",
-                "Strain into a champagne glass",
-                "Top with the champagne",
-                "Garnish with a lemon peel"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Raspberry Mojito",
-            "uncommon_ingredients": [
-                "White Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Simple Syrup",
-                "Lime (cut Into Wedges)",
-                "Raspberries",
-                "Soda",
-                "Mint Leaves"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                5.0,
-                1.0,
-                5.0
-            ],
-            "common_quantity_types": [
-                "part",
-                " fresh",
-                " fresh",
-                " part",
-                " fresh"
-            ],
-            "garnish": [
-                "Mint Leaf"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Muddle the lime wedges, raspberries, mint leaves and the simple syrup in a collins glass",
-                "Add ice to the glass, then add the white rum",
-                "Top with the soda and stir",
-                "Garnish with a mint leaf"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Rum Old Fashioned",
-            "uncommon_ingredients": [
-                "Dark Rum",
-                "Angostura Bitters",
-                "Orange Bitters"
+                "Angostura Bitters"
             ],
             "uncommon_quantities": [
                 2.0,
-                2.0,
-                2.0
+                4.0
             ],
             "uncommon_quantity_types": [
-                "part",
-                "dash",
-                "dash"
-            ],
-            "common_ingredients": [
-                "Demerara Syrup"
-            ],
-            "common_quantities": [
-                1.0
-            ],
-            "common_quantity_types": [
-                "teaspoon"
-            ],
-            "garnish": [
-                "Orange Twist"
-            ],
-            "glass_kind": "Rocks",
-            "recipe": [
-                "Combie all ingredients in a mixing glass filled with large ice cubes and stir",
-                "Strain into a rocks glass filled with a large ice cube",
-                "Garnish with an orange twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "El Presidente",
-            "uncommon_ingredients": [
-                "White Rum",
-                "Orange Liqueur",
-                "Dry Vermouth",
-                "Grenadine"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0,
-                1.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
                 "part",
                 "dash"
             ],
@@ -1059,19 +499,19 @@
             "common_quantities": [],
             "common_quantity_types": [],
             "garnish": [
-                "Orange Peel"
+                "Lemon Twist"
             ],
             "glass_kind": "Cocktail",
             "recipe": [
                 "Add all ingredients into a shaker filled with ice and shake",
                 "Strain into a cocktail glass",
-                "Garnish with an orange twist"
+                "Garnish with an lemon twist"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Bay Breeze",
+            "name": "Screwdriver",
             "uncommon_ingredients": [
                 "Vodka"
             ],
@@ -1082,99 +522,22 @@
                 "part"
             ],
             "common_ingredients": [
-                "Cranberry Juice",
-                "Pineapple Juice"
+                "Orange Juice"
             ],
             "common_quantities": [
-                2.0,
-                2.0
+                4.0
             ],
             "common_quantity_types": [
-                "part",
                 "part"
             ],
             "garnish": [
-                "Lime Wedge"
+                "Orange Slice"
             ],
             "glass_kind": "Highball",
             "recipe": [
                 "Add the vodka into a highball glass filled with ice",
-                "Then, add the pineapple juice and cranberry juice",
-                "Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Pimms Cup",
-            "uncommon_ingredients": [
-                "Pimms No. 1"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemonade"
-            ],
-            "common_quantities": [
-                1.0
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Strawberry And Mint Sprig"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Add all ingredients into a highball glass filled with ice and stir",
-                "Garnish with a strawberry and a mint sprig"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Paloma",
-            "uncommon_ingredients": [
-                "Tequila"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Grapefruit Juice",
-                "Soda",
-                "Sea Salt"
-            ],
-            "common_quantities": [
-                0.5,
-                2.0,
-                2.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part",
-                " dash"
-            ],
-            "garnish": [
-                "Grapefruit Wedge"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Rub the edge of a collins glass with the grapefruit wedge, then dip the glass onto a plate of sea salt",
-                "Fill the glass with ice",
-                "Add the tequila, lime juice and grapefruit juice and stir",
-                "Top with the soda",
-                "Garnish with a grapefruit edge"
+                "Then, add the orange juice",
+                "Garnish with an orange slice"
             ],
             "summary": "",
             "rating": 0
@@ -1227,837 +590,16 @@
             "rating": 0
         },
         {
-            "name": "Bamboo",
-            "uncommon_ingredients": [
-                "Dry Sherry",
-                "Dry Vermouth",
-                "Orange Bitters",
-                "Angostura Bitters"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                1.5,
-                2.0,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a cocktail glass",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "French Martini",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Raspberry Liqueur"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Pineapple Juice"
-            ],
-            "common_quantities": [
-                1.0
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Pineapple Wedge"
-            ],
-            "glass_kind": "Martini",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a martini glass",
-                "Garnish with a pineapple wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Gin Sour",
+            "name": "Last Word",
             "uncommon_ingredients": [
                 "Gin",
-                "Angostura Bitters"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                3.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Egg White"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Lemon Slice"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Add all ingredients into a shaker (without ice) and shake",
-                "Then, add ice and shake again",
-                "Strain into a coupe glass",
-                "Garnish with a lemon slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Gin Fizz",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Soda",
-                "Egg White"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                2.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Add the lemon juice, simple syrup, egg white and gin into a shaker (without ice) and shake",
-                "Then, add ice and shake again",
-                "Strain into a collins glass filled with ice",
-                "Top with the soda",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Champagne Cocktail",
-            "uncommon_ingredients": [
-                "Champagne",
-                "Angostura Bitters"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                3.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [
-                "Cube"
-            ],
-            "common_quantities": [
-                1.0
-            ],
-            "common_quantity_types": [
-                "sugar"
-            ],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Champagne",
-            "recipe": [
-                "Add the sugar cube into a champagne glass",
-                "Then, add the angostura bitters",
-                "Top with the champagne",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Caipirinha",
-            "uncommon_ingredients": [
-                "Cachaca"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Sugar",
-                "Lime (cut Into Edges)"
-            ],
-            "common_quantities": [
-                3.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "teaspoon",
-                " fresh"
-            ],
-            "garnish": [
-                "Lime Wedge"
-            ],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Muddle the lime (cut into wedges) and the sugar in an old fashioned glass",
-                "Add ice, then add the cachaca and stir",
-                " Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "White Lady",
-            "uncommon_ingredients": [
-                "Gin",
-                "Triple Sec"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Egg White"
-            ],
-            "common_quantities": [
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Add all ingredients into a shaker (without ice) and shake",
-                "Then, add ice and shake again",
-                "Strain into a cocktail",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Sidecar",
-            "uncommon_ingredients": [
-                "Cognac",
-                "Orange Liqueur"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Sugar"
-            ],
-            "common_quantities": [
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "dash"
-            ],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Rim a cocktail glass with sugar",
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into the rimmed glass",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Painkiller",
-            "uncommon_ingredients": [
-                "Dark Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Orange Juice",
-                "Pineapple Juice",
-                "Coconut Cream"
-            ],
-            "common_quantities": [
-                1.0,
-                4.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Ground Nutmeg And Pineapple Wedge"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a highball glass",
-                "Garnish with ground nutmeg and pineapple wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Kir Royale",
-            "uncommon_ingredients": [
-                "Champagne",
-                "Creme De Cassis"
-            ],
-            "uncommon_quantities": [
-                4.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Raspberry"
-            ],
-            "glass_kind": "Champagne",
-            "recipe": [
-                "Add the creme de cassis into a champagne glass",
-                "Add the champagne into the glass",
-                "Garnish with raspberries"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Sea Breeze",
-            "uncommon_ingredients": [
-                "Vodka"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Grapefruit Juice",
-                "Cranberry Juice"
-            ],
-            "common_quantities": [
-                1.0,
-                4.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Add all ingredients into a highball glass filled with ice and stir",
-                "Garnish with a lime slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Apple Martini",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Apple Schnapps"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice"
-            ],
-            "common_quantities": [
-                0.5
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Apple Slice"
-            ],
-            "glass_kind": "Martini",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a martini glass",
-                "Garnish with an apple slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Caipivodka",
-            "uncommon_ingredients": [
-                "Vodka"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime (cut Into Wedges)",
-                "Simple Syrup"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5
-            ],
-            "common_quantity_types": [
-                "fresh",
-                "part"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Muddle the lime (cut into wedges) in an old fashioned glass",
-                "Add ice, then add the vodka and the simple syrup and stir",
-                " Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Screwdriver",
-            "uncommon_ingredients": [
-                "Vodka"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Orange Juice"
-            ],
-            "common_quantities": [
-                4.0
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Orange Slice"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Add the vodka into a highball glass filled with ice",
-                "Then, add the orange juice",
-                "Garnish with an orange slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Dry Martini",
-            "uncommon_ingredients": [
-                "Gin",
-                "Dry Vermouth"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Green Olive"
-            ],
-            "glass_kind": "Martini",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a martini glass",
-                "Garnish with a green olive"
-            ],
-            "summary": "Dry Martini became a common cocktail in the 1920s and his origin is unknown.",
-            "rating": 0
-        },
-        {
-            "name": "Longshoreman",
-            "uncommon_ingredients": [
-                "Rye Whiskey",
-                "Amaro Averna",
-                "Punt E Mes"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Flamed Orange Peel"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a chilled coupe glass",
-                "Garnish with a flamed orange peel"
-            ],
-            "summary": "Longshoreman is  variation on the Manhattan cocktail.",
-            "rating": 3
-        },
-        {
-            "name": "Mojito",
-            "uncommon_ingredients": [
-                "White Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Mint",
-                "Simple Syrup",
-                "Lime Juice",
-                "Soda"
-            ],
-            "common_quantities": [
-                4.0,
-                0.5,
-                1.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "leaves",
-                "part",
-                "part",
-                "splash"
-            ],
-            "garnish": [
-                "Lime Slice"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Lightly muddle the mint in a cocktail shaker",
-                "Add all other ingredients with ice and shake",
-                "Strain into a highball glass filled with ice",
-                "Top with a splash of soda",
-                "Granish with a slice of lime"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Raspberry Daiquiri",
-            "uncommon_ingredients": [
-                "White Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Sugar",
-                "Lime Juice",
-                "Raspberries"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                5.0
-            ],
-            "common_quantity_types": [
-                "teaspoon",
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Lime Wedge"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Rim a cocktail glass with sugar",
-                "Muddle the raspberries and the lime juice in a shaker",
-                "Add ice and the white rum and shake",
-                "Strain into the rimmed glass",
-                "Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Aperol Spritz",
-            "uncommon_ingredients": [
-                "Aperol",
-                "Prosecco"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                3.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Soda"
-            ],
-            "common_quantities": [
-                1.0
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Orange Slice"
-            ],
-            "glass_kind": "Wine",
-            "recipe": [
-                "Combine all ingredients into a wine glass filled with ice and stir",
-                "Garnish with an orange slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Godfather",
-            "uncommon_ingredients": [
-                "Scotch Whiskey",
-                "Amaretto Liqueur"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into an old fashioned glass"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Tom Collins",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Soda"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5,
-                2.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Lemon Wedge"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Combine all ingredients (without the soda) into a collins glass filled with ice and stir",
-                "Top with the soda",
-                "Garnish with an lemon wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Californication",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Gin",
-                "White Rum",
-                "Tequila"
-            ],
-            "uncommon_quantities": [
-                0.5,
-                0.5,
-                0.5,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Orange Juice"
-            ],
-            "common_quantities": [
-                0.5,
-                3.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Orange Slice"
-            ],
-            "glass_kind": "Large",
-            "recipe": [
-                "Combine all ingredients into a large glass filled with ice and stir",
-                "Garnish with an orange slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Vodka Martini",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Dry Vermouth"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Lemon Twist"
-            ],
-            "glass_kind": "Martini",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a martini glass",
-                "Garnish with a lemon twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Aviation",
-            "uncommon_ingredients": [
-                "Gin",
-                "Violet Liqueur",
+                "Green Chartreuse Liqueur",
                 "Cherry Liqueur"
             ],
             "uncommon_quantities": [
-                2.0,
-                0.25,
-                0.25
+                0.75,
+                0.75,
+                0.75
             ],
             "uncommon_quantity_types": [
                 "part",
@@ -2065,10 +607,10 @@
                 "part"
             ],
             "common_ingredients": [
-                "Lemon Juice"
+                "Lime Juice"
             ],
             "common_quantities": [
-                0.5
+                0.75
             ],
             "common_quantity_types": [
                 "part"
@@ -2081,398 +623,6 @@
                 "Add all ingredients into a shaker filled with ice and shake",
                 "Strain into a cocktail glass",
                 "Garnish with a cherry"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Whiskey Sour",
-            "uncommon_ingredients": [
-                "Bourbon Whiskey"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Orange Slice And Cherry"
-            ],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into an old fashioned glass filled with ice",
-                "Garnish with a cherry and a orange slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Boulevardier",
-            "uncommon_ingredients": [
-                "Bourbon Whiskey",
-                "Sweet Vermouth",
-                "Campari"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                1.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Orange Peel"
-            ],
-            "glass_kind": "Rocks",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a rocks glass",
-                "Garnish with a orange peel"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Pina Colada",
-            "uncommon_ingredients": [
-                "White Rum"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Pineapple Juice",
-                "Coconut Cream"
-            ],
-            "common_quantities": [
-                2.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Pineapple Wedge"
-            ],
-            "glass_kind": "Hurricane",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a hurricane glass filled with ice",
-                "Garnish with a pineapple wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "John Collins",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup",
-                "Soda"
-            ],
-            "common_quantities": [
-                1.0,
-                0.5,
-                2.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "garnish": [
-                "Cherry And Lemon Slice"
-            ],
-            "glass_kind": "Collins",
-            "recipe": [
-                "Add all ingredients (without the soda) into a shaker filled with ice and shake",
-                "Strain into a collins glass",
-                "Top with the soda",
-                "Garnish with a cherry and a lemon slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Breakfast Martini",
-            "uncommon_ingredients": [
-                "Gin",
-                "Triple Sec"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Lemon Juice",
-                "Orange Marmalade"
-            ],
-            "common_quantities": [
-                0.5,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "teaspoon"
-            ],
-            "garnish": [
-                "Orange Twist"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a coupe glass",
-                "Garnish with an orange twist"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Strawberry Daiquiri",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Simple Syrup",
-                "Strawberries"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                4.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Strawberry Slice"
-            ],
-            "glass_kind": "Margarita",
-            "recipe": [
-                "Add all ingredients with ice into a blender and blend until smooth",
-                "Strain into a margarita glass",
-                "Garnish with a strawberry slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Hanky Panky",
-            "uncommon_ingredients": [
-                "Gin",
-                "Sweet Vermouth",
-                "Fernet Branca"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                1.5,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Orange Peel"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a cocktail glass",
-                "Garnish with an orange peel"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Gin Gin Mule",
-            "uncommon_ingredients": [
-                "Gin"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Lime Juice",
-                "Simple Syrup",
-                "Mint Sprig",
-                "Ginger Beer"
-            ],
-            "common_quantities": [
-                0.5,
-                0.5,
-                2.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "part",
-                "fresh",
-                "part"
-            ],
-            "garnish": [
-                "Mint Sprig"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Muddle the the lime juice, simple syrup and 2 mint sprigs in the bottom of a shaker",
-                "Add the ginger beer, gin and ice and shake",
-                "Strain into a highball glass filled with ice",
-                "Garnish with a mint sprig"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Salty Dog",
-            "uncommon_ingredients": [
-                "Vodka"
-            ],
-            "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Grapefruit Juice",
-                "Salt"
-            ],
-            "common_quantities": [
-                4.0,
-                1.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "dash"
-            ],
-            "garnish": [
-                "Grapefruit Slice"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Rim a highball glass with salt",
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into the rimmed glass filled with ice",
-                "Garnish with a grapefruit slice"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Baja Gold",
-            "uncommon_ingredients": [
-                "Tequila",
-                "Agave Syrup"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
-                "Pineapple Juice"
-            ],
-            "common_quantities": [
-                0.75
-            ],
-            "common_quantity_types": [
-                "part"
-            ],
-            "garnish": [
-                "Lime Wedge"
-            ],
-            "glass_kind": "Coupe",
-            "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a coupe glass",
-                "Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "B-52",
-            "uncommon_ingredients": [
-                "Coffee Liqueur",
-                "Irish Cream Liqueur",
-                "Orange Liqueur"
-            ],
-            "uncommon_quantities": [
-                0.33,
-                0.33,
-                0.33
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [],
-            "glass_kind": "Shot",
-            "recipe": [
-                "Add the coffee liqueur into a shot glass",
-                "Then, add the irish cream liqueur to the glass",
-                "Finally, add the orange liqueur to the glass"
             ],
             "summary": "",
             "rating": 0
@@ -2530,9 +680,9 @@
             "rating": 0
         },
         {
-            "name": "Bellini",
+            "name": "Sea Breeze",
             "uncommon_ingredients": [
-                "Prosecco"
+                "Vodka"
             ],
             "uncommon_quantities": [
                 2.0
@@ -2541,31 +691,33 @@
                 "part"
             ],
             "common_ingredients": [
-                "Peach Puree"
+                "Grapefruit Juice",
+                "Cranberry Juice"
             ],
             "common_quantities": [
-                1.0
+                1.0,
+                4.0
             ],
             "common_quantity_types": [
+                "part",
                 "part"
             ],
             "garnish": [
-                "Peach Slice"
+                "Lime Slice"
             ],
-            "glass_kind": "Champagne",
+            "glass_kind": "Highball",
             "recipe": [
-                "Add the peach puree into a champgane glass",
-                "Then, add the prosecco and stir",
-                "Granish with a slice of peach"
+                "Add all ingredients into a highball glass filled with ice and stir",
+                "Garnish with a lime slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Caribbean Sunrise",
+            "name": "Baja Gold",
             "uncommon_ingredients": [
-                "Vodka",
-                "Grenadine"
+                "Tequila",
+                "Agave Syrup"
             ],
             "uncommon_quantities": [
                 2.0,
@@ -2579,54 +731,585 @@
                 "Pineapple Juice"
             ],
             "common_quantities": [
-                4.0
+                0.75
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Pineapple Slice"
+                "Lime Wedge"
             ],
-            "glass_kind": "Highball",
+            "glass_kind": "Coupe",
             "recipe": [
-                "Add all ingredients (except the grenadine) into a shaker filled with ice and shake",
-                "Strain into a highball glass",
-                "Top with the grenadine",
-                "Garnish with a pineapple slice"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a coupe glass",
+                "Garnish with a lime wedge"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Garibaldi",
+            "name": "Raspberry Mojito",
             "uncommon_ingredients": [
-                "Campari"
+                "White Rum"
             ],
             "uncommon_quantities": [
-                1.5
+                2.0
             ],
             "uncommon_quantity_types": [
                 "part"
             ],
             "common_ingredients": [
-                "Orange Juice"
+                "Simple Syrup",
+                "Lime (cut Into Wedges)",
+                "Raspberries",
+                "Soda",
+                "Mint Leaves"
             ],
             "common_quantities": [
-                4.0
+                0.5,
+                0.5,
+                5.0,
+                1.0,
+                5.0
+            ],
+            "common_quantity_types": [
+                "part",
+                " fresh",
+                " fresh",
+                " part",
+                " fresh"
+            ],
+            "garnish": [
+                "Mint Leaf"
+            ],
+            "glass_kind": "Collins",
+            "recipe": [
+                "Muddle the lime wedges, raspberries, mint leaves and the simple syrup in a collins glass",
+                "Add ice to the glass, then add the white rum",
+                "Top with the soda and stir",
+                "Garnish with a mint leaf"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Boulevardier",
+            "uncommon_ingredients": [
+                "Bourbon Whiskey",
+                "Sweet Vermouth",
+                "Campari"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                1.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Orange Peel"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a rocks glass",
+                "Garnish with a orange peel"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Kir Royale",
+            "uncommon_ingredients": [
+                "Champagne",
+                "Creme De Cassis"
+            ],
+            "uncommon_quantities": [
+                4.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Raspberry"
+            ],
+            "glass_kind": "Champagne",
+            "recipe": [
+                "Add the creme de cassis into a champagne glass",
+                "Add the champagne into the glass",
+                "Garnish with raspberries"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Corpse Reviver",
+            "uncommon_ingredients": [
+                "Absinthe",
+                "Gin",
+                "Lillet Blanc",
+                "Orange Liqueur"
+            ],
+            "uncommon_quantities": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "dash",
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice"
+            ],
+            "common_quantities": [
+                1.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Orange Wedge"
+                "Orange Peel"
+            ],
+            "glass_kind": "Martini",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a martini glass",
+                "Garnish with an orange peel"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Paloma",
+            "uncommon_ingredients": [
+                "Tequila"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Grapefruit Juice",
+                "Soda",
+                "Sea Salt"
+            ],
+            "common_quantities": [
+                0.5,
+                2.0,
+                2.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part",
+                " dash"
+            ],
+            "garnish": [
+                "Grapefruit Wedge"
+            ],
+            "glass_kind": "Collins",
+            "recipe": [
+                "Rub the edge of a collins glass with the grapefruit wedge, then dip the glass onto a plate of sea salt",
+                "Fill the glass with ice",
+                "Add the tequila, lime juice and grapefruit juice and stir",
+                "Top with the soda",
+                "Garnish with a grapefruit edge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Gin Sour",
+            "uncommon_ingredients": [
+                "Gin",
+                "Angostura Bitters"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                3.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup",
+                "Egg White"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "fresh"
+            ],
+            "garnish": [
+                "Lemon Slice"
+            ],
+            "glass_kind": "Coupe",
+            "recipe": [
+                "Add all ingredients into a shaker (without ice) and shake",
+                "Then, add ice and shake again",
+                "Strain into a coupe glass",
+                "Garnish with a lemon slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Sidecar",
+            "uncommon_ingredients": [
+                "Cognac",
+                "Orange Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Sugar"
+            ],
+            "common_quantities": [
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "dash"
+            ],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Rim a cocktail glass with sugar",
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into the rimmed glass",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Cuba Libre",
+            "uncommon_ingredients": [
+                "White Rum"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Cola",
+                "Lime"
+            ],
+            "common_quantities": [
+                4.0,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                " fresh"
+            ],
+            "garnish": [
+                "Lime Wedge"
             ],
             "glass_kind": "Highball",
             "recipe": [
-                "Combine all ingredients into a highball glass filled with ice and stir",
-                "Garnish with an orange wedge"
+                "Fill a highball glass with ice",
+                "Squeeze the lime the glass",
+                "Add the white rum and the cola and stir",
+                "Garnish with a lime wedge"
             ],
-            "summary": "Garibaldi is a simple Italian cocktail including only 2 ingredients: Campari and Orange juice, named after the revolutionary general who helped liberate Italy.",
-            "rating": 4
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Black Russian",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Coffee Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add the vodka and the coffee liqueur into a mixing glass filled with ice and stir",
+                "Strain into a rocks glass filled with ice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Dark N Stormy",
+            "uncommon_ingredients": [
+                "Dark Rum"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Ginger Beer"
+            ],
+            "common_quantities": [
+                0.5,
+                4.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Tall",
+            "recipe": [
+                "Add the dark rum and the lime juice into a tall glass filled with ice",
+                "Top with the ginger beer and strir",
+                "Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Lemon Drop Martini",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Triple Sec"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup",
+                "Sugar"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "dash"
+            ],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Martini",
+            "recipe": [
+                "Rim a cocktail glass with sugar",
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into the rimmed glass",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Royal Hawaiian",
+            "uncommon_ingredients": [
+                "Gin",
+                "Orgeat Syrup"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Pineapple Juice",
+                "Lemon Juice"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Pineapple Slice"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with pineapple slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Americano",
+            "uncommon_ingredients": [
+                "Campari",
+                "Sweet Vermouth"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                1.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Soda"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Add the sweet vermouth and campari into a highball glass filled with ice",
+                "Top with the soda and stir",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Zombie",
+            "uncommon_ingredients": [
+                "Dark Rum",
+                "White Rum",
+                "Grenadine"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                2.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "teaspoon"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Pineapple Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Mint Sprig"
+            ],
+            "glass_kind": "Hurricane",
+            "recipe": [
+                "Add all ingredients (without the grenadine) into a shaker filled with ice and shake",
+                "Strain into a hurricane glass",
+                "Slowly pour the grenadine",
+                "Garnish with a mint sprig"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Tom Collins",
+            "uncommon_ingredients": [
+                "Gin"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup",
+                "Soda"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5,
+                2.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Wedge"
+            ],
+            "glass_kind": "Collins",
+            "recipe": [
+                "Combine all ingredients (without the soda) into a collins glass filled with ice and stir",
+                "Top with the soda",
+                "Garnish with an lemon wedge"
+            ],
+            "summary": "",
+            "rating": 0
         },
         {
             "name": "Moscow Mule",
@@ -2664,42 +1347,145 @@
             "rating": 0
         },
         {
-            "name": "El Diablo",
+            "name": "Penicillin",
             "uncommon_ingredients": [
-                "Creme De Cassis",
-                "Tequila"
+                "Blended Scotch",
+                "Single Malt Scotch"
             ],
             "uncommon_quantities": [
-                0.5,
-                1.5
+                2.0,
+                0.5
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Lime Juice",
-                "Ginger Beer"
+                "Lemon Juice",
+                "Honey-ginger Syrup"
             ],
             "common_quantities": [
-                0.5,
-                2.0
+                1.0,
+                1.0
             ],
             "common_quantity_types": [
                 "part",
                 "part"
             ],
             "garnish": [
-                "Lime Wedge"
+                "Candied Ginger"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add the blended scotch, lemon juice and honey-ginger syrup into a shaker filled with ice and shake",
+                "Strain into a rocks glass filled with ice",
+                "Top with the single malt scotch",
+                "Garnish with candied ginger"
+            ],
+            "summary": "The way to make honey-ginger syrup is: add honey, water and ginger root to a pot to boil. Reduce heat and simmer for 5 minutes, then cool the syrup in the fride for a night.",
+            "rating": 0
+        },
+        {
+            "name": "White Russian",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Coffee Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Heavy Cream"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add the vodka and the coffee liqueur into a rocks glass filled with ice",
+                "Top with the heavy cream"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Blueberry Collins",
+            "uncommon_ingredients": [
+                "Gin"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Blueberries",
+                "Lemon Juice",
+                "Soda",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                6.0,
+                0.5,
+                0.5,
+                0.6
+            ],
+            "common_quantity_types": [
+                "fresh",
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Slice"
             ],
             "glass_kind": "Collins",
             "recipe": [
-                "Add all ingredients (without the ginger beer) into a shaker filled with ice and shake",
-                "Strain into a collins glass filled with ice",
-                "Top with the ginger beer",
-                "Garnish with a lime wedge"
+                "Muddle the raspberries and the gin in a shaker",
+                "Add the lemon juice, sugar syrup and ice and shake",
+                "Strain into a collins glass",
+                "Top with the soda Garnish with a lemon slice"
             ],
             "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Dry Martini",
+            "uncommon_ingredients": [
+                "Gin",
+                "Dry Vermouth"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Green Olive"
+            ],
+            "glass_kind": "Martini",
+            "recipe": [
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a martini glass",
+                "Garnish with a green olive"
+            ],
+            "summary": "Dry Martini became a common cocktail in the 1920s and his origin is unknown.",
             "rating": 0
         },
         {
@@ -2748,74 +1534,861 @@
             "rating": 0
         },
         {
-            "name": "Clover Club",
+            "name": "Caipirinha",
+            "uncommon_ingredients": [
+                "Cachaca"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Sugar",
+                "Lime (cut Into Edges)"
+            ],
+            "common_quantities": [
+                3.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "teaspoon",
+                " fresh"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Muddle the lime (cut into wedges) and the sugar in an old fashioned glass",
+                "Add ice, then add the cachaca and stir",
+                " Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Bay Breeze",
+            "uncommon_ingredients": [
+                "Vodka"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Cranberry Juice",
+                "Pineapple Juice"
+            ],
+            "common_quantities": [
+                2.0,
+                2.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Add the vodka into a highball glass filled with ice",
+                "Then, add the pineapple juice and cranberry juice",
+                "Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Caribbean Sunrise",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Grenadine"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Pineapple Juice"
+            ],
+            "common_quantities": [
+                4.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Pineapple Slice"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Add all ingredients (except the grenadine) into a shaker filled with ice and shake",
+                "Strain into a highball glass",
+                "Top with the grenadine",
+                "Garnish with a pineapple slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Pimms Cup",
+            "uncommon_ingredients": [
+                "Pimms No. 1"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemonade"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Strawberry And Mint Sprig"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Add all ingredients into a highball glass filled with ice and stir",
+                "Garnish with a strawberry and a mint sprig"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Hemingway Daiquiri",
+            "uncommon_ingredients": [
+                "White Rum",
+                "Cherry Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Grapefruit Juice",
+                "Lime Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lime Slice"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with a lime slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Chocolate Covered Cherry",
+            "uncommon_ingredients": [
+                "Cherry Vodka",
+                "Creme De Cacao",
+                "Grenadine"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Heavy Cream",
+                "Chocolate Syrup"
+            ],
+            "common_quantities": [
+                2.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Cherry"
+            ],
+            "glass_kind": "Martini",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Drizzle the chocolate syrup in a martini glass",
+                "Strain into a the glass",
+                "Garnish with a cherry"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "French 75",
+            "uncommon_ingredients": [
+                "Gin",
+                "Champagne"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                3.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Peel"
+            ],
+            "glass_kind": "Champagne",
+            "recipe": [
+                "Add the lemon juice, simple syrup and gin into a shaker filled with ice and shake",
+                "Strain into a champagne glass",
+                "Top with the champagne",
+                "Garnish with a lemon peel"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Mai Tai",
+            "uncommon_ingredients": [
+                "Appleton Estate Reserve Blend",
+                "Orange Liqueur",
+                "Orgeat Syrup"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5,
+                0.75
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice"
+            ],
+            "common_quantities": [
+                0.75
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Mint Sprig"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Combine all ingredients (except mint) into a shaker with crushed ice and shake",
+                "Pour into a double Old Fashioned glass",
+                "Garnish with a mint sprig"
+            ],
+            "summary": "The Mai Tai is tropical and fruity. It was invented by Victor J. Bergon in 1944 with a Jamaican rum as the base.",
+            "rating": 4
+        },
+        {
+            "name": "Godfather",
+            "uncommon_ingredients": [
+                "Scotch Whiskey",
+                "Amaretto Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into an old fashioned glass"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Pina Colada",
+            "uncommon_ingredients": [
+                "White Rum"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Pineapple Juice",
+                "Coconut Cream"
+            ],
+            "common_quantities": [
+                2.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Pineapple Wedge"
+            ],
+            "glass_kind": "Hurricane",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a hurricane glass filled with ice",
+                "Garnish with a pineapple wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Daiquiri",
+            "uncommon_ingredients": [
+                "White Rum"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Simple Syrup",
+                "Lime Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Coupe",
+            "recipe": [
+                "Combine all ingredients with ice into a shaker and shake",
+                "Strain into a coupe glass",
+                "Garnish with a lime wedge"
+            ],
+            "summary": "Daiquiri is also a name of a beach and an iron mine in Cuba. According to the stories this cocktail was made by an American who was in Cuba in the strarting of the 20th century.",
+            "rating": 0
+        },
+        {
+            "name": "Pisco Sour",
+            "uncommon_ingredients": [
+                "Pisco",
+                "Angostura Bitters"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Egg White",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                0.5,
+                1.0,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "fresh",
+                "part"
+            ],
+            "garnish": [
+                "Lime Slice"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Add the pisco, lime juice, egg white and simple syrup into a shaker filled with ice and shake",
+                "Strain into am old fashioned glass",
+                "Top with a few drops of angostra bitters",
+                "Garnish with a lime slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "John Collins",
             "uncommon_ingredients": [
                 "Gin"
             ],
             "uncommon_quantities": [
-                1.5
+                2.0
             ],
             "uncommon_quantity_types": [
                 "part"
             ],
             "common_ingredients": [
                 "Lemon Juice",
-                "Raspberry Syrup",
-                "Egg White"
+                "Simple Syrup",
+                "Soda"
             ],
             "common_quantities": [
+                1.0,
                 0.5,
-                0.5,
-                1.0
+                2.0
             ],
             "common_quantity_types": [
                 "part",
                 "part",
-                "fresh"
+                "part"
             ],
             "garnish": [
-                "Raspberry"
+                "Cherry And Lemon Slice"
             ],
-            "glass_kind": "Cocktail",
+            "glass_kind": "Collins",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with raspberries"
+                "Add all ingredients (without the soda) into a shaker filled with ice and shake",
+                "Strain into a collins glass",
+                "Top with the soda",
+                "Garnish with a cherry and a lemon slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Americano",
+            "name": "Mojito",
             "uncommon_ingredients": [
-                "Campari",
-                "Sweet Vermouth"
+                "White Rum"
             ],
             "uncommon_quantities": [
-                1.5,
-                1.5
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Mint",
+                "Simple Syrup",
+                "Lime Juice",
+                "Soda"
+            ],
+            "common_quantities": [
+                4.0,
+                0.5,
+                1.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "leaves",
+                "part",
+                "part",
+                "splash"
+            ],
+            "garnish": [
+                "Lime Slice"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Lightly muddle the mint in a cocktail shaker",
+                "Add all other ingredients with ice and shake",
+                "Strain into a highball glass filled with ice",
+                "Top with a splash of soda",
+                "Granish with a slice of lime"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Rusty Nail",
+            "uncommon_ingredients": [
+                "Scotch Whiskey",
+                "Honey Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Add the ingredients into a mixing glass filled with ice and stir",
+                "Strain into an old fashioned glass filled with ice",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Aviation",
+            "uncommon_ingredients": [
+                "Gin",
+                "Violet Liqueur",
+                "Cherry Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.25,
+                0.25
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice"
+            ],
+            "common_quantities": [
+                0.5
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Cherry"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with a cherry"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Bucks Fizz",
+            "uncommon_ingredients": [
+                "Champagne"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Orange Juice"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "part"
+            ],
+            "garnish": [
+                "Orange Twist"
+            ],
+            "glass_kind": "Champagne",
+            "recipe": [
+                "Add the orange juice into a champagne glass",
+                "Add the champagne",
+                "Garnish with an orange twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Whiskey Sour",
+            "uncommon_ingredients": [
+                "Bourbon Whiskey"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Orange Slice And Cherry"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into an old fashioned glass filled with ice",
+                "Garnish with a cherry and a orange slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Mint Julep",
+            "uncommon_ingredients": [
+                "Bourbon Whiskey"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Simple Syrup",
+                "Mint Leaves"
+            ],
+            "common_quantities": [
+                0.5,
+                5.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "fresh"
+            ],
+            "garnish": [
+                "Mint Sprig"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Muddle the mint leaves and the simple syrup in a highball glass",
+                "Add the bourbon whisley, add ice and stir",
+                "Garnish with a mint sprig"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "El Presidente",
+            "uncommon_ingredients": [
+                "White Rum",
+                "Orange Liqueur",
+                "Dry Vermouth",
+                "Grenadine"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Orange Peel"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with an orange twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "White Lady",
+            "uncommon_ingredients": [
+                "Gin",
+                "Triple Sec"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Soda"
+                "Lemon Juice",
+                "Egg White"
             ],
             "common_quantities": [
+                0.5,
                 1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "fresh"
+            ],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker (without ice) and shake",
+                "Then, add ice and shake again",
+                "Strain into a cocktail",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Cosmopolitan",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Triple Sec"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Cranberry Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "dash"
+            ],
+            "garnish": [
+                "Lime Wedge"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Vodka Martini",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Dry Vermouth"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Martini",
+            "recipe": [
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a martini glass",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Tequila Sunrise",
+            "uncommon_ingredients": [
+                "Tequila",
+                "Grenadine"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Orange Juice"
+            ],
+            "common_quantities": [
+                4.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Lemon Twist"
+                "Orange Slice And Cherry"
             ],
             "glass_kind": "Highball",
             "recipe": [
-                "Add the sweet vermouth and campari into a highball glass filled with ice",
-                "Top with the soda and stir",
-                "Garnish with a lemon twist"
+                "Add the tequila into a highball glass filled with ice",
+                "Then, add the orange juice",
+                "Top with the grenadine",
+                "Garnish with an orange slice and a cherry"
             ],
             "summary": "",
             "rating": 0
@@ -2853,68 +2426,100 @@
             "rating": 0
         },
         {
-            "name": "Espresso Martini",
+            "name": "B-52",
             "uncommon_ingredients": [
-                "Vodka",
-                "Coffee Liqueur"
+                "Coffee Liqueur",
+                "Irish Cream Liqueur",
+                "Orange Liqueur"
             ],
             "uncommon_quantities": [
-                2.0,
-                1.0
+                0.33,
+                0.33,
+                0.33
             ],
             "uncommon_quantity_types": [
                 "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [],
+            "glass_kind": "Shot",
+            "recipe": [
+                "Add the coffee liqueur into a shot glass",
+                "Then, add the irish cream liqueur to the glass",
+                "Finally, add the orange liqueur to the glass"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Garibaldi",
+            "uncommon_ingredients": [
+                "Campari"
+            ],
+            "uncommon_quantities": [
+                1.5
+            ],
+            "uncommon_quantity_types": [
                 "part"
             ],
             "common_ingredients": [
-                "Espresso"
+                "Orange Juice"
             ],
             "common_quantities": [
-                1.0
+                4.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Coffee Beans"
+                "Orange Wedge"
             ],
-            "glass_kind": "Cocktail",
+            "glass_kind": "Highball",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with 3 coffee beans"
+                "Combine all ingredients into a highball glass filled with ice and stir",
+                "Garnish with an orange wedge"
             ],
-            "summary": "Kahlua is the preffered coffee liqueur for this cocktail.",
-            "rating": 0
+            "summary": "Garibaldi is a simple Italian cocktail including only 2 ingredients: Campari and Orange juice, named after the revolutionary general who helped liberate Italy.",
+            "rating": 4
         },
         {
-            "name": "White Russian",
+            "name": "Strawberry Daiquiri",
             "uncommon_ingredients": [
-                "Vodka",
-                "Coffee Liqueur"
+                "Gin"
             ],
             "uncommon_quantities": [
-                2.0,
-                1.0
+                2.0
             ],
             "uncommon_quantity_types": [
-                "part",
                 "part"
             ],
             "common_ingredients": [
-                "Heavy Cream"
+                "Lime Juice",
+                "Simple Syrup",
+                "Strawberries"
             ],
             "common_quantities": [
-                1.0
+                0.5,
+                0.5,
+                4.0
             ],
             "common_quantity_types": [
-                "part"
+                "part",
+                "part",
+                "fresh"
             ],
-            "garnish": [],
-            "glass_kind": "Rocks",
+            "garnish": [
+                "Strawberry Slice"
+            ],
+            "glass_kind": "Margarita",
             "recipe": [
-                "Add the vodka and the coffee liqueur into a rocks glass filled with ice",
-                "Top with the heavy cream"
+                "Add all ingredients with ice into a blender and blend until smooth",
+                "Strain into a margarita glass",
+                "Garnish with a strawberry slice"
             ],
             "summary": "",
             "rating": 0
@@ -2962,10 +2567,10 @@
             "rating": 0
         },
         {
-            "name": "Bourbon Old Fashioned",
+            "name": "Aperol Spritz",
             "uncommon_ingredients": [
-                "Bourbon Whiskey",
-                "Angostura Bitters"
+                "Aperol",
+                "Prosecco"
             ],
             "uncommon_quantities": [
                 2.0,
@@ -2973,97 +2578,45 @@
             ],
             "uncommon_quantity_types": [
                 "part",
-                "dash"
+                "part"
             ],
             "common_ingredients": [
-                "Simple Syrup"
+                "Soda"
             ],
             "common_quantities": [
-                0.5
+                1.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Orange Peel"
+                "Orange Slice"
             ],
-            "glass_kind": "Old Fashioned",
+            "glass_kind": "Wine",
             "recipe": [
-                "Combine all ingredients into a Old Fashioned glass and stir",
-                "Add ice",
-                "Garnish with a orange peel"
-            ],
-            "summary": "The Bourbon Old Fashioned is a classic and one of the most popular cocktails in the world, made first in the 19th century.",
-            "rating": 4
-        },
-        {
-            "name": "Manhattan",
-            "uncommon_ingredients": [
-                "Rye Whiskey",
-                "Sweet Vermouth",
-                "Angostura Bitters"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                1.0,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Cherry"
-            ],
-            "glass_kind": "Cocktail",
-            "recipe": [
-                "Stir the ingredients with ice in a mixing glass",
-                "Strain into a cocktail glass",
-                "Garnish with a cherry"
-            ],
-            "summary": "Manhattan was invented in New York City\u2019s Manhattan Club according to the history stories, in the 19th century.",
-            "rating": 4
-        },
-        {
-            "name": "French Connection",
-            "uncommon_ingredients": [
-                "Amaretto Liqueur",
-                "Cognac"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Add all ingredients into an old fashioned glass filled with ice and stir"
+                "Combine all ingredients into a wine glass filled with ice and stir",
+                "Garnish with an orange slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Rusty Nail",
+            "name": "Bamboo",
             "uncommon_ingredients": [
-                "Scotch Whiskey",
-                "Honey Liqueur"
+                "Dry Sherry",
+                "Dry Vermouth",
+                "Orange Bitters",
+                "Angostura Bitters"
             ],
             "uncommon_quantities": [
+                1.5,
+                1.5,
                 2.0,
-                0.5
+                2.0
             ],
             "uncommon_quantity_types": [
+                "part",
+                "part",
                 "part",
                 "part"
             ],
@@ -3073,72 +2626,31 @@
             "garnish": [
                 "Lemon Twist"
             ],
-            "glass_kind": "Old Fashioned",
+            "glass_kind": "Cocktail",
             "recipe": [
-                "Add the ingredients into a mixing glass filled with ice and stir",
-                "Strain into an old fashioned glass filled with ice",
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a cocktail glass",
                 "Garnish with a lemon twist"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Vieux Carre",
+            "name": "Margarita",
             "uncommon_ingredients": [
-                "Rye Whiskey",
-                "Cognac",
-                "Sweet Vermouth",
-                "Benedictine Liqueur",
-                "Peychauds Bitters"
-            ],
-            "uncommon_quantities": [
-                1.0,
-                1.0,
-                1.0,
-                0.5,
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part",
-                "part",
-                "part",
-                "dash"
-            ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Cherry"
-            ],
-            "glass_kind": "Old Fashioned",
-            "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into an old fashioned glass",
-                "Garnish with a cherry"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Bronx",
-            "uncommon_ingredients": [
-                "Gin",
-                "Dry Vermouth",
-                "Sweet Vermouth"
+                "Tequila",
+                "Triple Sec"
             ],
             "uncommon_quantities": [
                 2.0,
-                0.5,
-                0.5
+                1.0
             ],
             "uncommon_quantity_types": [
-                "part",
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Orange Juice"
+                "Lime Juice"
             ],
             "common_quantities": [
                 1.0
@@ -3147,58 +2659,159 @@
                 "part"
             ],
             "garnish": [
-                "Orange Twist"
+                "Lime Wedge And Salt"
             ],
-            "glass_kind": "Cocktail",
+            "glass_kind": "Margarita",
             "recipe": [
                 "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
-                "Garnish with an orange twist"
+                "Strain into a margarita glass",
+                "Garnish with a lime wedge and salt"
             ],
-            "summary": "",
+            "summary": "Margarita is one of the most popular cocktails in North America. Its origin is probably from the Mexican drink, the Daisy (\"daisy\" in Spanish is margarita).",
             "rating": 0
         },
         {
-            "name": "Bramble",
+            "name": "Sex On The Beach",
             "uncommon_ingredients": [
-                "Gin",
-                "Blackberry Liqueur"
+                "Vodka",
+                "Peach Schnapps"
             ],
             "uncommon_quantities": [
                 2.0,
-                0.5
+                1.0
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Lemon Juice",
-                "Simple Syrup"
+                "Orange Juice",
+                "Cranberry Juice"
             ],
             "common_quantities": [
-                1.0,
-                0.5
+                2.0,
+                2.0
             ],
             "common_quantity_types": [
                 "part",
                 "part"
             ],
             "garnish": [
-                "Lemon Slice And Blackberry"
+                "Orange Slice"
             ],
-            "glass_kind": "Rocks",
+            "glass_kind": "Hurricane",
             "recipe": [
-                "Add the simple syrup, lemon juice and gin into a shaker filled with ice and shake",
-                "Strain into a rocks glass filled with ice",
-                "Drizzle the liqueur blackberry over the top so it 'bleeds' into the drink",
-                "Garnish with a lemon slice and blackberry"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a hurricane glass",
+                "Garnish with an orange slice"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Cuba Libre",
+            "name": "Gibson",
+            "uncommon_ingredients": [
+                "Gin",
+                "Dry Vermouth"
+            ],
+            "uncommon_quantities": [
+                2.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Cocktail Onion"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Stir all ingredients with ice in a mixing glass",
+                "Strain into a cocktail glass",
+                "Garnish with a cocktail onion"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Painkiller",
+            "uncommon_ingredients": [
+                "Dark Rum"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Orange Juice",
+                "Pineapple Juice",
+                "Coconut Cream"
+            ],
+            "common_quantities": [
+                1.0,
+                4.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Ground Nutmeg And Pineapple Wedge"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a highball glass",
+                "Garnish with ground nutmeg and pineapple wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Caipivodka",
+            "uncommon_ingredients": [
+                "Vodka"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime (cut Into Wedges)",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5
+            ],
+            "common_quantity_types": [
+                "fresh",
+                "part"
+            ],
+            "garnish": [
+                "Lime Slice"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Muddle the lime (cut into wedges) in an old fashioned glass",
+                "Add ice, then add the vodka and the simple syrup and stir",
+                " Garnish with a lime wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Raspberry Daiquiri",
             "uncommon_ingredients": [
                 "White Rum"
             ],
@@ -3209,86 +2822,139 @@
                 "part"
             ],
             "common_ingredients": [
-                "Cola",
-                "Lime"
-            ],
-            "common_quantities": [
-                4.0,
-                0.5
-            ],
-            "common_quantity_types": [
-                "part",
-                " fresh"
-            ],
-            "garnish": [
-                "Lime Wedge"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Fill a highball glass with ice",
-                "Squeeze the lime the glass",
-                "Add the white rum and the cola and stir",
-                "Garnish with a lime wedge"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Cosmopolitan",
-            "uncommon_ingredients": [
-                "Vodka",
-                "Triple Sec"
-            ],
-            "uncommon_quantities": [
-                1.5,
-                0.5
-            ],
-            "uncommon_quantity_types": [
-                "part",
-                "part"
-            ],
-            "common_ingredients": [
+                "Sugar",
                 "Lime Juice",
-                "Cranberry Juice"
+                "Raspberries"
             ],
             "common_quantities": [
                 0.5,
-                1.0
+                0.5,
+                5.0
             ],
             "common_quantity_types": [
+                "teaspoon",
                 "part",
-                "dash"
+                "fresh"
             ],
             "garnish": [
                 "Lime Wedge"
             ],
             "glass_kind": "Cocktail",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a cocktail glass",
+                "Rim a cocktail glass with sugar",
+                "Muddle the raspberries and the lime juice in a shaker",
+                "Add ice and the white rum and shake",
+                "Strain into the rimmed glass",
                 "Garnish with a lime wedge"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Tommys Margarita",
+            "name": "Negroni",
             "uncommon_ingredients": [
-                "Tequila"
+                "Gin",
+                "Campari",
+                "Sweet Vermouth"
             ],
             "uncommon_quantities": [
-                2.0
+                1.0,
+                1.0,
+                1.0
             ],
             "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Orange Peel"
+            ],
+            "glass_kind": "Old Fashioned",
+            "recipe": [
+                "Combine all ingredients into an Old Fashioned glass filled with ice and stir",
+                "Garnish with an orange peel"
+            ],
+            "summary": "Negroni is a popular Italian cocktail, was made first in Florence (Italy) in 1919.",
+            "rating": 4
+        },
+        {
+            "name": "Navy Grog",
+            "uncommon_ingredients": [
+                "White Rum",
+                "Dark Rum",
+                "Demerara Rum"
+            ],
+            "uncommon_quantities": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
                 "part"
             ],
             "common_ingredients": [
                 "Lime Juice",
-                "Agave Nectar",
-                "Salt"
+                "Honey Syrup",
+                "Grapefruit Juice",
+                "Soda"
             ],
             "common_quantities": [
+                0.75,
                 1.0,
+                0.75,
+                0.75
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lime Slice"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a rocks glass",
+                "Garnish with a lime slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Brandy Crusta",
+            "uncommon_ingredients": [
+                "Brandy",
+                "Cherry Liqueur",
+                "Orange Liqueur",
+                "Angostura Bitters"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5,
+                0.5,
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup",
+                "Sugar"
+            ],
+            "common_quantities": [
+                0.5,
                 0.5,
                 1.0
             ],
@@ -3298,91 +2964,53 @@
                 "dash"
             ],
             "garnish": [
-                "Lime Wedge"
+                "Lemon Twist"
             ],
-            "glass_kind": "Rocks",
+            "glass_kind": "Coupe",
             "recipe": [
-                "Rim a rocks glass with salt",
-                "Combine all ingredients with ice into a shaker and shake",
-                "Strain into the rimmed glass filled with ice",
-                "Garnish with a lime wedge"
+                "Rim a coupe glass with sugar",
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into the rimmed glass",
+                "Garnish with a lemon twist"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Mint Julep",
+            "name": "El Diablo",
             "uncommon_ingredients": [
-                "Bourbon Whiskey"
+                "Creme De Cassis",
+                "Tequila"
             ],
             "uncommon_quantities": [
-                2.0
-            ],
-            "uncommon_quantity_types": [
-                "part"
-            ],
-            "common_ingredients": [
-                "Simple Syrup",
-                "Mint Leaves"
-            ],
-            "common_quantities": [
                 0.5,
-                5.0
-            ],
-            "common_quantity_types": [
-                "part",
-                "fresh"
-            ],
-            "garnish": [
-                "Mint Sprig"
-            ],
-            "glass_kind": "Highball",
-            "recipe": [
-                "Muddle the mint leaves and the simple syrup in a highball glass",
-                "Add the bourbon whisley, add ice and stir",
-                "Garnish with a mint sprig"
-            ],
-            "summary": "",
-            "rating": 0
-        },
-        {
-            "name": "Pisco Sour",
-            "uncommon_ingredients": [
-                "Pisco",
-                "Angostura Bitters"
-            ],
-            "uncommon_quantities": [
-                2.0,
-                2.0
+                1.5
             ],
             "uncommon_quantity_types": [
                 "part",
-                "dash"
+                "part"
             ],
             "common_ingredients": [
                 "Lime Juice",
-                "Egg White",
-                "Simple Syrup"
+                "Ginger Beer"
             ],
             "common_quantities": [
                 0.5,
-                1.0,
-                0.5
+                2.0
             ],
             "common_quantity_types": [
                 "part",
-                "fresh",
                 "part"
             ],
             "garnish": [
-                "Lime Slice"
+                "Lime Wedge"
             ],
-            "glass_kind": "Old Fashioned",
+            "glass_kind": "Collins",
             "recipe": [
-                "Add the pisco, lime juice, egg white and simple syrup into a shaker filled with ice and shake",
-                "Strain into am old fashioned glass",
-                "Top with a few drops of angostra bitters",
-                "Garnish with a lime slice"
+                "Add all ingredients (without the ginger beer) into a shaker filled with ice and shake",
+                "Strain into a collins glass filled with ice",
+                "Top with the ginger beer",
+                "Garnish with a lime wedge"
             ],
             "summary": "",
             "rating": 0
@@ -3422,6 +3050,45 @@
                 "Then, add ice and shake again",
                 "Strain into a rocks glass filled with ice",
                 "Garnish with a lemon twist and cherry"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Bramble",
+            "uncommon_ingredients": [
+                "Gin",
+                "Blackberry Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup"
+            ],
+            "common_quantities": [
+                1.0,
+                0.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Slice And Blackberry"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add the simple syrup, lemon juice and gin into a shaker filled with ice and shake",
+                "Strain into a rocks glass filled with ice",
+                "Drizzle the liqueur blackberry over the top so it 'bleeds' into the drink",
+                "Garnish with a lemon slice and blackberry"
             ],
             "summary": "",
             "rating": 0
@@ -3475,9 +3142,217 @@
             "rating": 0
         },
         {
-            "name": "Margarita",
+            "name": "Long Island Iced Tea",
             "uncommon_ingredients": [
-                "Tequila",
+                "Vodka",
+                "White Rum",
+                "Silver Tequila",
+                "Gin",
+                "Triple Sec"
+            ],
+            "uncommon_quantities": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Simple Syrup",
+                "Lemon Juice",
+                "Cola"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Wedge"
+            ],
+            "glass_kind": "Collins",
+            "recipe": [
+                "Shake all ingredients with ice (except the cola) in a shaker",
+                "Strain into a collins glass and top with the cola",
+                "Garnish with a lemon wedge\n"
+            ],
+            "summary": "Long Island Iced Tea was popular in the 1980s. It is a mix of many flavors.",
+            "rating": 4
+        },
+        {
+            "name": "Jungle Bird",
+            "uncommon_ingredients": [
+                "Dark Rum",
+                "Campari"
+            ],
+            "uncommon_quantities": [
+                1.5,
+                1.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Simple Syrup",
+                "Pineapple Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5,
+                1.5
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Pineapple Wedge"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a rocks glass",
+                "Garnish with a pineapple wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Gin Gin Mule",
+            "uncommon_ingredients": [
+                "Gin"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lime Juice",
+                "Simple Syrup",
+                "Mint Sprig",
+                "Ginger Beer"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5,
+                2.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "fresh",
+                "part"
+            ],
+            "garnish": [
+                "Mint Sprig"
+            ],
+            "glass_kind": "Highball",
+            "recipe": [
+                "Muddle the the lime juice, simple syrup and 2 mint sprigs in the bottom of a shaker",
+                "Add the ginger beer, gin and ice and shake",
+                "Strain into a highball glass filled with ice",
+                "Garnish with a mint sprig"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Gin Fizz",
+            "uncommon_ingredients": [
+                "Gin"
+            ],
+            "uncommon_quantities": [
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Simple Syrup",
+                "Soda",
+                "Egg White"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5,
+                2.0,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "fresh"
+            ],
+            "garnish": [
+                "Lemon Twist"
+            ],
+            "glass_kind": "Collins",
+            "recipe": [
+                "Add the lemon juice, simple syrup, egg white and gin into a shaker (without ice) and shake",
+                "Then, add ice and shake again",
+                "Strain into a collins glass filled with ice",
+                "Top with the soda",
+                "Garnish with a lemon twist"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Manhattan",
+            "uncommon_ingredients": [
+                "Rye Whiskey",
+                "Sweet Vermouth",
+                "Angostura Bitters"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                1.0,
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "dash"
+            ],
+            "common_ingredients": [],
+            "common_quantities": [],
+            "common_quantity_types": [],
+            "garnish": [
+                "Cherry"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Stir the ingredients with ice in a mixing glass",
+                "Strain into a cocktail glass",
+                "Garnish with a cherry"
+            ],
+            "summary": "Manhattan was invented in New York City\u2019s Manhattan Club according to the history stories, in the 19th century.",
+            "rating": 4
+        },
+        {
+            "name": "Breakfast Martini",
+            "uncommon_ingredients": [
+                "Gin",
                 "Triple Sec"
             ],
             "uncommon_quantities": [
@@ -3489,63 +3364,61 @@
                 "part"
             ],
             "common_ingredients": [
-                "Lime Juice"
+                "Lemon Juice",
+                "Orange Marmalade"
             ],
             "common_quantities": [
+                0.5,
                 1.0
             ],
             "common_quantity_types": [
-                "part"
+                "part",
+                "teaspoon"
             ],
             "garnish": [
-                "Lime Wedge And Salt"
+                "Orange Twist"
             ],
-            "glass_kind": "Margarita",
+            "glass_kind": "Coupe",
             "recipe": [
                 "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a margarita glass",
-                "Garnish with a lime wedge and salt"
+                "Strain into a coupe glass",
+                "Garnish with an orange twist"
             ],
-            "summary": "Margarita is one of the most popular cocktails in North America. Its origin is probably from the Mexican drink, the Daisy (\"daisy\" in Spanish is margarita).",
+            "summary": "",
             "rating": 0
         },
         {
-            "name": "Corpse Reviver",
+            "name": "Champagne Cocktail",
             "uncommon_ingredients": [
-                "Absinthe",
-                "Gin",
-                "Lillet Blanc",
-                "Orange Liqueur"
+                "Champagne",
+                "Angostura Bitters"
             ],
             "uncommon_quantities": [
-                1.0,
-                1.0,
-                1.0,
-                1.0
+                2.0,
+                3.0
             ],
             "uncommon_quantity_types": [
-                "dash",
                 "part",
-                "part",
-                "part"
+                "dash"
             ],
             "common_ingredients": [
-                "Lemon Juice"
+                "Cube"
             ],
             "common_quantities": [
                 1.0
             ],
             "common_quantity_types": [
-                "part"
+                "sugar"
             ],
             "garnish": [
-                "Orange Peel"
+                "Lemon Twist"
             ],
-            "glass_kind": "Martini",
+            "glass_kind": "Champagne",
             "recipe": [
-                "Add all ingredients into a shaker filled with ice and shake",
-                "Strain into a martini glass",
-                "Garnish with an orange peel"
+                "Add the sugar cube into a champagne glass",
+                "Then, add the angostura bitters",
+                "Top with the champagne",
+                "Garnish with a lemon twist"
             ],
             "summary": "",
             "rating": 0
@@ -3586,102 +3459,229 @@
             "rating": 0
         },
         {
-            "name": "Gibson",
+            "name": "Californication",
             "uncommon_ingredients": [
+                "Vodka",
                 "Gin",
-                "Dry Vermouth"
+                "White Rum",
+                "Tequila"
             ],
             "uncommon_quantities": [
-                2.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "part",
+                "part",
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Orange Juice"
+            ],
+            "common_quantities": [
+                0.5,
+                3.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Orange Slice"
+            ],
+            "glass_kind": "Large",
+            "recipe": [
+                "Combine all ingredients into a large glass filled with ice and stir",
+                "Garnish with an orange slice"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Lemongrad",
+            "uncommon_ingredients": [
+                "Vodka",
+                "Elderflower Liqueur"
+            ],
+            "uncommon_quantities": [
+                2.0,
                 0.5
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
-            "common_ingredients": [],
-            "common_quantities": [],
-            "common_quantity_types": [],
-            "garnish": [
-                "Cocktail Onion"
+            "common_ingredients": [
+                "Lemon Juice",
+                "Tonic Water"
             ],
-            "glass_kind": "Cocktail",
+            "common_quantities": [
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part"
+            ],
+            "garnish": [
+                "Lemon Wedge"
+            ],
+            "glass_kind": "Highball",
             "recipe": [
-                "Stir all ingredients with ice in a mixing glass",
-                "Strain into a cocktail glass",
-                "Garnish with a cocktail onion"
+                "Add all ingredients (except the tonic water) into a shaker filled with ice and shake",
+                "Strain into a highball glass",
+                "Top with the tonic water",
+                "Garnish with a lemon wedge"
             ],
             "summary": "",
             "rating": 0
         },
         {
-            "name": "Mai Tai",
+            "name": "Gimlet",
             "uncommon_ingredients": [
-                "Appleton Estate Reserve Blend",
-                "Orange Liqueur",
-                "Orgeat Syrup"
+                "Gin"
             ],
             "uncommon_quantities": [
-                2.0,
-                0.5,
-                0.75
+                2.0
             ],
             "uncommon_quantity_types": [
-                "part",
-                "part",
                 "part"
             ],
             "common_ingredients": [
-                "Lime Juice"
+                "Lime Juice",
+                "Simple Syrup"
             ],
             "common_quantities": [
-                0.75
+                1.0,
+                0.5
             ],
             "common_quantity_types": [
+                "part",
                 "part"
             ],
             "garnish": [
-                "Mint Sprig"
+                "Lime Slice"
             ],
-            "glass_kind": "Old Fashioned",
+            "glass_kind": "Cocktail",
             "recipe": [
-                "Combine all ingredients (except mint) into a shaker with crushed ice and shake",
-                "Pour into a double Old Fashioned glass",
-                "Garnish with a mint sprig"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into an old cocktail glass",
+                "Garnish with a lime slice"
             ],
-            "summary": "The Mai Tai is tropical and fruity. It was invented by Victor J. Bergon in 1944 with a Jamaican rum as the base.",
-            "rating": 4
+            "summary": "",
+            "rating": 0
         },
         {
-            "name": "Woo Woo",
+            "name": "Clover Club",
+            "uncommon_ingredients": [
+                "Gin"
+            ],
+            "uncommon_quantities": [
+                1.5
+            ],
+            "uncommon_quantity_types": [
+                "part"
+            ],
+            "common_ingredients": [
+                "Lemon Juice",
+                "Raspberry Syrup",
+                "Egg White"
+            ],
+            "common_quantities": [
+                0.5,
+                0.5,
+                1.0
+            ],
+            "common_quantity_types": [
+                "part",
+                "part",
+                "fresh"
+            ],
+            "garnish": [
+                "Raspberry"
+            ],
+            "glass_kind": "Cocktail",
+            "recipe": [
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a cocktail glass",
+                "Garnish with raspberries"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "French Martini",
             "uncommon_ingredients": [
                 "Vodka",
-                "Peach Schnapps"
+                "Raspberry Liqueur"
             ],
             "uncommon_quantities": [
                 2.0,
-                1.0
+                0.5
             ],
             "uncommon_quantity_types": [
                 "part",
                 "part"
             ],
             "common_ingredients": [
-                "Cranberry Juice"
+                "Pineapple Juice"
             ],
             "common_quantities": [
-                4.0
+                1.0
             ],
             "common_quantity_types": [
                 "part"
             ],
             "garnish": [
-                "Lime Wedge"
+                "Pineapple Wedge"
             ],
-            "glass_kind": "Highball",
+            "glass_kind": "Martini",
             "recipe": [
-                "Add all ingredients into a highball glass filled with ice and stir",
-                "Garnish with an lime wedge"
+                "Add all ingredients into a shaker filled with ice and shake",
+                "Strain into a martini glass",
+                "Garnish with a pineapple wedge"
+            ],
+            "summary": "",
+            "rating": 0
+        },
+        {
+            "name": "Rum Old Fashioned",
+            "uncommon_ingredients": [
+                "Dark Rum",
+                "Angostura Bitters",
+                "Orange Bitters"
+            ],
+            "uncommon_quantities": [
+                2.0,
+                2.0,
+                2.0
+            ],
+            "uncommon_quantity_types": [
+                "part",
+                "dash",
+                "dash"
+            ],
+            "common_ingredients": [
+                "Demerara Syrup"
+            ],
+            "common_quantities": [
+                1.0
+            ],
+            "common_quantity_types": [
+                "teaspoon"
+            ],
+            "garnish": [
+                "Orange Twist"
+            ],
+            "glass_kind": "Rocks",
+            "recipe": [
+                "Combie all ingredients in a mixing glass filled with large ice cubes and stir",
+                "Strain into a rocks glass filled with a large ice cube",
+                "Garnish with an orange twist"
             ],
             "summary": "",
             "rating": 0

@@ -12,6 +12,8 @@
 		600AFF7A2506836900BC17D9 /* DBDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF792506836900BC17D9 /* DBDrinks.swift */; };
 		600AFF7E250696C600BC17D9 /* ListDrinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF7D250696C600BC17D9 /* ListDrinkButtonView.swift */; };
 		600AFF822507ABC500BC17D9 /* CocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */; };
+		6028631D25F93E26007E9F9D /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 6028631C25F93E26007E9F9D /* cocktails.json */; };
+		6028632225F93E2F007E9F9D /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6028632125F93E2F007E9F9D /* drinks.json */; };
 		60292D7F2510B020004081CF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D7E2510B020004081CF /* ImageView.swift */; };
 		60292D812510E211004081CF /* FullCocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D802510E211004081CF /* FullCocktailView.swift */; };
 		60292D832510F5C8004081CF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D822510F5C8004081CF /* GridView.swift */; };
@@ -37,8 +39,6 @@
 		60CB93B42534B5B300596265 /* DesignStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CB93B32534B5B300596265 /* DesignStyle.swift */; };
 		60D85C10252CABC700FD604A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D85C0F252CABC600FD604A /* ContentView.swift */; };
 		60E8AC7D2530E92A001849D9 /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E8AC7C2530E929001849D9 /* HalfModalView.swift */; };
-		60FE6A0525F106DE0041EF4B /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FE6A0425F106DE0041EF4B /* drinks.json */; };
-		60FE6A0F25F11FAB0041EF4B /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FE6A0E25F11FAB0041EF4B /* cocktails.json */; };
 		60FE6A5025F152330041EF4B /* PrivacyAndTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE6A4F25F152330041EF4B /* PrivacyAndTerms.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +65,8 @@
 		600AFF792506836900BC17D9 /* DBDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDrinks.swift; sourceTree = "<group>"; };
 		600AFF7D250696C600BC17D9 /* ListDrinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDrinkButtonView.swift; sourceTree = "<group>"; };
 		600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailButtonView.swift; sourceTree = "<group>"; };
+		6028631C25F93E26007E9F9D /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
+		6028632125F93E2F007E9F9D /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
 		60292D7E2510B020004081CF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		60292D802510E211004081CF /* FullCocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCocktailView.swift; sourceTree = "<group>"; };
 		60292D822510F5C8004081CF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		60CB93B32534B5B300596265 /* DesignStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStyle.swift; sourceTree = "<group>"; };
 		60D85C0F252CABC600FD604A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60E8AC7C2530E929001849D9 /* HalfModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
-		60FE6A0425F106DE0041EF4B /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
-		60FE6A0E25F11FAB0041EF4B /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
 		60FE6A4F25F152330041EF4B /* PrivacyAndTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndTerms.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +129,7 @@
 		600AFF722506426400BC17D9 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				60FE6A0E25F11FAB0041EF4B /* cocktails.json */,
+				6028631C25F93E26007E9F9D /* cocktails.json */,
 				600AFF6D25062C4900BC17D9 /* DBCocktails.swift */,
 				602EC11E25093DD70057AA9E /* Cocktail.swift */,
 			);
@@ -139,7 +139,7 @@
 		600AFF742506790000BC17D9 /* Drinks */ = {
 			isa = PBXGroup;
 			children = (
-				60FE6A0425F106DE0041EF4B /* drinks.json */,
+				6028632125F93E2F007E9F9D /* drinks.json */,
 				600AFF792506836900BC17D9 /* DBDrinks.swift */,
 				600AFF7725067AC900BC17D9 /* Drink.swift */,
 			);
@@ -383,10 +383,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60ADAE822504FE6D006628F9 /* LaunchScreen.storyboard in Resources */,
-				60FE6A0525F106DE0041EF4B /* drinks.json in Resources */,
-				60FE6A0F25F11FAB0041EF4B /* cocktails.json in Resources */,
+				6028632225F93E2F007E9F9D /* drinks.json in Resources */,
 				60ADAE7F2504FE6D006628F9 /* Preview Assets.xcassets in Resources */,
 				60ADAE7C2504FE6D006628F9 /* Assets.xcassets in Resources */,
+				6028631D25F93E26007E9F9D /* cocktails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkIt/Preview Content\"";
 				DEVELOPMENT_TEAM = 72M4A43R24;
 				ENABLE_PREVIEWS = YES;
@@ -691,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DrinkIt/Preview Content\"";
 				DEVELOPMENT_TEAM = 72M4A43R24;
 				ENABLE_PREVIEWS = YES;

@@ -10,7 +10,11 @@ import Foundation
 
 class DBDrinks: ObservableObject {
 
+    // [drink category name : [Drink]]
     @Published var data:[String : [Drink]] = [:]
+    
+    // [drink name : Drink]
+    @Published var drinksDict:[String : Drink] = [:]
 
     /**
         read all the drinks from the db and save them
@@ -31,16 +35,19 @@ class DBDrinks: ObservableObject {
         }
         let drinks = (json as! [String: Any])["drinks"] as! [[String : Any]]
         for drink in drinks {
-            // add drink from db to array
-            let category = drink["category"] as! String
+            
+            let temp:Drink = Drink(id: drink["name"] as! String, category: drink["category"] as! String, volume: drink["alcohol_percentage"] as! Int, summary: drink["summary"] as! String)
            
             // chekc if the category already exists in the data
-            if (self.data.keys.contains(category)){
-                self.data[category]!.append(Drink(id: drink["name"] as! String, category: category, volume: drink["alcohol_percentage"] as! Int, summary: drink["summary"] as! String))
+            if (self.data.keys.contains(temp.category)){
+                self.data[temp.category]!.append(temp)
             }
             else{
-                self.data[category] = [Drink(id: drink["name"] as! String, category: category, volume: drink["alcohol_percentage"] as! Int, summary: drink["summary"] as! String)]
+                self.data[temp.category] = [temp]
             }
+            
+            // add drink to drinks dict
+            drinksDict[temp.id] = temp
         }
     }
     

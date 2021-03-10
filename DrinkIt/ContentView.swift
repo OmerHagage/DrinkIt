@@ -11,7 +11,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     @State private var startEdit = false
     @State var appDarkMode:Bool
     
@@ -23,6 +22,11 @@ struct ContentView: View {
     @EnvironmentObject var user:User
     
     @EnvironmentObject var model:Model
+    
+    
+    @State var showDrinkInfo:Bool = false
+    
+    @State var infoDrink = Drink()
     
 
     
@@ -64,12 +68,12 @@ struct ContentView: View {
                         
                         //add drink button
                         NavigationLink(destination: DrinkList(categoriesOrList: user.drinksViewPriority)){
-                            ButtonLableStyle.addStyle(lable: "Add drinks")
+                            ButtonLableStyle.addStyle(lable: "Add Drinks")
                         }
                     }.padding(.horizontal)
                     
                     //liquor cabinet and grid view
-                    LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit)
+                    LiquorCabinetView(userDrinks: self.user.userDrinks, edit: $startEdit, showDrinkInfo: $showDrinkInfo, infoDrink: $infoDrink)
                         .onDisappear(perform: stopEdit)
                                
                     //edit cabinet buttons bar
@@ -77,7 +81,7 @@ struct ContentView: View {
 
                     //search cocktail button - depending on user drinks
                     NavigationLink(destination: CocktailsList(filterAcordingToUserDrinks: true, addToFavorite: user.userFavoriteCocktails)){
-                        ButtonLableStyle.addStyle(lable: "Search Cocktails")
+                        ButtonLableStyle.addStyle(lable: "View Cocktails You Can Make")
                     }
                     .padding(2)
                     .padding(.bottom, 2)
@@ -85,6 +89,11 @@ struct ContentView: View {
                 
                 HalfModalView(isShown: self.$pressed, modalHeight: 200){
                     Menu(isShown: self.$pressed, appDarkMode: self.$appDarkMode, startGuide: self.$startGuide)
+                }
+                
+                HalfModalView(isShown: self.$showDrinkInfo){
+                    DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
+                    
                 }
                 
             }

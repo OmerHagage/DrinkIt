@@ -9,26 +9,31 @@
 import SwiftUI
 
 struct GridView: View {
+    @EnvironmentObject var dbDrinks:DBDrinks
+    
     // grid height
     private let heightEntry:CGFloat
     private let widthEntry:CGFloat
     
     // array divided to chunks (number of drinks in each column)
     private let userDrinks:[[String]]
-    
    
     // edit the drinks in the cabinet
     @Binding var edit:Bool
+    
+    //drink info
+    @Binding var showDrinkInfo:Bool
+    @Binding var infoDrink:Drink
     
     
     /**
      initialize the  grid view and builds chunks of the array
      */
-    init(gridHeight:CGFloat, drinks:Set<String>, edit:Binding<Bool>) {
-        
+    init(gridHeight:CGFloat, drinks:Set<String>, edit:Binding<Bool>, showDrinkInfo:Binding<Bool>, infoDrink:Binding<Drink>) {
         //todo: check what is _edit
         self._edit = edit
-//        self.height = gridHeight
+        self._showDrinkInfo = showDrinkInfo
+        self._infoDrink = infoDrink
         
         let NUM_OF_ROWS = Int((UIScreen.main.bounds.height * 0.6)/100)
         let NUM_OF_COLS = Int(ceil(UIScreen.main.bounds.width / ((UIScreen.main.bounds.height * 0.65) / CGFloat(NUM_OF_ROWS))))
@@ -79,6 +84,12 @@ struct GridView: View {
                                 .shadow(color: .primary, radius: 2, x: 0.0, y: -2)
                             
                             CabinetDrinkView(drinkName: drink, edit: self.$edit, cabinetDrinkViewWidth: self.widthEntry)
+                                .onTapGesture {
+                                    if !self.edit{
+                                        self.infoDrink = dbDrinks.drinksDict[drink]!
+                                        self.showDrinkInfo.toggle()
+                                    }
+                                }
                                 .frame(width: self.widthEntry, height: self.heightEntry)
                         }
                     }

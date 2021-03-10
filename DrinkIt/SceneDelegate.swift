@@ -48,8 +48,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let dbDrinks = DBDrinks()
         let dbCocktails = DBCocktails()
+    
         
-        
+        var toDelete : Set<String> = []
+        for drink in user.userDrinks {
+            if !dbDrinks.drinksDict.keys.contains(drink) {
+                toDelete.insert(drink)
+            }
+        }
+        user.userDrinks = user.userDrinks.subtracting(toDelete)
         
         
         

@@ -157,7 +157,7 @@ struct NumPeopleView: View {
             Text("Number of people:")
                 .font(.subheadline)
                 .padding(.horizontal)
-                .frame(width: 110)
+                .frame(width: 110, height: 45)
             
             // numbers Buttons
             Picker(selection: self.$num, label: Text("Picker"), content: /*@START_MENU_TOKEN@*/{
