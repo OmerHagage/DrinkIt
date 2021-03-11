@@ -147,7 +147,10 @@ struct DrinkList: View {
             }
             .navigationBarTitle("Drinks")
         
-            HalfModalView(isShown: self.$showDrinkInfo){DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)}
+            HalfModalView(isShown: self.$showDrinkInfo){
+                DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink, mainCabinet: false)
+                
+            }
             
             HalfModalView(isShown: self.$showEditCategoriesOrListSheet, modalHeight: 200){
                 EditCategoriesOrListView(isShown: self.$showEditCategoriesOrListSheet, categoriesOrList: self.$categoriesOrList)
@@ -214,37 +217,4 @@ struct EditCategoriesOrListButton: View {
         })
     }
 
-}
-
-
-struct DrinkInfoView: View {
-    
-    @Binding var showDrinkInfo:Bool
-    @Binding var infoDrink:Drink
-    
-    var body: some View{
-        VStack(alignment: .leading){
-            XButton(isShown: self.$showDrinkInfo)
-            
-            HStack{
-                VStack(alignment: .leading){
-                    Text(self.infoDrink.id).font(.title).fontWeight(.bold)
-                    Text("\(self.infoDrink.volume)% Vol").font(.body)
-                }
-                
-                
-                Spacer()
-                
-                DrinkImageView(imageName: self.infoDrink.id)
-            }.padding(.top)
-            
-            Text(self.infoDrink.summary)
-                .layoutPriority(1)
-                .font(.callout)
-                .multilineTextAlignment(.leading)
-            
-            Spacer()
-            
-        }
-    }
 }

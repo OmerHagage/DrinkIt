@@ -66,9 +66,5 @@ struct CocktailImageView: View {
             .shadow(color: .white, radius: 1)
     }
 }
-//struct ImageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImageView(imageName: "star")
-//    }
-//}
+
 

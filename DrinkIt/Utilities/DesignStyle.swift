@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct DesignStyle {
-//    @Environment(\.colorScheme) var colorScheme
     
     static func backgroundStyle() -> LinearGradient {
+        //todo: decide on the background color
         return LinearGradient(gradient: Gradient(colors: [Color("backGroundL"),Color("backGroundM"),  Color("backGroundH")]), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
     
@@ -30,9 +30,3 @@ struct DesignStyle {
     }
     
 }
-
-//struct DesignStyle_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DesignStyle()
-//    }
-//}

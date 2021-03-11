@@ -30,7 +30,6 @@ struct GridView: View {
      initialize the  grid view and builds chunks of the array
      */
     init(gridHeight:CGFloat, drinks:Set<String>, edit:Binding<Bool>, showDrinkInfo:Binding<Bool>, infoDrink:Binding<Drink>) {
-        //todo: check what is _edit
         self._edit = edit
         self._showDrinkInfo = showDrinkInfo
         self._infoDrink = infoDrink
@@ -77,7 +76,7 @@ struct GridView: View {
                     ForEach(chunk, id: \.self){ drink in
                         ZStack(alignment: .bottom){
                          
-//                            Rectangle()
+                            // rectangle represents a shelf
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color("Charleston Green"))
                                 .frame(width: self.widthEntry / 1.7, height: 5)

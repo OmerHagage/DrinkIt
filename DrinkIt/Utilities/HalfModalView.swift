@@ -58,7 +58,7 @@ struct HalfModalView<Content: View> : View {
                                 .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
                                 .clipped()
                         }
-                        .offset(y: (self.dragState.isDragging && dragState.translation.height >= 1) ?       dragState.translation.height : 0)
+                        .offset(y: (self.dragState.isDragging && dragState.translation.height >= 1) ? dragState.translation.height : 0)
                         .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
                         .gesture(drag)
                         

@@ -58,7 +58,6 @@ struct CocktailButtonView: View {
             .overlay( RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.clear, lineWidth: 1)
             )
-//            .background(Color("Charleston Green"))
             .background(DesignStyle.drinkOrCocktailButton(category: ""))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .shadow(color: .black, radius: 3)

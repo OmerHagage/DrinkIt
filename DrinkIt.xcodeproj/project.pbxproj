@@ -14,6 +14,7 @@
 		600AFF822507ABC500BC17D9 /* CocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */; };
 		6028631D25F93E26007E9F9D /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 6028631C25F93E26007E9F9D /* cocktails.json */; };
 		6028632225F93E2F007E9F9D /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6028632125F93E2F007E9F9D /* drinks.json */; };
+		6028633025FA2CE2007E9F9D /* DrinkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6028632F25FA2CE2007E9F9D /* DrinkInfoView.swift */; };
 		60292D7F2510B020004081CF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D7E2510B020004081CF /* ImageView.swift */; };
 		60292D812510E211004081CF /* FullCocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D802510E211004081CF /* FullCocktailView.swift */; };
 		60292D832510F5C8004081CF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60292D822510F5C8004081CF /* GridView.swift */; };
@@ -67,6 +68,7 @@
 		600AFF812507ABC500BC17D9 /* CocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailButtonView.swift; sourceTree = "<group>"; };
 		6028631C25F93E26007E9F9D /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
 		6028632125F93E2F007E9F9D /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		6028632F25FA2CE2007E9F9D /* DrinkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkInfoView.swift; sourceTree = "<group>"; };
 		60292D7E2510B020004081CF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		60292D802510E211004081CF /* FullCocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCocktailView.swift; sourceTree = "<group>"; };
 		60292D822510F5C8004081CF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				6033D7E425052E9000D0C85E /* DrinkList.swift */,
 				600AFF7D250696C600BC17D9 /* ListDrinkButtonView.swift */,
 				60424AFD2530B6EE006A2CF5 /* CategoryDrinkButtonView.swift */,
+				6028632F25FA2CE2007E9F9D /* DrinkInfoView.swift */,
 			);
 			path = DrinkView;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				6033D7E525052E9000D0C85E /* DrinkList.swift in Sources */,
 				60B039F9252A2AD200737D37 /* LiquorCabinetView.swift in Sources */,
 				6047C5FF252782920055591B /* ButtonLableStyle.swift in Sources */,
+				6028633025FA2CE2007E9F9D /* DrinkInfoView.swift in Sources */,
 				602EC11F25093DD70057AA9E /* Cocktail.swift in Sources */,
 				605BC47B252F5AA200C72CCC /* FavoriteButton.swift in Sources */,
 				60A8D60E251E603F00222D8D /* BulletedText.swift in Sources */,

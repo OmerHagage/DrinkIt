@@ -113,13 +113,6 @@ struct FullCocktailView: View {
 }
 
 
-//struct FullCocktailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FullCocktailView(cocktail: Cocktail(id: "fdg", recipe: "fdg", ingredients: ["fg"], quantities: [1]))
-//    }
-//}
-
-
 struct IngredientsView: View {
     @Binding var cocktail:Cocktail
     @Binding var peopleNum:Int

@@ -39,11 +39,9 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 
-                //todo: decide on the background color
+                // backgound color
                 DesignStyle.backgroundStyle().edgesIgnoringSafeArea(.all)
                     
-                
-               
                 // full start view
                 VStack{
 
@@ -91,8 +89,8 @@ struct ContentView: View {
                     Menu(isShown: self.$pressed, appDarkMode: self.$appDarkMode, startGuide: self.$startGuide)
                 }
                 
-                HalfModalView(isShown: self.$showDrinkInfo){
-                    DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink)
+                HalfModalView(isShown: self.$showDrinkInfo, modalHeight: 200){
+                    DrinkInfoView(showDrinkInfo: self.$showDrinkInfo, infoDrink: self.$infoDrink, mainCabinet: true)
                     
                 }
                 
