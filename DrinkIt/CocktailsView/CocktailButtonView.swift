@@ -9,67 +9,58 @@
 import SwiftUI
 
 struct CocktailButtonView: View {
-    let cocktail: Cocktail
-    
-    @EnvironmentObject var user:User
-    @Binding var isPressed:Bool
-    @Binding var infoCocktail:Cocktail
-    
-    @Binding var addToFavorite:Set<String>
+  let cocktail: Cocktail
 
-    var body: some View {
+  @EnvironmentObject var user:User
+  @Binding var isPressed:Bool
+  @Binding var infoCocktail:Cocktail
+
+  @Binding var addToFavorite:Set<String>
+
+  var body: some View {
+    VStack{
+      Button(action: {
+        self.infoCocktail = self.cocktail
+        self.isPressed = true
+      })
+      {
+        // button detail view
         VStack{
-            Button(action: {
-                self.infoCocktail = self.cocktail
-                self.isPressed = true
-            })
-            {
-                // button detail view
-                VStack{
-                    // cocktail name and favorite button
-                    HStack{
-                        Text(cocktail.id)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-            
-                        FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
-                    }.padding(.top, 4)
-                    Spacer()
-                    // cocktail ingredients and image
-                    HStack{
-                        VStack(alignment: .leading){
-                            ForEach(0..<self.cocktail.uncommonIngredients.count, id: \.self){ i in
-                                BulletedText(text: self.cocktail.uncommonIngredients[i])
-                                    .font(.subheadline)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            Spacer()
-                        }
-                        Spacer()
-                        //todo: אולי לשנות לשם של הקוקטייל במקום סוג הכוס?
-                        CocktailImageView(imageName: self.cocktail.glassKind).padding([.bottom, .trailing])
-                    }
-                }
+          // cocktail name and favorite button
+          HStack{
+            Text(cocktail.id)
+              .font(.title)
+              .fontWeight(.bold)
+            Spacer()
+
+            FavoriteButton(cocktailName: cocktail.id, addToFavorite: self.$addToFavorite)
+          }.padding(.top, 4)
+          Spacer()
+          // cocktail ingredients and image
+          HStack{
+            VStack(alignment: .leading){
+              ForEach(0..<self.cocktail.uncommonIngredients.count, id: \.self){ i in
+                BulletedText(text: self.cocktail.uncommonIngredients[i])
+                  .font(.subheadline)
+                  .multilineTextAlignment(.leading)
+              }
+              Spacer()
             }
-            .frame(height: 100)
-            .foregroundColor(.primary)
-            .padding()
-            .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.clear, lineWidth: 1)
-            )
-            .background(DesignStyle.drinkOrCocktailButton(category: ""))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .shadow(color: .black, radius: 3)
-            .padding(.all, 5.5)
+            Spacer()
+            CocktailImageView(imageName: self.cocktail.glassKind).padding([.bottom, .trailing])
+          }
         }
-//        .sheet(isPresented: self.$isPressed, content: { FullCocktailView(showFullCocktailInfo: self.$isPressed, addToFavorite: self.$addToFavorite, cocktail: self.cocktail)})
+      }
+      .frame(height: 100)
+      .foregroundColor(.primary)
+      .padding()
+      .overlay( RoundedRectangle(cornerRadius: 20)
+        .stroke(Color.clear, lineWidth: 1)
+      )
+      .background(DesignStyle.drinkOrCocktailButton(category: ""))
+      .clipShape(RoundedRectangle(cornerRadius: 20))
+      .shadow(color: .black, radius: 3)
+      .padding(.all, 5.5)
     }
+  }
 }
-
-
-//struct CocktailButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CocktailButtonView(cocktail: Cocktail(id: "sdlfgn", recipe: "ldnkfg", ingredients: ["Df","sdf","sdf"], quantities: [1,2,3]))
-//    }
-//}
